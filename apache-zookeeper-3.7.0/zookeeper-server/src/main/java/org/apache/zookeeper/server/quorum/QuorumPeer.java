@@ -1511,12 +1511,15 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
                     try {
                         LOG.info("FOLLOWING");
                         setFollower(makeFollower(logFactory));
+                        // 处于跟随者状态的节点，在 Follower.followLeader() 函数中，周期性地读数据包和处理数据包
                         follower.followLeader();
                     } catch (Exception e) {
                         LOG.warn("Unexpected exception", e);
                     } finally {
+                        // 关闭跟随者节点
                         follower.shutdown();
                         setFollower(null);
+                        // 设置状态为选举状态
                         updateServerState();
                     }
                     break;

@@ -938,7 +938,9 @@ public class FastLeaderElection implements Election {
             int notTimeout = minNotificationInterval;
 
             synchronized (this) {
+                // 对逻辑时钟的值执行加一操作
                 logicalclock.incrementAndGet();
+                // 创建投票提案，并默认推荐自己为领导者
                 updateProposal(getInitId(), getInitLastLoggedZxid(), getPeerEpoch());
             }
 
@@ -946,6 +948,7 @@ public class FastLeaderElection implements Election {
                 "New election. My id = {}, proposed zxid=0x{}",
                 self.getId(),
                 Long.toHexString(proposedZxid));
+            // 广播投票信息给所有节点
             sendNotifications();
 
             SyncedLearnerTracker voteSet;
@@ -959,6 +962,7 @@ public class FastLeaderElection implements Election {
                  * Remove next notification from queue, times out after 2 times
                  * the termination time
                  */
+                // 从队列中读取接收到的投票信息
                 Notification n = recvqueue.poll(notTimeout, TimeUnit.MILLISECONDS);
 
                 /*
@@ -1010,7 +1014,9 @@ public class FastLeaderElection implements Election {
                                     Long.toHexString(logicalclock.get()));
                             break;
                         } else if (totalOrderPredicate(n.leader, n.zxid, n.peerEpoch, proposedLeader, proposedZxid, proposedEpoch)) {
+                            // 投票信息中提议的节点比自己提议的节点更适合作为领导者，更新投票信息，并推荐投票信息中提议的节点
                             updateProposal(n.leader, n.zxid, n.peerEpoch);
+                            // 将新的投票信息广播给所有节点
                             sendNotifications();
                         }
 
@@ -1041,7 +1047,9 @@ public class FastLeaderElection implements Election {
                              * relevant message from the reception queue
                              */
                             if (n == null) {
+                                // 根据投票结果，判断并设置节点状态
                                 setPeerState(proposedLeader, voteSet);
+                                // 退出领导者选举
                                 Vote endVote = new Vote(proposedLeader, proposedZxid, logicalclock.get(), proposedEpoch);
                                 leaveInstance(endVote);
                                 return endVote;

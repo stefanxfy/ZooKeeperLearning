@@ -124,7 +124,9 @@ public class Follower extends Learner {
                 // create a reusable packet to reduce gc impact
                 QuorumPacket qp = new QuorumPacket();
                 while (this.isRunning()) {
+                    // 读取数据包
                     readPacket(qp);
+                    // 处理数据包
                     processPacket(qp);
                 }
             } catch (Exception e) {
