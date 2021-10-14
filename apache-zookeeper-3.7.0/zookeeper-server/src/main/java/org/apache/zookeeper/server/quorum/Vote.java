@@ -69,13 +69,30 @@ public class Vote {
 
     private final int version;
 
+    /**
+     * 被推举的Leader的sid
+     */
     private final long id;
 
+    /**
+     * 被推举的Leader的事务id
+     */
     private final long zxid;
 
+    /**
+     * 逻辑时钟
+     */
     private final long electionEpoch;
 
+    /**
+     * 被推举的Leader的epoch
+     */
     private final long peerEpoch;
+
+    /**
+     * 当前服务器的状态
+     */
+    private final ServerState state;
 
     public int getVersion() {
         return version;
@@ -100,8 +117,6 @@ public class Vote {
     public ServerState getState() {
         return state;
     }
-
-    private final ServerState state;
 
     @Override
     public boolean equals(Object o) {
