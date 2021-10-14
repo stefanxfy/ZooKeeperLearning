@@ -46,7 +46,7 @@ public class FourLetterCommandTest {
 
     @Test
     public void testZkServerCons() {
-        List<ZkClientCons> zkClientConsList = FourLetterCommandUtil.doCommand("172.17.0.144", 2181,
+        List<ZkClientCons> zkClientConsList = FourLetterCommandUtil.doCommand("119.23.73.197", 2181,
                 FourLetterCommand.cons, new ZkClientConsReaderParser());
         for (ZkClientCons zkClientCons : zkClientConsList) {
             System.out.println(zkClientCons);
