@@ -3,6 +3,8 @@ package study.stefan.entity;
 import java.io.Serializable;
 
 /**
+ * 四字命令conf，一般获取一次即可，后面可手动刷新，
+ * 获取dataDir和dataLogDir可用于日志文件备份和迁移
  * @author stefan
  * @date 2021/10/14 15:11
  */

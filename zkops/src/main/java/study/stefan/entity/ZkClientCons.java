@@ -3,6 +3,7 @@ package study.stefan.entity;
 import java.io.Serializable;
 
 /**
+ * 四字命令cons
  * @author stefan
  * @date 2021/10/14 15:12
  */

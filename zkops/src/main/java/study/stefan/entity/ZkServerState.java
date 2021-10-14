@@ -3,6 +3,10 @@ package study.stefan.entity;
 import java.io.Serializable;
 
 /**
+ * 四字命令mntr，可以自行写定时任务1分钟1次入库，
+ * 频率也可以调整为10秒1次等，看实际情况
+ * 需要注意的是执行完mntr后，执行srst重置服务器的统计
+ *
  * @author stefan
  * @date 2021/10/14 15:05
  */
