@@ -20,7 +20,7 @@ public class FourLetterCommandTest {
 
     @Test
     public void test() {
-        String res = FourLetterCommandUtil.doCommand("119.23.73.197", 2381, FourLetterCommand.conf);
+        String res = FourLetterCommandUtil.doCommand("119.23.73.197", 2382, FourLetterCommand.ruok);
         System.out.println(res);
     }
 
