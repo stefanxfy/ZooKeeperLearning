@@ -34,8 +34,7 @@ class CaptureLog {
     }
 
     protected CaptureLog() {
-        outputStream = new ByteArrayOutputStream();
-        ps = new PrintStream(outputStream, true);
+        this(new ByteArrayOutputStream());
     }
 
     private final OutputStream outputStream;
@@ -46,8 +45,7 @@ class CaptureLog {
     }
 
     protected void reset() {
-//        baos.reset();
-        ps.flush();
+
     }
 
     protected String getCapture() {

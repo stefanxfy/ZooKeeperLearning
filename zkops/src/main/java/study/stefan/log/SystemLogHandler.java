@@ -70,6 +70,10 @@ public class SystemLogHandler extends PrintStream {
     private static final Stack<CaptureLog> reuse = new Stack<>();
 
 
+    private static PrintStream preOut = null;
+    private static PrintStream preErr = null;
+
+
     // --------------------------------------------------------- Public Methods
 
 
@@ -77,6 +81,7 @@ public class SystemLogHandler extends PrintStream {
      * Start capturing thread's output.
      */
     public static void startCapture(OutputStream outputStream) {
+        redirect();
         CaptureLog log = null;
         if (!reuse.isEmpty()) {
             try {
@@ -95,6 +100,30 @@ public class SystemLogHandler extends PrintStream {
         stack.push(log);
     }
 
+    private static void redirect() {
+        if (SystemLogHandler.class.equals(System.out.getClass()) && SystemLogHandler.class.equals(System.err.getClass())) {
+            return;
+        }
+        synchronized (SystemLogHandler.class) {
+            preOut = System.out;
+            System.setOut(new SystemLogHandler(System.out));
+            preErr = System.err;
+            System.setErr(new SystemLogHandler(System.err));
+        }
+    }
+    public static void reset() {
+        if (!SystemLogHandler.class.equals(System.out.getClass()) && !SystemLogHandler.class.equals(System.err.getClass())) {
+            return;
+        }
+        synchronized (SystemLogHandler.class) {
+            if (preOut != null) {
+                System.setOut(preOut);
+            }
+            if (preErr != null) {
+                System.setErr(preErr);
+            }
+        }
+    }
 
     /**
      * Stop capturing thread's output.

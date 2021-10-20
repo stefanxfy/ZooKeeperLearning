@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.jute.BinaryInputArchiveTest" time="0.036" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.jute.BinaryInputArchiveTest" time="0.033" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_241\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\stefan\AppData\Local\Temp\surefire1144541672523093174\surefirebooter1048041328828625134.jar C:\Users\stefan\AppData\Local\Temp\surefire1144541672523093174 2021-10-05T13-25-01_329-jvmRun1 surefire6542108461911938498tmp surefire_08472014686510182120tmp"/>
+    <property name="sun.java.command" value="C:\Users\stefan\AppData\Local\Temp\surefire7778947403990147271\surefirebooter7069525157042858967.jar C:\Users\stefan\AppData\Local\Temp\surefire7778947403990147271 2021-10-20T20-10-32_416-jvmRun1 surefire4638495630439999500tmp surefire_053326368921474374tmp"/>
     <property name="surefire.test.class.path" value="C:\study\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-jute\target\test-classes;C:\study\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-jute\target\classes;C:\Users\stefan\.m2\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;C:\Users\stefan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\stefan\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\stefan\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\Users\stefan\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\stefan\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\stefan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\stefan"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\stefan\AppData\Local\Temp\surefire1144541672523093174\surefirebooter1048041328828625134.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\stefan\AppData\Local\Temp\surefire7778947403990147271\surefirebooter7069525157042858967.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_241\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_241\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,11 +61,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testInt" classname="org.apache.jute.BinaryInputArchiveTest" time="0.019"/>
-  <testcase name="testFloat" classname="org.apache.jute.BinaryInputArchiveTest" time="0.002"/>
-  <testcase name="testBool" classname="org.apache.jute.BinaryInputArchiveTest" time="0.002"/>
-  <testcase name="testReadStringCheckLength" classname="org.apache.jute.BinaryInputArchiveTest" time="0.001"/>
-  <testcase name="testReadStringForRecordsHavingLengthMoreThanMaxAllowedSize" classname="org.apache.jute.BinaryInputArchiveTest" time="0.001"/>
+  <testcase name="testInt" classname="org.apache.jute.BinaryInputArchiveTest" time="0.018"/>
+  <testcase name="testFloat" classname="org.apache.jute.BinaryInputArchiveTest" time="0.001"/>
+  <testcase name="testBool" classname="org.apache.jute.BinaryInputArchiveTest" time="0.001"/>
+  <testcase name="testReadStringCheckLength" classname="org.apache.jute.BinaryInputArchiveTest" time="0.002"/>
+  <testcase name="testReadStringForRecordsHavingLengthMoreThanMaxAllowedSize" classname="org.apache.jute.BinaryInputArchiveTest" time="0"/>
   <testcase name="testBuffer" classname="org.apache.jute.BinaryInputArchiveTest" time="0.002"/>
   <testcase name="testDouble" classname="org.apache.jute.BinaryInputArchiveTest" time="0.001"/>
   <testcase name="testReadStringForRecordsHavingLengthLessThanMaxAllowedSize" classname="org.apache.jute.BinaryInputArchiveTest" time="0.001"/>

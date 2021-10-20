@@ -29,15 +29,14 @@ public class ZkLogTest {
         String dest = filepath + ".txt";
         logFormat(filepath, dest);*/
         // snapshot.5100000c94
-        String filepath = "C:\\Users\\faisco\\Downloads\\zk\\snapshot.5100000c94";
+        String filepath = "C:\\Users\\stefan\\Downloads\\zk\\snapshot.5100000c94";
         String dest = filepath + ".txt";
         snapshotFormat(filepath, dest);
     }
     public static void snapshotFormat(String filepath, String dest) throws IOException, InterruptedException {
-        FileOutputStream fileOutputStream = new FileOutputStream(dest, true);
-        SystemLogHandler.startCapture(new ByteArrayOutputStream());
+//        FileOutputStream fileOutputStream = new FileOutputStream(dest, true);
+//        SystemLogHandler.startCapture(fileOutputStream);
         new SnapshotFormatter().run(filepath);
-        Thread.sleep(100000000000000L);
 //        SystemLogHandler.stopCapture();
     }
 
