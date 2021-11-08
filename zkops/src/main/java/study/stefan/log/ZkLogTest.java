@@ -36,12 +36,12 @@ public class ZkLogTest {
     public static void snapshotFormat(String filepath, String dest) throws IOException, InterruptedException {
 //        FileOutputStream fileOutputStream = new FileOutputStream(dest, true);
 //        SystemLogHandler.startCapture(fileOutputStream);
-        new SnapshotFormatter().run(filepath);
+//        new SnapshotFormatter().run(filepath);
 //        SystemLogHandler.stopCapture();
     }
 
     public static void logFormat(String filepath, String dest) throws IOException {
-        FileInputStream fis = new FileInputStream(filepath);
+/*        FileInputStream fis = new FileInputStream(filepath);
         BinaryInputArchive logStream = BinaryInputArchive.getArchive(fis);
         FileHeader fhdr = new FileHeader();
         fhdr.deserialize(logStream, "fileheader");
@@ -94,6 +94,6 @@ public class ZkLogTest {
                 throw new EOFException("Last transaction was partial.");
             }
             count++;
-        }
+        }*/
     }
 }
