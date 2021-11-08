@@ -96,6 +96,7 @@ public class QuorumPeerMain {
             ZKAuditProvider.addServerStartFailureAuditLog();
             ServiceUtils.requestSystemExit(ExitCode.INVALID_INVOCATION.getValue());
         } catch (ConfigException e) {
+            e.printStackTrace();
             LOG.error("Invalid config, exiting abnormally", e);
             System.err.println("Invalid config, exiting abnormally");
             ZKAuditProvider.addServerStartFailureAuditLog();
@@ -121,6 +122,7 @@ public class QuorumPeerMain {
 
     protected void initializeAndRun(String[] args) throws ConfigException, IOException, AdminServerException {
         QuorumPeerConfig config = new QuorumPeerConfig();
+//        args = new String[]{"D:\\mysoft\\faiscoGit\\myStudy\\ZooKeeperLearning\\conf\\zoo_1.cfg"};
         if (args.length == 1) {
             config.parse(args[0]);
         }

@@ -7,10 +7,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="zookeeper-3.4.6-fatjar" level="project" />
-    <orderEntry type="library" name="dist-maven" level="project" />
-    <orderEntry type="library" name="zookeeper-3.4.6" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="zookeeper-3.4.6-fatjar1" level="project" />
+    <orderEntry type="library" name="zookeeper-3.4.61" level="project" />
+    <orderEntry type="library" name="dist-maven1" level="project" />
+    <orderEntry type="library" name="target" level="project" />
+    <orderEntry type="module" module-name="test4" />
+    <orderEntry type="module" module-name="target" />
+    <orderEntry type="module" module-name="main8" />
+    <orderEntry type="module" module-name="test3" />
     <orderEntry type="module" module-name="zookeeper-3.4.6" />
+    <orderEntry type="module" module-name="main7" />
   </component>
 </module>

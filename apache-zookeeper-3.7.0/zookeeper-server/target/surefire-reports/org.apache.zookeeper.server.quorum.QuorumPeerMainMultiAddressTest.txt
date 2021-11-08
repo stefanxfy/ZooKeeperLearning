@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 139.938 s <<< FAILURE! - in org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest
+shouldStartClusterWhenSomeAddressesAreUnreachable  Time elapsed: 30.289 s  <<< ERROR!
+java.lang.RuntimeException: Waiting too long
+	at org.apache.zookeeper.server.quorum.QuorumPeerTestBase.waitForAll(QuorumPeerTestBase.java:553)
+	at org.apache.zookeeper.server.quorum.QuorumPeerTestBase.waitForAll(QuorumPeerTestBase.java:543)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest.launchServers(QuorumPeerMainMultiAddressTest.java:284)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest.shouldStartClusterWhenSomeAddressesAreUnreachable(QuorumPeerMainMultiAddressTest.java:115)
+
+shouldStartClusterWhenSomeAddressesAreUnreachable_IPv6  Time elapsed: 30.107 s  <<< ERROR!
+java.lang.RuntimeException: Waiting too long
+	at org.apache.zookeeper.server.quorum.QuorumPeerTestBase.waitForAll(QuorumPeerTestBase.java:553)
+	at org.apache.zookeeper.server.quorum.QuorumPeerTestBase.waitForAll(QuorumPeerTestBase.java:543)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest.launchServers(QuorumPeerMainMultiAddressTest.java:284)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest.shouldStartClusterWhenSomeAddressesAreUnreachable(QuorumPeerMainMultiAddressTest.java:115)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMainMultiAddressTest.shouldStartClusterWhenSomeAddressesAreUnreachable_IPv6(QuorumPeerMainMultiAddressTest.java:125)
+

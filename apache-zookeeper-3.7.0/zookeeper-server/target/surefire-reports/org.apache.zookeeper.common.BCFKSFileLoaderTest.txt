@@ -1,0 +1,212 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.common.BCFKSFileLoaderTest
+-------------------------------------------------------------------------------
+Tests run: 80, Failures: 0, Errors: 16, Skipped: 0, Time elapsed: 20.777 s <<< FAILURE! - in org.apache.zookeeper.common.BCFKSFileLoaderTest
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[1]  Time elapsed: 0.246 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[2]  Time elapsed: 0.264 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[3]  Time elapsed: 0.224 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[4]  Time elapsed: 0.258 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[5]  Time elapsed: 0.254 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[6]  Time elapsed: 0.343 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[7]  Time elapsed: 0.39 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadKeyStore{X509KeyType, X509KeyType, String, Integer}[8]  Time elapsed: 0.237 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:340)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:274)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadKeyStore(BCFKSFileLoaderTest.java:37)
+Caused by: org.bouncycastle.jcajce.provider.keystore.bcfks.BcFKSKeyStoreSpi$ExtKeyStoreException: BCFKS KeyStore exception storing private key: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.setKeyEntry(KeyStore.java:1128)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBytes(X509TestHelpers.java:415)
+	at org.apache.zookeeper.common.X509TestHelpers.certAndPrivateKeyToBCFKSBytes(X509TestHelpers.java:408)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreBcfksFile(X509TestContext.java:335)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[1]  Time elapsed: 0.24 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[2]  Time elapsed: 0.24 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[3]  Time elapsed: 0.221 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[4]  Time elapsed: 0.228 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[5]  Time elapsed: 0.218 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[6]  Time elapsed: 0.23 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[7]  Time elapsed: 0.264 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+
+testLoadTrustStore{X509KeyType, X509KeyType, String, Integer}[8]  Time elapsed: 0.512 s  <<< ERROR!
+java.io.IOException: java.security.InvalidKeyException: Illegal key size or default parameters
+	at java.security.KeyStore.store(KeyStore.java:1365)
+	at org.apache.zookeeper.common.X509TestHelpers.certToTrustStoreBytes(X509TestHelpers.java:351)
+	at org.apache.zookeeper.common.X509TestHelpers.certToBCFKSTrustStoreBytes(X509TestHelpers.java:343)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreBcfksFile(X509TestContext.java:223)
+	at org.apache.zookeeper.common.X509TestContext.getTrustStoreFile(X509TestContext.java:166)
+	at org.apache.zookeeper.common.BCFKSFileLoaderTest.testLoadTrustStore(BCFKSFileLoaderTest.java:115)
+

@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.test.FourLetterWordsWhiteListTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 62.56 s <<< FAILURE! - in org.apache.zookeeper.test.FourLetterWordsWhiteListTest
+testFourLetterWordsEnableAllCommandsThroughAsterisk  Time elapsed: 13.264 s  <<< ERROR!
+java.io.IOException: Exception while executing four letter word: envi
+	at org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord(FourLetterWordMain.java:134)
+	at org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord(FourLetterWordMain.java:56)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.sendRequest(FourLetterWordsWhiteListTest.java:235)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.verifyFuzzyMatch(FourLetterWordsWhiteListTest.java:239)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.verifyAllCommandsSuccess(FourLetterWordsWhiteListTest.java:147)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.testFourLetterWordsEnableAllCommandsThroughAsterisk(FourLetterWordsWhiteListTest.java:130)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord(FourLetterWordMain.java:129)
+	... 5 more
+
+testFourLetterWordsEnableAllCommandsThroughExplicitList  Time elapsed: 13.151 s  <<< ERROR!
+java.io.IOException: Exception while executing four letter word: envi
+	at org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord(FourLetterWordMain.java:134)
+	at org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord(FourLetterWordMain.java:56)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.sendRequest(FourLetterWordsWhiteListTest.java:235)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.verifyFuzzyMatch(FourLetterWordsWhiteListTest.java:239)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.verifyAllCommandsSuccess(FourLetterWordsWhiteListTest.java:147)
+	at org.apache.zookeeper.test.FourLetterWordsWhiteListTest.testFourLetterWordsEnableAllCommandsThroughExplicitList(FourLetterWordsWhiteListTest.java:142)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord(FourLetterWordMain.java:129)
+	... 5 more
+

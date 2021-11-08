@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.NettyServerCnxnTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 152.864 s <<< FAILURE! - in org.apache.zookeeper.server.NettyServerCnxnTest
+testEnableDisableThrottling_secure_random  Time elapsed: 54.5 s  <<< ERROR!
+java.net.ProtocolException: Unable to connect to server
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:201)
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:193)
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:182)
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:177)
+	at org.apache.zookeeper.server.NettyServerCnxnTest.runEnableDisableThrottling(NettyServerCnxnTest.java:301)
+	at org.apache.zookeeper.server.NettyServerCnxnTest.testEnableDisableThrottling_secure_random(NettyServerCnxnTest.java:270)
+
+testEnableDisableThrottling_secure_sequentially  Time elapsed: 32.427 s  <<< ERROR!
+java.net.ProtocolException: Unable to connect to server
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:201)
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:193)
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:182)
+	at org.apache.zookeeper.test.ClientBase.createClient(ClientBase.java:177)
+	at org.apache.zookeeper.server.NettyServerCnxnTest.runEnableDisableThrottling(NettyServerCnxnTest.java:301)
+	at org.apache.zookeeper.server.NettyServerCnxnTest.testEnableDisableThrottling_secure_sequentially(NettyServerCnxnTest.java:275)
+

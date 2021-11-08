@@ -1,0 +1,41 @@
+2021-11-08 11:27:16,237 [myid:] - INFO  [main:MiniKdc@222] - Configuration:
+2021-11-08 11:27:16,240 [myid:] - INFO  [main:MiniKdc@223] - ---------------------------------------------------------------
+2021-11-08 11:27:16,241 [myid:] - INFO  [main:MiniKdc@225] -   debug: true
+2021-11-08 11:27:16,241 [myid:] - INFO  [main:MiniKdc@225] -   transport: TCP
+2021-11-08 11:27:16,241 [myid:] - INFO  [main:MiniKdc@225] -   max.ticket.lifetime: 86400000
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@225] -   org.name: EXAMPLE
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@225] -   kdc.port: 0
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@225] -   org.domain: COM
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@225] -   max.renewable.lifetime: 604800000
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@225] -   instance: DefaultKrbServer
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@225] -   kdc.bind.address: localhost
+2021-11-08 11:27:16,242 [myid:] - INFO  [main:MiniKdc@227] - ---------------------------------------------------------------
+2021-11-08 11:27:16,330 [myid:] - INFO  [main:MiniKdc@281] - MiniKdc stated.
+2021-11-08 11:27:16,333 [myid:] - INFO  [main:PortAssignment@154] - Test process 3/8 using ports from 16607 - 19299.
+2021-11-08 11:27:16,333 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16608 from range 16607 - 19299.
+2021-11-08 11:27:16,348 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.SaslKerberosAuthOverSSLTest.testAuth() throws java.lang.Exception]
+2021-11-08 11:27:16,362 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2021-11-08 11:27:16,363 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16609 from range 16607 - 19299.
+2021-11-08 11:27:16,406 [myid:] - INFO  [main:NettyServerCnxnFactory@507] - zookeeper.client.portUnification=false
+2021-11-08 11:27:16,407 [myid:] - INFO  [main:NettyServerCnxnFactory@519] - zookeeper.netty.advancedFlowControl.enabled = false
+2021-11-08 11:27:16,407 [myid:] - INFO  [main:NettyServerCnxnFactory@106] - handshakeThrottlingEnabled = false, zookeeper.netty.server.outstandingHandshake.limit = -1
+2021-11-08 11:27:16,908 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NettyServerCnxnFactory as server connection factory
+Debug is  true storeKey true useTicketCache false useKeyTab true doNotPrompt true ticketCache is null isInitiator true KeyTab is D:mysoftaiscoGitmyStudyZooKeeperLearningpache-zookeeper-3.7.0zookeeper-server	argetsurefirecc9baac9-87c7-4578-9d68-b44c97571ea5 refreshKrb5Config is true principal is zkquorum/localhost@EXAMPLE.COM tryFirstPass is false useFirstPass is false storePass is false clearPass is false
+Refreshing Kerberos configuration
+Java config name: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test5972586964504852921.junit.dir\1636342036237\krb5.conf
+Loaded from Java config
+>>> KdcAccessibility: reset
+>>> KdcAccessibility: reset
+Looking for keys for: zkquorum/localhost@EXAMPLE.COM
+Key for the principal zkquorum/localhost@EXAMPLE.COM not available in D:mysoftaiscoGitmyStudyZooKeeperLearningpache-zookeeper-3.7.0zookeeper-server	argetsurefirecc9baac9-87c7-4578-9d68-b44c97571ea5
+		[Krb5LoginModule] authentication failed 
+Unable to obtain password from user
+
+2021-11-08 11:27:16,930 [myid:] - INFO  [main:ClientBase@583] - tearDown starting
+2021-11-08 11:27:16,930 [myid:] - INFO  [main:ClientBase@557] - STOPPING server
+2021-11-08 11:27:16,930 [myid:] - INFO  [main:NettyServerCnxnFactory@647] - shutdown called null
+2021-11-08 11:27:16,934 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16609
+2021-11-08 11:27:18,968 [myid:] - INFO  [main:JMXEnv@142] - ensureOnly:[]
+2021-11-08 11:27:18,969 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.SaslKerberosAuthOverSSLTest.testAuth() throws java.lang.Exception]
+2021-11-08 11:27:18,982 [myid:] - INFO  [main:DefaultInternalKdcServerImpl@102] - Default Internal kdc server stopped.
+2021-11-08 11:27:19,997 [myid:] - INFO  [main:MiniKdc@343] - MiniKdc stopped.

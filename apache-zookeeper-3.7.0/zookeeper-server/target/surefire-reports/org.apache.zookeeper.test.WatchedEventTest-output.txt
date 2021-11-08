@@ -1,0 +1,8 @@
+2021-11-08 11:29:15,976 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.WatchedEventTest.testConvertingToEventWrapper()]
+2021-11-08 11:29:15,994 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.WatchedEventTest.testConvertingToEventWrapper()]
+2021-11-08 11:29:16,002 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.WatchedEventTest.testCreatingWatchedEvent()]
+2021-11-08 11:29:16,003 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.WatchedEventTest.testCreatingWatchedEvent()]
+2021-11-08 11:29:16,005 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.WatchedEventTest.testCreatingWatchedEventFromInvalidWrapper()]
+2021-11-08 11:29:16,006 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.WatchedEventTest.testCreatingWatchedEventFromInvalidWrapper()]
+2021-11-08 11:29:16,008 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.WatchedEventTest.testCreatingWatchedEventFromWrapper()]
+2021-11-08 11:29:16,009 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.WatchedEventTest.testCreatingWatchedEventFromWrapper()]

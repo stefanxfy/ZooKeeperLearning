@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.quorum.MultipleAddressesTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 10.242 s <<< FAILURE! - in org.apache.zookeeper.server.quorum.MultipleAddressesTest
+testGetValidAddress  Time elapsed: 2.507 s  <<< ERROR!
+java.net.NoRouteToHostException: No valid address among [/127.0.0.4:16652, /127.0.0.5:16653, /127.0.0.6:16654, /127.0.0.7:16655, /127.0.0.0:16648, /127.0.0.8:16656, /127.0.0.1:16649, /127.0.0.9:16657, /127.0.0.2:16650, /127.0.0.3:16651]
+	at org.apache.zookeeper.server.quorum.MultipleAddresses.lambda$getReachableAddress$15(MultipleAddresses.java:127)
+	at org.apache.zookeeper.server.quorum.MultipleAddresses.getReachableAddress(MultipleAddresses.java:127)
+	at org.apache.zookeeper.server.quorum.MultipleAddressesTest.testGetValidAddress(MultipleAddressesTest.java:106)
+
+testAlwaysGetReachableAddress  Time elapsed: 1.948 s  <<< ERROR!
+java.net.NoRouteToHostException: No valid address among [/127.0.0.1:1234, unreachable2.address.zookeeper.apache.com:1234, unreachable1.address.zookeeper.apache.com:1234, unreachable3.address.zookeeper.apache.com:1234]
+	at org.apache.zookeeper.server.quorum.MultipleAddresses.lambda$getReachableAddress$15(MultipleAddresses.java:127)
+	at org.apache.zookeeper.server.quorum.MultipleAddresses.getReachableAddress(MultipleAddresses.java:127)
+	at org.apache.zookeeper.server.quorum.MultipleAddressesTest.testAlwaysGetReachableAddress(MultipleAddressesTest.java:178)
+
+testGetAllReachableAddresses  Time elapsed: 1.009 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[/127.0.0.1:1234, /127.0.0.1:2345]> but was: <[]>
+	at org.apache.zookeeper.server.quorum.MultipleAddressesTest.testGetAllReachableAddresses(MultipleAddressesTest.java:193)
+
+testGetAllReachableAddressesOrAllWhenSomeReachable  Time elapsed: 1.014 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[/127.0.0.1:1234, /127.0.0.1:2345]> but was: <[/127.0.0.1:1234, unreachable2.address.zookeeper.apache.com:1234, unreachable1.address.zookeeper.apache.com:1234, /127.0.0.1:2345]>
+	at org.apache.zookeeper.server.quorum.MultipleAddressesTest.testGetAllReachableAddressesOrAllWhenSomeReachable(MultipleAddressesTest.java:207)
+

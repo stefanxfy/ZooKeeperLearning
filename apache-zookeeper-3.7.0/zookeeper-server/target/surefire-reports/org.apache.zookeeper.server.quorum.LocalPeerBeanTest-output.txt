@@ -1,0 +1,16 @@
+2021-11-08 11:10:10,019 [myid:] - INFO  [main:QuorumPeer@796] - zookeeper.quorumCnxnTimeoutMs=-1
+2021-11-08 11:10:10,088 [myid:] - INFO  [main:Log@169] - Logging initialized @1253ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-11-08 11:10:10,175 [myid:] - WARN  [main:ContextHandler@1660] - o.e.j.s.ServletContextHandler@74cec793{/,null,STOPPED} contextPath ends with /*
+2021-11-08 11:10:10,176 [myid:] - WARN  [main:ContextHandler@1671] - Empty contextPath
+2021-11-08 11:10:10,194 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2021-11-08 11:10:10,201 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:10:10,202 [myid:] - INFO  [main:PortAssignment@154] - Test process 3/8 using ports from 16607 - 19299.
+2021-11-08 11:10:10,208 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16608 from range 16607 - 19299.
+2021-11-08 11:10:10,209 [myid:] - WARN  [main:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:10:10,211 [myid:] - INFO  [main:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:10:10,224 [myid:] - INFO  [main:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:16608
+2021-11-08 11:10:10,227 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16609 from range 16607 - 19299.
+2021-11-08 11:10:10,227 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:10:10,228 [myid:] - WARN  [main:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:10:10,228 [myid:] - INFO  [main:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:10:10,228 [myid:] - INFO  [main:NIOServerCnxnFactory@660] - binding to port localhost/127.0.0.1:16609

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.quorum.CnxManagerTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 264.523 s <<< FAILURE! - in org.apache.zookeeper.server.quorum.CnxManagerTest
+testWorkerThreads  Time elapsed: 242.512 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Mon Nov 08 11:12:58 CST 2021 Incorrect number of Worker threads for sid=0 expected 2 found 0 ==> expected: <null> but was: <Mon Nov 08 11:12:58 CST 2021 Incorrect number of Worker threads for sid=0 expected 2 found 0>
+	at org.apache.zookeeper.server.quorum.CnxManagerTest.testWorkerThreads(CnxManagerTest.java:520)
+

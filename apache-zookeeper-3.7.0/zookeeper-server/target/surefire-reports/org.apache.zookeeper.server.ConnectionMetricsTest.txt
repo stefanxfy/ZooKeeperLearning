@@ -1,0 +1,49 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.ConnectionMetricsTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 9.95 s <<< FAILURE! - in org.apache.zookeeper.server.ConnectionMetricsTest
+testStaleSessionsExpired  Time elapsed: 9.767 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/zookeeper/server/ExpiryQueue
+	at org.apache.zookeeper.server.SessionTrackerImpl.<init>(SessionTrackerImpl.java:112)
+	at org.apache.zookeeper.server.ConnectionMetricsTest.testStaleSessionsExpired(ConnectionMetricsTest.java:214)
+Caused by: java.lang.ClassNotFoundException: org.apache.zookeeper.server.ExpiryQueue
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 2 more
+
+testRevalidateCount  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/zookeeper/server/ServerMetrics
+	at org.apache.zookeeper.server.ConnectionMetricsTest.testRevalidateCount(ConnectionMetricsTest.java:54)
+Caused by: java.lang.ClassNotFoundException: org.apache.zookeeper.server.ServerMetrics
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 1 more
+
+testSessionlessConnectionsExpired  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/zookeeper/server/NIOServerCnxnFactory$1
+	at org.apache.zookeeper.server.ConnectionMetricsTest.testSessionlessConnectionsExpired(ConnectionMetricsTest.java:188)
+Caused by: java.lang.ClassNotFoundException: org.apache.zookeeper.server.NIOServerCnxnFactory$1
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 1 more
+
+testNettyConnectionDropCount  Time elapsed: 0.1 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/zookeeper/server/ServerMetrics
+	at org.apache.zookeeper.server.ConnectionMetricsTest.testNettyConnectionDropCount(ConnectionMetricsTest.java:173)
+
+testNIOConnectionDropCount  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/zookeeper/server/ServerMetrics
+	at org.apache.zookeeper.server.ConnectionMetricsTest.testNIOConnectionDropCount(ConnectionMetricsTest.java:155)
+

@@ -1,0 +1,296 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.common.X509UtilTest
+-------------------------------------------------------------------------------
+Tests run: 352, Failures: 12, Errors: 8, Skipped: 0, Time elapsed: 7.311 s <<< FAILURE! - in org.apache.zookeeper.common.X509UtilTest
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[1]  Time elapsed: 0.051 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[2]  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[3]  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[4]  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[5]  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[6]  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[7]  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testClientRenegotiationFails{X509KeyType, X509KeyType, String, Integer}[8]  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <javax.net.ssl.SSLHandshakeException> but was: <java.lang.IllegalArgumentException>
+	at org.apache.zookeeper.common.X509UtilTest.testClientRenegotiationFails(X509UtilTest.java:692)
+Caused by: java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLServerSocket.setSSLParameters(SSLServerSocket.java:514)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLServerSocket(SSLContextAndOptions.java:133)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLServerSocket(SSLContextAndOptions.java:96)
+	at org.apache.zookeeper.common.X509Util.createSSLServerSocket(X509Util.java:525)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testClientRenegotiationFails$101(X509UtilTest.java:695)
+	... 1 more
+
+testLoadPEMKeyStoreAutodetectStoreFileType{X509KeyType, X509KeyType, String, Integer}[2]  Time elapsed: 0.46 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreAutodetectStoreFileType(X509UtilTest.java:278)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStoreAutodetectStoreFileType{X509KeyType, X509KeyType, String, Integer}[4]  Time elapsed: 0.003 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreAutodetectStoreFileType(X509UtilTest.java:278)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStoreAutodetectStoreFileType{X509KeyType, X509KeyType, String, Integer}[6]  Time elapsed: 0 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreAutodetectStoreFileType(X509UtilTest.java:278)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStoreAutodetectStoreFileType{X509KeyType, X509KeyType, String, Integer}[8]  Time elapsed: 0.005 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreAutodetectStoreFileType(X509UtilTest.java:278)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStore{X509KeyType, X509KeyType, String, Integer}[2]  Time elapsed: 0.005 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStore(X509UtilTest.java:249)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStore{X509KeyType, X509KeyType, String, Integer}[4]  Time elapsed: 0.003 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStore(X509UtilTest.java:249)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStore{X509KeyType, X509KeyType, String, Integer}[6]  Time elapsed: 0.003 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStore(X509UtilTest.java:249)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStore{X509KeyType, X509KeyType, String, Integer}[8]  Time elapsed: 0.004 s  <<< ERROR!
+java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStore(X509UtilTest.java:249)
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 2 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 5 more
+
+testLoadPEMKeyStoreWithWrongPassword{X509KeyType, X509KeyType, String, Integer}[2]  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <org.apache.zookeeper.common.X509Exception.KeyManagerException> but was: <java.io.IOException>
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreWithWrongPassword(X509UtilTest.java:289)
+Caused by: java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testLoadPEMKeyStoreWithWrongPassword$95(X509UtilTest.java:292)
+	... 1 more
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 3 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadPEMKeyStoreWithWrongPassword{X509KeyType, X509KeyType, String, Integer}[4]  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <org.apache.zookeeper.common.X509Exception.KeyManagerException> but was: <java.io.IOException>
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreWithWrongPassword(X509UtilTest.java:289)
+Caused by: java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testLoadPEMKeyStoreWithWrongPassword$95(X509UtilTest.java:292)
+	... 1 more
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 3 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadPEMKeyStoreWithWrongPassword{X509KeyType, X509KeyType, String, Integer}[6]  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <org.apache.zookeeper.common.X509Exception.KeyManagerException> but was: <java.io.IOException>
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreWithWrongPassword(X509UtilTest.java:289)
+Caused by: java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testLoadPEMKeyStoreWithWrongPassword$95(X509UtilTest.java:292)
+	... 1 more
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 3 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+
+testLoadPEMKeyStoreWithWrongPassword{X509KeyType, X509KeyType, String, Integer}[8]  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <org.apache.zookeeper.common.X509Exception.KeyManagerException> but was: <java.io.IOException>
+	at org.apache.zookeeper.common.X509UtilTest.testLoadPEMKeyStoreWithWrongPassword(X509UtilTest.java:289)
+Caused by: java.io.IOException: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:307)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStoreFile(X509TestContext.java:270)
+	at org.apache.zookeeper.common.X509UtilTest.lambda$testLoadPEMKeyStoreWithWrongPassword$95(X509UtilTest.java:292)
+	... 1 more
+Caused by: org.bouncycastle.operator.OperatorCreationException: Illegal key size or default parameters
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodePrivateKey(X509TestHelpers.java:273)
+	at org.apache.zookeeper.common.X509TestHelpers.pemEncodeCertAndPrivateKey(X509TestHelpers.java:255)
+	at org.apache.zookeeper.common.X509TestContext.getKeyStorePemFile(X509TestContext.java:304)
+	... 3 more
+Caused by: java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1021)
+	at javax.crypto.Cipher.init(Cipher.java:1225)
+	at javax.crypto.Cipher.init(Cipher.java:1166)
+	... 6 more
+

@@ -1,0 +1,436 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.quorum.UnifiedServerSocketTest
+-------------------------------------------------------------------------------
+Tests run: 72, Failures: 0, Errors: 48, Skipped: 0, Time elapsed: 7.949 s <<< FAILURE! - in org.apache.zookeeper.server.quorum.UnifiedServerSocketTest
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[1]  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[2]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[3]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[4]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[5]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[6]  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[7]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testConnectWithSSLToStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[8]  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToStrictServer(UnifiedServerSocketTest.java:312)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[1]  Time elapsed: 0.01 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[2]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[3]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[4]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[5]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[6]  Time elapsed: 0.01 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[7]  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testTLSDetectionNonBlockingNonStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[8]  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerDisconnectedClient(UnifiedServerSocketTest.java:575)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[1]  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[2]  Time elapsed: 0.008 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[3]  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[4]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[5]  Time elapsed: 0.034 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[6]  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[7]  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testConnectWithSSLToNonStrictServer{X509KeyType, X509KeyType, Boolean, Integer}[8]  Time elapsed: 0.031 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testConnectWithSSLToNonStrictServer(UnifiedServerSocketTest.java:277)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[1]  Time elapsed: 0.008 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[2]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[3]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[4]  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[5]  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[6]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[7]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerDisconnectedClient{X509KeyType, X509KeyType, Boolean, Integer}[8]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerDisconnectedClient(UnifiedServerSocketTest.java:616)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[1]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[2]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[3]  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[4]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[5]  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[6]  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[7]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[8]  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingStrictServerIdleClient(UnifiedServerSocketTest.java:520)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[1]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[2]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[3]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[4]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[5]  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[6]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[7]  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+
+testTLSDetectionNonBlockingNonStrictServerIdleClient{X509KeyType, X509KeyType, Boolean, Integer}[8]  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.connectWithSSL(UnifiedServerSocketTest.java:212)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketTest.testTLSDetectionNonBlockingNonStrictServerIdleClient(UnifiedServerSocketTest.java:478)
+

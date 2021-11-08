@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/zookeeper-server/zookeeper.iml" filepath="$PROJECT_DIR$/zookeeper-server/zookeeper.iml" />
       <module fileurl="file://$PROJECT_DIR$/zookeeper-assembly/zookeeper-assembly.iml" filepath="$PROJECT_DIR$/zookeeper-assembly/zookeeper-assembly.iml" />
       <module fileurl="file://$PROJECT_DIR$/zookeeper-client/zookeeper-client.iml" filepath="$PROJECT_DIR$/zookeeper-client/zookeeper-client.iml" />

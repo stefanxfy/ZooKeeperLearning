@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.quorum.FuzzySnapshotRelatedTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 70.874 s <<< FAILURE! - in org.apache.zookeeper.server.quorum.FuzzySnapshotRelatedTest
+testMultiOpDigestConsistentDuringSnapshot  Time elapsed: 7.333 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/zookeeper/server/quorum/FuzzySnapshotRelatedTest$3
+	at org.apache.zookeeper.server.quorum.FuzzySnapshotRelatedTest.testMultiOpDigestConsistentDuringSnapshot(FuzzySnapshotRelatedTest.java:260)
+Caused by: java.lang.ClassNotFoundException: org.apache.zookeeper.server.quorum.FuzzySnapshotRelatedTest$3
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 1 more
+

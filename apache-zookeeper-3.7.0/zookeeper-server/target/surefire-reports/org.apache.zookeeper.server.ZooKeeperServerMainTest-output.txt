@@ -1,0 +1,1011 @@
+2021-11-08 11:14:28,693 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testStandalone() throws java.lang.Exception]
+2021-11-08 11:14:28,703 [myid:] - INFO  [main:PortAssignment@154] - Test process 3/8 using ports from 16607 - 19299.
+2021-11-08 11:14:28,708 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16608 from range 16607 - 19299.
+2021-11-08 11:14:29,347 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:29,348 [myid:] - INFO  [Standalone server with clientPort:16608:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:14:29,388 [myid:] - INFO  [Standalone server with clientPort:16608:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:14:29,391 [myid:] - WARN  [Standalone server with clientPort:16608:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:14:29,392 [myid:] - INFO  [Standalone server with clientPort:16608:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:14:29,392 [myid:] - INFO  [Standalone server with clientPort:16608:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:14:29,392 [myid:] - INFO  [Standalone server with clientPort:16608:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:14:29,392 [myid:] - INFO  [Standalone server with clientPort:16608:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:14:29,393 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:14:29,403 [myid:] - INFO  [Standalone server with clientPort:16608:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@3ab43208
+2021-11-08 11:14:29,405 [myid:] - INFO  [Standalone server with clientPort:16608:DigestAuthenticationProvider@47] - ACL digest algorithm is: SHA1
+2021-11-08 11:14:29,405 [myid:] - INFO  [Standalone server with clientPort:16608:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:14:29,406 [myid:] - INFO  [Standalone server with clientPort:16608:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] - 
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -   ______                  _                                          
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -  |___  /                 | |                                         
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -     / /    ___     ___   | | __   ___    ___   _ __     ___   _ __   
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -    / /    / _ \   / _ \  | |/ /  / _ \  / _ \ | '_ \   / _ \ | '__|
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -   / /__  | (_) | | (_) | |   <  |  __/ |  __/ | |_) | |  __/ | |    
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -  /_____|  \___/   \___/  |_|\_\  \___|  \___| | .__/   \___| |_|
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -                                               | |                     
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] -                                               |_|                     
+2021-11-08 11:14:29,416 [myid:] - INFO  [Standalone server with clientPort:16608:ZookeeperBanner@42] - 
+2021-11-08 11:14:31,401 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:31,654 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:33,667 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:33,917 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:35,938 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:36,203 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:38,224 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:38,441 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:zookeeper.version=3.7.0-02d8e7728613600d355308bb0a256b6f5b41360c-dirty, built on 2021-11-08 03:06 UTC
+2021-11-08 11:14:38,441 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:host.name=DESKTOP-3V3H020
+2021-11-08 11:14:38,441 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.version=1.8.0_31
+2021-11-08 11:14:38,441 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.vendor=Oracle Corporation
+2021-11-08 11:14:38,441 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.home=C:\Program Files\Java\jdk1.8.0_31\jre
+2021-11-08 11:14:38,441 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.class.path=D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\test-classes;D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\classes;D:\mysoft\maven\repository\com\github\spotbugs\spotbugs-annotations\4.0.2\spotbugs-annotations-4.0.2.jar;D:\mysoft\maven\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-library\2.2\hamcrest-library-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;D:\mysoft\maven\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;D:\mysoft\maven\repository\org\apache\zookeeper\zookeeper-jute\3.7.0\zookeeper-jute-3.7.0.jar;D:\mysoft\maven\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar;D:\mysoft\maven\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;D:\mysoft\maven\repository\io\netty\netty-handler\4.1.59.Final\netty-handler-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-common\4.1.59.Final\netty-common-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-resolver\4.1.59.Final\netty-resolver-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-buffer\4.1.59.Final\netty-buffer-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport\4.1.59.Final\netty-transport-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-codec\4.1.59.Final\netty-codec-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-epoll\4.1.59.Final\netty-transport-native-epoll-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-unix-common\4.1.59.Final\netty-transport-native-unix-common-4.1.59.Final.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-server\9.4.38.v20210224\jetty-server-9.4.38.v20210224.jar;D:\mysoft\maven\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-http\9.4.38.v20210224\jetty-http-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util\9.4.38.v20210224\jetty-util-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-io\9.4.38.v20210224\jetty-io-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-servlet\9.4.38.v20210224\jetty-servlet-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-security\9.4.38.v20210224\jetty-security-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util-ajax\9.4.38.v20210224\jetty-util-ajax-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-client\9.4.38.v20210224\jetty-client-9.4.38.v20210224.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-databind\2.10.5.1\jackson-databind-2.10.5.1.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.5\jackson-annotations-2.10.5.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-core\2.10.5\jackson-core-2.10.5.jar;D:\mysoft\maven\repository\org\bouncycastle\bcprov-jdk15on\1.60\bcprov-jdk15on-1.60.jar;D:\mysoft\maven\repository\org\bouncycastle\bcpkix-jdk15on\1.60\bcpkix-jdk15on-1.60.jar;D:\mysoft\maven\repository\jline\jline\2.14.6\jline-2.14.6.jar;D:\mysoft\maven\repository\io\dropwizard\metrics\metrics-core\4.1.12.1\metrics-core-4.1.12.1.jar;D:\mysoft\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-core\2.0.0\kerb-core-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-pkix\2.0.0\kerby-pkix-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-asn1\2.0.0\kerby-asn1-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-util\2.0.0\kerby-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-simplekdc\2.0.0\kerb-simplekdc-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-client\2.0.0\kerb-client-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-common\2.0.0\kerb-common-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-crypto\2.0.0\kerb-crypto-2.0.0.jar;D:\mysoft\maven\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-util\2.0.0\kerb-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\token-provider\2.0.0\token-provider-2.0.0.jar;D:\mysoft\maven\repository\com\nimbusds\nimbus-jose-jwt\4.41.2\nimbus-jose-jwt-4.41.2.jar;D:\mysoft\maven\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;D:\mysoft\maven\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;D:\mysoft\maven\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;D:\mysoft\maven\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-admin\2.0.0\kerb-admin-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-server\2.0.0\kerb-server-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-identity\2.0.0\kerb-identity-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-xdr\2.0.0\kerby-xdr-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-config\2.0.0\kerby-config-2.0.0.jar;D:\mysoft\maven\repository\org\mockito\mockito-core\3.6.28\mockito-core-3.6.28.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy-agent\1.10.18\byte-buddy-agent-1.10.18.jar;D:\mysoft\maven\repository\org\objenesis\objenesis\3.1\objenesis-3.1.jar;D:\mysoft\maven\repository\org\jmockit\jmockit\1.48\jmockit-1.48.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;D:\mysoft\maven\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;D:\mysoft\maven\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-runner\1.6.2\junit-platform-runner-1.6.2.jar;D:\mysoft\maven\repository\junit\junit\4.13\junit-4.13.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-launcher\1.6.2\junit-platform-launcher-1.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-suite-api\1.6.2\junit-platform-suite-api-1.6.2.jar;D:\mysoft\maven\repository\org\xerial\snappy\snappy-java\1.1.7.7\snappy-java-1.1.7.7.jar;
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.library.path=C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\Python39\Scripts\;C:\Python39\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_31\bin;D:\soft\Git\cmd;D:\mysoft\maven\apache-maven-3.6.1\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;D:\mysoft\gradle-7.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\OpenVPN\bin;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;;D:\soft\Microsoft VS Code\bin;D:\soft\PyCharm Community Edition 2019.1.3\bin;;D:\soft\PyCharm 2019.2.3\bin;;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\bin;;C:\Users\faisco\AppData\Roaming\npm;.
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.io.tmpdir=C:\Users\faisco\AppData\Local\Temp\
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:java.compiler=<NA>
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:os.name=Windows 8.1
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:os.arch=amd64
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:os.version=6.3
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:user.name=faisco
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:user.home=C:\Users\faisco
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:user.dir=D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server
+2021-11-08 11:14:38,442 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:os.memory.free=228MB
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:os.memory.max=455MB
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:Environment@98] - Server environment:os.memory.total=243MB
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@138] - zookeeper.enableEagerACLCheck = false
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@151] - zookeeper.digest.enabled = true
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@155] - zookeeper.closeSessionTxn.enabled = true
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1499] - zookeeper.flushDelay=0
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1508] - zookeeper.maxWriteQueuePollTime=0
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1517] - zookeeper.maxBatchSize=1000
+2021-11-08 11:14:38,443 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@260] - zookeeper.intBufferStartingSizeBytes = 1024
+2021-11-08 11:14:38,444 [myid:] - INFO  [Standalone server with clientPort:16608:BlueThrottle@141] - Weighed connection throttling is disabled
+2021-11-08 11:14:38,445 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:14:38,445 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:14:38,446 [myid:] - INFO  [Standalone server with clientPort:16608:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:14:38,447 [myid:] - INFO  [Standalone server with clientPort:16608:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:14:38,447 [myid:] - INFO  [Standalone server with clientPort:16608:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:14:38,447 [myid:] - INFO  [Standalone server with clientPort:16608:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:14:38,447 [myid:] - INFO  [Standalone server with clientPort:16608:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:14:38,448 [myid:] - INFO  [Standalone server with clientPort:16608:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:14:38,448 [myid:] - INFO  [Standalone server with clientPort:16608:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:14:38,448 [myid:] - INFO  [Standalone server with clientPort:16608:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:14:38,449 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:14:38,449 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:14:38,450 [myid:] - INFO  [Standalone server with clientPort:16608:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:14:38,450 [myid:] - INFO  [Standalone server with clientPort:16608:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:14:38,450 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:14:38,454 [myid:] - INFO  [Standalone server with clientPort:16608:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:14:38,455 [myid:] - WARN  [Standalone server with clientPort:16608:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:14:38,456 [myid:] - INFO  [Standalone server with clientPort:16608:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:14:38,468 [myid:] - INFO  [Standalone server with clientPort:16608:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:14:38,483 [myid:] - INFO  [Standalone server with clientPort:16608:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:14:38,483 [myid:] - INFO  [Standalone server with clientPort:16608:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:14:38,483 [myid:] - INFO  [Standalone server with clientPort:16608:ZKDatabase@133] - zookeeper.snapshotSizeFactor = 0.33
+2021-11-08 11:14:38,483 [myid:] - INFO  [Standalone server with clientPort:16608:ZKDatabase@153] - zookeeper.commitLogCount=500
+2021-11-08 11:14:38,487 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:38,489 [myid:] - INFO  [Standalone server with clientPort:16608:SnapStream@61] - zookeeper.snapshot.compression.method = CHECKED
+2021-11-08 11:14:38,489 [myid:] - INFO  [Standalone server with clientPort:16608:FileTxnSnapLog@479] - Snapshotting: 0x0 to \tmp\zookeeper\version-2\snapshot.0
+2021-11-08 11:14:38,492 [myid:] - INFO  [Standalone server with clientPort:16608:ZKDatabase@290] - Snapshot loaded in 9 ms, highest zxid is 0x0, digest is 1371985504
+2021-11-08 11:14:38,493 [myid:] - INFO  [Standalone server with clientPort:16608:FileTxnSnapLog@479] - Snapshotting: 0x0 to \tmp\zookeeper\version-2\snapshot.0
+2021-11-08 11:14:38,493 [myid:] - INFO  [Standalone server with clientPort:16608:ZooKeeperServer@543] - Snapshot taken in 0 ms
+2021-11-08 11:14:38,507 [myid:] - INFO  [Standalone server with clientPort:16608:RequestThrottler@75] - zookeeper.request_throttler.shutdownTimeout = 10000
+2021-11-08 11:14:38,507 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@137] - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+2021-11-08 11:14:38,518 [myid:] - INFO  [Standalone server with clientPort:16608:ContainerManager@84] - Using checkIntervalMs=60000 maxPerMinute=10000 maxNeverUsedIntervalMs=0
+2021-11-08 11:14:38,519 [myid:] - INFO  [Standalone server with clientPort:16608:ZKAuditProvider@42] - ZooKeeper audit is disabled.
+2021-11-08 11:14:40,511 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:40,761 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:42,792 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:43,042 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:45,078 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:45,329 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:47,365 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:47,615 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:49,654 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:49,904 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:51,943 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:52,193 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:54,222 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:54,476 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:56,517 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:56,768 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:14:58,811 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:14:59,065 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16608
+2021-11-08 11:15:01,085 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16608 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:01,093 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testStandalone() throws java.lang.Exception]
+2021-11-08 11:15:01,101 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testJMXRegistrationWithNIO() throws java.lang.Exception]
+2021-11-08 11:15:01,106 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16609 from range 16607 - 19299.
+2021-11-08 11:15:01,106 [myid:] - INFO  [main:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:15:01,107 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:15:01,107 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:15:01,107 [myid:] - INFO  [main:ZKDatabase@133] - zookeeper.snapshotSizeFactor = 0.33
+2021-11-08 11:15:01,107 [myid:] - INFO  [main:ZKDatabase@153] - zookeeper.commitLogCount=500
+2021-11-08 11:15:01,108 [myid:] - INFO  [main:ZooKeeperServer@1300] - minSessionTimeout set to 6000
+2021-11-08 11:15:01,108 [myid:] - INFO  [main:ZooKeeperServer@1309] - maxSessionTimeout set to 60000
+2021-11-08 11:15:01,108 [myid:] - INFO  [main:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:15:01,108 [myid:] - INFO  [main:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:15:01,108 [myid:] - INFO  [main:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:15:01,109 [myid:] - INFO  [main:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:15:01,110 [myid:] - INFO  [main:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:15:01,110 [myid:] - INFO  [main:ZooKeeperServer@361] - Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000 clientPortListenBacklog -1 datadir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test708266875259641576.junit.dir\version-2 snapdir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test708266875259641576.junit.dir\version-2
+2021-11-08 11:15:01,110 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:15:01,110 [myid:] - WARN  [main:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:15:01,111 [myid:] - INFO  [main:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:15:01,112 [myid:] - INFO  [main:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:16609
+2021-11-08 11:15:01,113 [myid:] - INFO  [main:FileTxnSnapLog@260] - Initialize file found, an empty database will not block voting participation
+2021-11-08 11:15:01,113 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test708266875259641576.junit.dir\version-2\snapshot.0
+2021-11-08 11:15:01,116 [myid:] - INFO  [main:ZKDatabase@290] - Snapshot loaded in 4 ms, highest zxid is 0x0, digest is 1371985504
+2021-11-08 11:15:01,116 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test708266875259641576.junit.dir\version-2\snapshot.0
+2021-11-08 11:15:01,117 [myid:] - INFO  [main:ZooKeeperServer@543] - Snapshot taken in 0 ms
+2021-11-08 11:15:01,118 [myid:] - INFO  [ProcessThread(sid:0 cport:16609)::PrepRequestProcessor@137] - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+2021-11-08 11:15:01,119 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16609
+2021-11-08 11:15:01,124 [myid:] - INFO  [NIOWorkerThread-1:FourLetterCommands@223] - The list of known four letter word commands is : [{1936881266=srvr, 1937006964=stat, 2003003491=wchc, 1685417328=dump, 1668445044=crst, 1936880500=srst, 1701738089=envi, 1668247142=conf, -720899=telnet close, 1751217000=hash, 2003003507=wchs, 2003003504=wchp, 1684632179=dirs, 1668247155=cons, 1835955314=mntr, 1769173615=isro, 1920298859=ruok, 1735683435=gtmk, 1937010027=stmk}]
+2021-11-08 11:15:01,124 [myid:] - INFO  [NIOWorkerThread-1:FourLetterCommands@224] - The list of enabled four letter word commands is : [[wchs, stat, wchp, dirs, stmk, conf, ruok, mntr, srvr, wchc, envi, srst, isro, dump, gtmk, telnet close, crst, hash, cons]]
+2021-11-08 11:15:01,124 [myid:] - INFO  [NIOWorkerThread-1:NIOServerCnxn@514] - Processing stat command from /127.0.0.1:12633
+2021-11-08 11:15:01,128 [myid:] - INFO  [NIOWorkerThread-1:StatCommand@52] - Stat command output
+2021-11-08 11:15:01,130 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16610 from range 16607 - 19299.
+2021-11-08 11:15:01,130 [myid:] - INFO  [main:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:ZKDatabase@133] - zookeeper.snapshotSizeFactor = 0.33
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:ZKDatabase@153] - zookeeper.commitLogCount=500
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:ZooKeeperServer@1300] - minSessionTimeout set to 6000
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:ZooKeeperServer@1309] - maxSessionTimeout set to 60000
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:15:01,131 [myid:] - INFO  [main:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:15:01,132 [myid:] - INFO  [main:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:15:01,133 [myid:] - INFO  [main:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:15:01,133 [myid:] - INFO  [main:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:15:01,133 [myid:] - INFO  [main:ZooKeeperServer@361] - Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000 clientPortListenBacklog -1 datadir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7828153217516715844.junit.dir\version-2 snapdir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7828153217516715844.junit.dir\version-2
+2021-11-08 11:15:01,133 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:15:01,133 [myid:] - WARN  [main:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:15:01,133 [myid:] - INFO  [main:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:15:01,134 [myid:] - INFO  [main:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:16610
+2021-11-08 11:15:01,135 [myid:] - INFO  [main:FileTxnSnapLog@260] - Initialize file found, an empty database will not block voting participation
+2021-11-08 11:15:01,136 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7828153217516715844.junit.dir\version-2\snapshot.0
+2021-11-08 11:15:01,136 [myid:] - INFO  [main:ZKDatabase@290] - Snapshot loaded in 1 ms, highest zxid is 0x0, digest is 1371985504
+2021-11-08 11:15:01,136 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7828153217516715844.junit.dir\version-2\snapshot.0
+2021-11-08 11:15:01,137 [myid:] - INFO  [main:ZooKeeperServer@543] - Snapshot taken in 1 ms
+2021-11-08 11:15:01,138 [myid:] - INFO  [ProcessThread(sid:0 cport:16610)::PrepRequestProcessor@137] - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+2021-11-08 11:15:01,138 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16610
+2021-11-08 11:15:01,139 [myid:] - INFO  [NIOWorkerThread-1:NIOServerCnxn@514] - Processing stat command from /127.0.0.1:12638
+2021-11-08 11:15:01,140 [myid:] - INFO  [NIOWorkerThread-1:StatCommand@52] - Stat command output
+2021-11-08 11:15:01,140 [myid:] - INFO  [ConnnectionExpirer:NIOServerCnxnFactory$ConnectionExpirerThread@564] - ConnnectionExpirerThread interrupted
+2021-11-08 11:15:01,141 [myid:] - INFO  [NIOServerCxnFactory.AcceptThread:0.0.0.0/0.0.0.0:16609:NIOServerCnxnFactory$AcceptThread@195] - accept thread exitted run method
+2021-11-08 11:15:01,141 [myid:] - INFO  [NIOServerCxnFactory.SelectorThread-0:NIOServerCnxnFactory$SelectorThread@397] - selector thread exitted run method
+2021-11-08 11:15:01,142 [myid:] - INFO  [main:ZooKeeperServer@829] - shutting down
+2021-11-08 11:15:01,142 [myid:] - INFO  [main:RequestThrottler@258] - Shutting down
+2021-11-08 11:15:01,142 [myid:] - INFO  [RequestThrottler:RequestThrottler@219] - Draining request throttler queue
+2021-11-08 11:15:01,142 [myid:] - INFO  [RequestThrottler:RequestThrottler@195] - RequestThrottler shutdown. Dropped 0 requests
+2021-11-08 11:15:01,142 [myid:] - INFO  [main:SessionTrackerImpl@252] - Shutting down
+2021-11-08 11:15:01,142 [myid:] - INFO  [main:PrepRequestProcessor@1066] - Shutting down
+2021-11-08 11:15:01,142 [myid:] - INFO  [main:SyncRequestProcessor@255] - Shutting down
+2021-11-08 11:15:01,142 [myid:] - INFO  [ProcessThread(sid:0 cport:16609)::PrepRequestProcessor@161] - PrepRequestProcessor exited loop!
+2021-11-08 11:15:01,143 [myid:] - INFO  [SyncThread:0:SyncRequestProcessor@224] - SyncRequestProcessor exited!
+2021-11-08 11:15:01,143 [myid:] - INFO  [main:FinalRequestProcessor@684] - shutdown of request processor complete
+2021-11-08 11:15:01,144 [myid:] - INFO  [ConnnectionExpirer:NIOServerCnxnFactory$ConnectionExpirerThread@564] - ConnnectionExpirerThread interrupted
+2021-11-08 11:15:01,144 [myid:] - INFO  [NIOServerCxnFactory.AcceptThread:0.0.0.0/0.0.0.0:16610:NIOServerCnxnFactory$AcceptThread@195] - accept thread exitted run method
+2021-11-08 11:15:01,144 [myid:] - INFO  [NIOServerCxnFactory.SelectorThread-0:NIOServerCnxnFactory$SelectorThread@397] - selector thread exitted run method
+2021-11-08 11:15:01,144 [myid:] - INFO  [main:ZooKeeperServer@829] - shutting down
+2021-11-08 11:15:01,144 [myid:] - INFO  [main:RequestThrottler@258] - Shutting down
+2021-11-08 11:15:01,144 [myid:] - INFO  [RequestThrottler:RequestThrottler@219] - Draining request throttler queue
+2021-11-08 11:15:01,145 [myid:] - INFO  [RequestThrottler:RequestThrottler@195] - RequestThrottler shutdown. Dropped 0 requests
+2021-11-08 11:15:01,145 [myid:] - INFO  [main:SessionTrackerImpl@252] - Shutting down
+2021-11-08 11:15:01,145 [myid:] - INFO  [main:PrepRequestProcessor@1066] - Shutting down
+2021-11-08 11:15:01,145 [myid:] - INFO  [main:SyncRequestProcessor@255] - Shutting down
+2021-11-08 11:15:01,145 [myid:] - INFO  [ProcessThread(sid:0 cport:16610)::PrepRequestProcessor@161] - PrepRequestProcessor exited loop!
+2021-11-08 11:15:01,145 [myid:] - INFO  [SyncThread:0:SyncRequestProcessor@224] - SyncRequestProcessor exited!
+2021-11-08 11:15:01,145 [myid:] - INFO  [main:FinalRequestProcessor@684] - shutdown of request processor complete
+2021-11-08 11:15:01,147 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testJMXRegistrationWithNIO() throws java.lang.Exception]
+2021-11-08 11:15:01,149 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testWithMinSessionTimeoutGreaterThanMaxSessionTimeout() throws java.lang.Exception]
+2021-11-08 11:15:01,150 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16611 from range 16607 - 19299.
+2021-11-08 11:15:01,152 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testWithMinSessionTimeoutGreaterThanMaxSessionTimeout() throws java.lang.Exception]
+2021-11-08 11:15:01,155 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testReadOnlySnapshotDir() throws java.lang.Exception]
+2021-11-08 11:15:01,159 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16612 from range 16607 - 19299.
+2021-11-08 11:15:01,161 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:01,162 [myid:] - INFO  [Standalone server with clientPort:16612:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:15:01,162 [myid:] - ERROR [Standalone server with clientPort:16612:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:01,163 [myid:] - WARN  [Standalone server with clientPort:16612:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:01,163 [myid:] - INFO  [Standalone server with clientPort:16612:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:15:01,164 [myid:] - WARN  [Standalone server with clientPort:16612:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@4a58261e
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:15:01,164 [myid:] - INFO  [Standalone server with clientPort:16612:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:15:01,165 [myid:] - WARN  [Standalone server with clientPort:16612:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:15:01,165 [myid:] - INFO  [Standalone server with clientPort:16612:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:15:01,166 [myid:] - INFO  [Standalone server with clientPort:16612:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:15:01,166 [myid:] - ERROR [Standalone server with clientPort:16612:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:02,685 [myid:] - INFO  [SessionTracker:SessionTrackerImpl@175] - SessionTrackerImpl exited loop!
+2021-11-08 11:15:02,685 [myid:] - INFO  [SessionTracker:SessionTrackerImpl@175] - SessionTrackerImpl exited loop!
+2021-11-08 11:15:03,216 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:03,466 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:05,508 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:05,759 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:07,784 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:08,034 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:10,073 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:10,323 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:12,359 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:12,609 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:14,661 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:14,911 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16612
+2021-11-08 11:15:16,938 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16612 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:16,939 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testReadOnlySnapshotDir() throws java.lang.Exception]
+2021-11-08 11:15:16,940 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testMinMaxSessionTimeOut() throws java.lang.Exception]
+2021-11-08 11:15:16,940 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16613 from range 16607 - 19299.
+2021-11-08 11:15:16,943 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:16,943 [myid:] - INFO  [Standalone server with clientPort:16613:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:15:16,943 [myid:] - ERROR [Standalone server with clientPort:16613:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:16,943 [myid:] - WARN  [Standalone server with clientPort:16613:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:16,943 [myid:] - INFO  [Standalone server with clientPort:16613:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:15:16,944 [myid:] - WARN  [Standalone server with clientPort:16613:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:15:16,944 [myid:] - INFO  [Standalone server with clientPort:16613:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:15:16,944 [myid:] - INFO  [Standalone server with clientPort:16613:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:15:16,944 [myid:] - INFO  [Standalone server with clientPort:16613:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:15:16,944 [myid:] - INFO  [Standalone server with clientPort:16613:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:15:16,944 [myid:] - INFO  [Standalone server with clientPort:16613:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@3c364cec
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:15:16,945 [myid:] - INFO  [Standalone server with clientPort:16613:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:15:16,946 [myid:] - INFO  [Standalone server with clientPort:16613:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:15:16,946 [myid:] - INFO  [Standalone server with clientPort:16613:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:15:16,946 [myid:] - INFO  [Standalone server with clientPort:16613:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:15:16,946 [myid:] - INFO  [Standalone server with clientPort:16613:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:15:16,946 [myid:] - WARN  [Standalone server with clientPort:16613:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:15:16,946 [myid:] - INFO  [Standalone server with clientPort:16613:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:15:16,947 [myid:] - INFO  [Standalone server with clientPort:16613:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:15:16,947 [myid:] - ERROR [Standalone server with clientPort:16613:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:18,983 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:19,233 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:21,276 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:21,527 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:23,561 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:23,812 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:25,825 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:26,075 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:28,118 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:28,368 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:30,397 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:30,662 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:32,705 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:32,970 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:35,016 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:35,266 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:37,281 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:37,531 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:39,546 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:39,796 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:41,836 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:42,086 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:44,123 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:44,373 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:46,400 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:46,652 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16613
+2021-11-08 11:15:48,712 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16613 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:48,713 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testMinMaxSessionTimeOut() throws java.lang.Exception]
+2021-11-08 11:15:48,714 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testMetricsProviderConfiguration() throws java.lang.Exception]
+2021-11-08 11:15:48,714 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16614 from range 16607 - 19299.
+2021-11-08 11:15:48,722 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:15:48,722 [myid:] - INFO  [Standalone server with clientPort:16614:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:15:48,722 [myid:] - ERROR [Standalone server with clientPort:16614:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:48,722 [myid:] - WARN  [Standalone server with clientPort:16614:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:48,722 [myid:] - INFO  [Standalone server with clientPort:16614:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:15:48,723 [myid:] - WARN  [Standalone server with clientPort:16614:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@7d953533
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:15:48,723 [myid:] - INFO  [Standalone server with clientPort:16614:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:15:48,724 [myid:] - WARN  [Standalone server with clientPort:16614:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:15:48,724 [myid:] - INFO  [Standalone server with clientPort:16614:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:15:48,725 [myid:] - INFO  [Standalone server with clientPort:16614:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:15:48,725 [myid:] - ERROR [Standalone server with clientPort:16614:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:15:50,771 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:51,023 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:15:53,054 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:53,305 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:15:55,329 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:55,594 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:15:57,631 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:15:57,881 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:15:59,901 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:00,153 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:02,178 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:02,430 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:04,455 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:04,706 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:06,742 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:06,992 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:09,022 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:09,273 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:11,304 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:11,567 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:13,627 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:13,878 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:15,915 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:16,165 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:18,194 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:18,445 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16614
+2021-11-08 11:16:20,472 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16614 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:20,472 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testMetricsProviderConfiguration() throws java.lang.Exception]
+2021-11-08 11:16:20,474 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testInvalidMetricsProvider() throws java.lang.Exception]
+2021-11-08 11:16:20,474 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16615 from range 16607 - 19299.
+2021-11-08 11:16:20,481 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testInvalidMetricsProvider() throws java.lang.Exception]
+2021-11-08 11:16:20,482 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testJMXRegistrationWithNetty() throws java.lang.Exception]
+2021-11-08 11:16:20,484 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16616 from range 16607 - 19299.
+2021-11-08 11:16:20,484 [myid:] - INFO  [main:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:ZKDatabase@133] - zookeeper.snapshotSizeFactor = 0.33
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:ZKDatabase@153] - zookeeper.commitLogCount=500
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:ZooKeeperServer@1300] - minSessionTimeout set to 6000
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:ZooKeeperServer@1309] - maxSessionTimeout set to 60000
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:16:20,485 [myid:] - INFO  [main:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:16:20,486 [myid:] - INFO  [main:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:16:20,487 [myid:] - INFO  [main:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:16:20,487 [myid:] - INFO  [main:ZooKeeperServer@361] - Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000 clientPortListenBacklog -1 datadir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7930807849099146855.junit.dir\version-2 snapdir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7930807849099146855.junit.dir\version-2
+2021-11-08 11:16:20,531 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2021-11-08 11:16:20,531 [myid:] - INFO  [main:NettyServerCnxnFactory@507] - zookeeper.client.portUnification=false
+2021-11-08 11:16:20,532 [myid:] - INFO  [main:NettyServerCnxnFactory@519] - zookeeper.netty.advancedFlowControl.enabled = false
+2021-11-08 11:16:20,532 [myid:] - INFO  [main:NettyServerCnxnFactory@106] - handshakeThrottlingEnabled = false, zookeeper.netty.server.outstandingHandshake.limit = -1
+2021-11-08 11:16:20,878 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NettyServerCnxnFactory as server connection factory
+2021-11-08 11:16:20,878 [myid:] - WARN  [main:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:16:20,879 [myid:] - INFO  [main:NettyServerCnxnFactory@606] - configure org.apache.zookeeper.server.NettyServerCnxnFactory@186f8716 secure: false on addr 0.0.0.0/0.0.0.0:16616
+2021-11-08 11:16:20,879 [myid:] - INFO  [main:NettyServerCnxnFactory@695] - binding to port 0.0.0.0/0.0.0.0:16616
+2021-11-08 11:16:21,616 [myid:] - INFO  [main:NettyServerCnxnFactory@700] - bound to port 16616
+2021-11-08 11:16:21,616 [myid:] - INFO  [main:FileTxnSnapLog@260] - Initialize file found, an empty database will not block voting participation
+2021-11-08 11:16:21,617 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7930807849099146855.junit.dir\version-2\snapshot.0
+2021-11-08 11:16:21,617 [myid:] - INFO  [main:ZKDatabase@290] - Snapshot loaded in 1 ms, highest zxid is 0x0, digest is 1371985504
+2021-11-08 11:16:21,617 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test7930807849099146855.junit.dir\version-2\snapshot.0
+2021-11-08 11:16:21,618 [myid:] - INFO  [main:ZooKeeperServer@543] - Snapshot taken in 0 ms
+2021-11-08 11:16:21,619 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16616
+2021-11-08 11:16:21,623 [myid:] - INFO  [ProcessThread(sid:0 cport:16616)::PrepRequestProcessor@137] - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+2021-11-08 11:16:21,652 [myid:] - INFO  [nioEventLoopGroup-4-1:NettyServerCnxn@294] - Processing stat command from /127.0.0.1:14644
+2021-11-08 11:16:21,652 [myid:] - INFO  [nioEventLoopGroup-4-1:StatCommand@52] - Stat command output
+2021-11-08 11:16:21,667 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16617 from range 16607 - 19299.
+2021-11-08 11:16:21,667 [myid:] - INFO  [main:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:16:21,668 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:16:21,668 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:16:21,668 [myid:] - INFO  [main:ZKDatabase@133] - zookeeper.snapshotSizeFactor = 0.33
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:ZKDatabase@153] - zookeeper.commitLogCount=500
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:ZooKeeperServer@1300] - minSessionTimeout set to 6000
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:ZooKeeperServer@1309] - maxSessionTimeout set to 60000
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:16:21,669 [myid:] - INFO  [main:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:ZooKeeperServer@361] - Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000 clientPortListenBacklog -1 datadir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test5942689684077668402.junit.dir\version-2 snapdir D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test5942689684077668402.junit.dir\version-2
+2021-11-08 11:16:21,670 [myid:] - INFO  [main:NettyServerCnxnFactory@507] - zookeeper.client.portUnification=false
+2021-11-08 11:16:21,671 [myid:] - INFO  [main:NettyServerCnxnFactory@519] - zookeeper.netty.advancedFlowControl.enabled = false
+2021-11-08 11:16:21,671 [myid:] - INFO  [main:NettyServerCnxnFactory@106] - handshakeThrottlingEnabled = false, zookeeper.netty.server.outstandingHandshake.limit = -1
+2021-11-08 11:16:22,111 [myid:] - INFO  [main:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NettyServerCnxnFactory as server connection factory
+2021-11-08 11:16:22,111 [myid:] - WARN  [main:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:16:22,112 [myid:] - INFO  [main:NettyServerCnxnFactory@606] - configure org.apache.zookeeper.server.NettyServerCnxnFactory@614ca7df secure: false on addr 0.0.0.0/0.0.0.0:16617
+2021-11-08 11:16:22,112 [myid:] - INFO  [main:NettyServerCnxnFactory@695] - binding to port 0.0.0.0/0.0.0.0:16617
+2021-11-08 11:16:22,113 [myid:] - INFO  [main:NettyServerCnxnFactory@700] - bound to port 16617
+2021-11-08 11:16:22,114 [myid:] - INFO  [main:FileTxnSnapLog@260] - Initialize file found, an empty database will not block voting participation
+2021-11-08 11:16:22,114 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test5942689684077668402.junit.dir\version-2\snapshot.0
+2021-11-08 11:16:22,117 [myid:] - INFO  [main:ZKDatabase@290] - Snapshot loaded in 4 ms, highest zxid is 0x0, digest is 1371985504
+2021-11-08 11:16:22,117 [myid:] - INFO  [main:FileTxnSnapLog@479] - Snapshotting: 0x0 to D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test5942689684077668402.junit.dir\version-2\snapshot.0
+2021-11-08 11:16:22,118 [myid:] - INFO  [main:ZooKeeperServer@543] - Snapshot taken in 1 ms
+2021-11-08 11:16:22,119 [myid:] - INFO  [ProcessThread(sid:0 cport:16617)::PrepRequestProcessor@137] - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+2021-11-08 11:16:22,119 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16617
+2021-11-08 11:16:22,121 [myid:] - INFO  [nioEventLoopGroup-7-1:NettyServerCnxn@294] - Processing stat command from /127.0.0.1:14673
+2021-11-08 11:16:22,121 [myid:] - INFO  [nioEventLoopGroup-7-1:StatCommand@52] - Stat command output
+2021-11-08 11:16:22,122 [myid:] - INFO  [main:NettyServerCnxnFactory@647] - shutdown called /0:0:0:0:0:0:0:0:16616
+2021-11-08 11:16:22,126 [myid:] - INFO  [main:ZooKeeperServer@829] - shutting down
+2021-11-08 11:16:22,126 [myid:] - INFO  [main:RequestThrottler@258] - Shutting down
+2021-11-08 11:16:22,126 [myid:] - INFO  [RequestThrottler:RequestThrottler@219] - Draining request throttler queue
+2021-11-08 11:16:22,126 [myid:] - INFO  [RequestThrottler:RequestThrottler@195] - RequestThrottler shutdown. Dropped 0 requests
+2021-11-08 11:16:22,126 [myid:] - INFO  [main:SessionTrackerImpl@252] - Shutting down
+2021-11-08 11:16:22,126 [myid:] - INFO  [main:PrepRequestProcessor@1066] - Shutting down
+2021-11-08 11:16:22,127 [myid:] - INFO  [main:SyncRequestProcessor@255] - Shutting down
+2021-11-08 11:16:22,127 [myid:] - INFO  [ProcessThread(sid:0 cport:16616)::PrepRequestProcessor@161] - PrepRequestProcessor exited loop!
+2021-11-08 11:16:22,127 [myid:] - INFO  [SyncThread:0:SyncRequestProcessor@224] - SyncRequestProcessor exited!
+2021-11-08 11:16:22,127 [myid:] - INFO  [main:FinalRequestProcessor@684] - shutdown of request processor complete
+2021-11-08 11:16:22,127 [myid:] - INFO  [main:NettyServerCnxnFactory@647] - shutdown called /0:0:0:0:0:0:0:0:16617
+2021-11-08 11:16:22,129 [myid:] - INFO  [main:ZooKeeperServer@829] - shutting down
+2021-11-08 11:16:22,129 [myid:] - INFO  [main:RequestThrottler@258] - Shutting down
+2021-11-08 11:16:22,129 [myid:] - INFO  [RequestThrottler:RequestThrottler@219] - Draining request throttler queue
+2021-11-08 11:16:22,129 [myid:] - INFO  [RequestThrottler:RequestThrottler@195] - RequestThrottler shutdown. Dropped 0 requests
+2021-11-08 11:16:22,129 [myid:] - INFO  [main:SessionTrackerImpl@252] - Shutting down
+2021-11-08 11:16:22,129 [myid:] - INFO  [main:PrepRequestProcessor@1066] - Shutting down
+2021-11-08 11:16:22,130 [myid:] - INFO  [main:SyncRequestProcessor@255] - Shutting down
+2021-11-08 11:16:22,130 [myid:] - INFO  [ProcessThread(sid:0 cport:16617)::PrepRequestProcessor@161] - PrepRequestProcessor exited loop!
+2021-11-08 11:16:22,130 [myid:] - INFO  [SyncThread:0:SyncRequestProcessor@224] - SyncRequestProcessor exited!
+2021-11-08 11:16:22,130 [myid:] - INFO  [main:FinalRequestProcessor@684] - shutdown of request processor complete
+2021-11-08 11:16:22,142 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testJMXRegistrationWithNetty() throws java.lang.Exception]
+2021-11-08 11:16:22,143 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testWithOnlyMinSessionTimeout() throws java.lang.Exception]
+2021-11-08 11:16:22,144 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16618 from range 16607 - 19299.
+2021-11-08 11:16:22,146 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:22,146 [myid:] - INFO  [Standalone server with clientPort:16618:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:16:22,147 [myid:] - ERROR [Standalone server with clientPort:16618:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:16:22,147 [myid:] - WARN  [Standalone server with clientPort:16618:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:16:22,147 [myid:] - INFO  [Standalone server with clientPort:16618:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:16:22,147 [myid:] - WARN  [Standalone server with clientPort:16618:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:16:22,147 [myid:] - INFO  [Standalone server with clientPort:16618:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:16:22,147 [myid:] - INFO  [Standalone server with clientPort:16618:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@158f1b69
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:16:22,148 [myid:] - INFO  [Standalone server with clientPort:16618:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:16:22,149 [myid:] - WARN  [Standalone server with clientPort:16618:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:16:22,149 [myid:] - INFO  [Standalone server with clientPort:16618:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:16:22,150 [myid:] - INFO  [Standalone server with clientPort:16618:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:16:22,150 [myid:] - ERROR [Standalone server with clientPort:16618:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:16:23,684 [myid:] - INFO  [SessionTracker:SessionTrackerImpl@175] - SessionTrackerImpl exited loop!
+2021-11-08 11:16:23,685 [myid:] - INFO  [SessionTracker:SessionTrackerImpl@175] - SessionTrackerImpl exited loop!
+2021-11-08 11:16:24,175 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:24,426 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:26,469 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:26,719 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:28,751 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:29,001 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:31,026 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:31,277 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:33,285 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:33,536 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:35,572 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:35,823 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:37,878 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:38,128 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:40,161 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:40,411 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:42,462 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:42,724 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:44,773 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:45,025 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:47,476 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:47,726 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:49,775 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:50,025 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:52,057 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:52,308 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16618
+2021-11-08 11:16:54,357 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16618 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:54,358 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testWithOnlyMinSessionTimeout() throws java.lang.Exception]
+2021-11-08 11:16:54,359 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testFaultyMetricsProviderOnStop() throws java.lang.Exception]
+2021-11-08 11:16:54,359 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16619 from range 16607 - 19299.
+2021-11-08 11:16:54,365 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:16:54,366 [myid:] - INFO  [Standalone server with clientPort:16619:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:16:54,366 [myid:] - ERROR [Standalone server with clientPort:16619:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:16:54,366 [myid:] - WARN  [Standalone server with clientPort:16619:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:16:54,366 [myid:] - INFO  [Standalone server with clientPort:16619:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:16:54,366 [myid:] - WARN  [Standalone server with clientPort:16619:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@20028e82
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:16:54,367 [myid:] - INFO  [Standalone server with clientPort:16619:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:16:54,368 [myid:] - INFO  [Standalone server with clientPort:16619:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:16:54,368 [myid:] - INFO  [Standalone server with clientPort:16619:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:16:54,368 [myid:] - INFO  [Standalone server with clientPort:16619:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:16:54,368 [myid:] - INFO  [Standalone server with clientPort:16619:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:16:54,368 [myid:] - WARN  [Standalone server with clientPort:16619:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:16:54,368 [myid:] - INFO  [Standalone server with clientPort:16619:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:16:54,368 [myid:] - INFO  [Standalone server with clientPort:16619:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:16:54,368 [myid:] - ERROR [Standalone server with clientPort:16619:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:16:56,387 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:56,639 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:16:58,650 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:16:58,900 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:00,946 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:01,198 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:03,232 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:03,483 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:05,529 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:05,780 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:07,837 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:08,087 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:10,112 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:10,363 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:12,397 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:12,647 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:14,673 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:14,925 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:16,969 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:17,219 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:19,264 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:19,529 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:21,577 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:21,828 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:23,868 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:24,119 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16619
+2021-11-08 11:17:26,165 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16619 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:26,165 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testFaultyMetricsProviderOnStop() throws java.lang.Exception]
+2021-11-08 11:17:26,167 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testNonRecoverableError() throws java.lang.Exception]
+2021-11-08 11:17:26,167 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16620 from range 16607 - 19299.
+2021-11-08 11:17:26,173 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:26,174 [myid:] - INFO  [Standalone server with clientPort:16620:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:17:26,174 [myid:] - ERROR [Standalone server with clientPort:16620:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:17:26,174 [myid:] - WARN  [Standalone server with clientPort:16620:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:17:26,174 [myid:] - INFO  [Standalone server with clientPort:16620:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:17:26,174 [myid:] - WARN  [Standalone server with clientPort:16620:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:17:26,174 [myid:] - INFO  [Standalone server with clientPort:16620:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:17:26,174 [myid:] - INFO  [Standalone server with clientPort:16620:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@71f58062
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:17:26,175 [myid:] - INFO  [Standalone server with clientPort:16620:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:17:26,176 [myid:] - WARN  [Standalone server with clientPort:16620:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:17:26,176 [myid:] - INFO  [Standalone server with clientPort:16620:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:17:26,177 [myid:] - INFO  [Standalone server with clientPort:16620:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:17:26,177 [myid:] - ERROR [Standalone server with clientPort:16620:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:17:28,245 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:28,495 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:30,529 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:30,780 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:32,817 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:33,067 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:35,080 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:35,330 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:37,353 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:37,606 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:39,648 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:39,899 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:41,913 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:42,178 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:44,185 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:44,436 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:46,454 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:46,706 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:48,722 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:48,973 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:51,004 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:51,258 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:53,286 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:53,537 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:55,580 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:55,844 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16620
+2021-11-08 11:17:57,883 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16620 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:17:57,884 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testNonRecoverableError() throws java.lang.Exception]
+2021-11-08 11:17:57,886 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testMetricsProviderLifecycle() throws java.lang.Exception]
+2021-11-08 11:17:57,887 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16621 from range 16607 - 19299.
+2021-11-08 11:17:57,894 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:17:57,894 [myid:] - INFO  [Standalone server with clientPort:16621:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:17:57,895 [myid:] - ERROR [Standalone server with clientPort:16621:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:17:57,895 [myid:] - WARN  [Standalone server with clientPort:16621:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:17:57,895 [myid:] - INFO  [Standalone server with clientPort:16621:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:17:57,895 [myid:] - WARN  [Standalone server with clientPort:16621:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@44877813
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:17:57,896 [myid:] - INFO  [Standalone server with clientPort:16621:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:17:57,897 [myid:] - WARN  [Standalone server with clientPort:16621:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:17:57,897 [myid:] - INFO  [Standalone server with clientPort:16621:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:17:57,898 [myid:] - INFO  [Standalone server with clientPort:16621:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:17:57,898 [myid:] - ERROR [Standalone server with clientPort:16621:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:17:59,927 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:00,177 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:02,213 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:02,463 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:04,487 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:04,738 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:06,794 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:07,044 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:09,064 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:09,315 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:11,330 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:11,580 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:13,604 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:13,854 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:15,892 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:16,144 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:18,184 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:18,435 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:20,475 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:20,725 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:22,781 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:23,032 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:25,073 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:25,323 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:27,360 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:27,611 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16621
+2021-11-08 11:18:29,655 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16621 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:29,655 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testMetricsProviderLifecycle() throws java.lang.Exception]
+2021-11-08 11:18:29,657 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testFaultyMetricsProviderOnConfigure() throws java.lang.Exception]
+2021-11-08 11:18:29,657 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16622 from range 16607 - 19299.
+2021-11-08 11:18:29,660 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testFaultyMetricsProviderOnConfigure() throws java.lang.Exception]
+2021-11-08 11:18:29,661 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testReadOnlyTxnLogDir() throws java.lang.Exception]
+2021-11-08 11:18:29,662 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16623 from range 16607 - 19299.
+2021-11-08 11:18:29,664 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:29,664 [myid:] - INFO  [Standalone server with clientPort:16623:ManagedUtil@44] - Log4j 1.2 jmx support found and enabled.
+2021-11-08 11:18:29,664 [myid:] - ERROR [Standalone server with clientPort:16623:ManagedUtil@109] - Problems while registering log4j 1.2 jmx beans!
+javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:72)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:18:29,664 [myid:] - WARN  [Standalone server with clientPort:16623:ZooKeeperServerMain@103] - Unable to register log4j JMX control
+javax.management.JMException: javax.management.InstanceAlreadyExistsException: log4j:hierarchy=default
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:110)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:101)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:QuorumPeerConfig@174] - Reading configuration from: D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\conf\zoo_sample.cfg
+2021-11-08 11:18:29,665 [myid:] - WARN  [Standalone server with clientPort:16623:VerifyingFileFactory@65] - \tmp\zookeeper is relative. Prepend .\ to indicate that you're sure!
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:2181
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:18:29,665 [myid:] - INFO  [Standalone server with clientPort:16623:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@52a8ccf5
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ZooKeeperServer@1300] - minSessionTimeout set to 4000
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ZooKeeperServer@1309] - maxSessionTimeout set to 40000
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ZooKeeperServer@361] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 clientPortListenBacklog -1 datadir \tmp\zookeeper\version-2 snapdir \tmp\zookeeper\version-2
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2021-11-08 11:18:29,666 [myid:] - WARN  [Standalone server with clientPort:16623:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:18:29,666 [myid:] - INFO  [Standalone server with clientPort:16623:NIOServerCnxnFactory@652] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 12 worker threads, and 64 kB direct buffers.
+2021-11-08 11:18:29,667 [myid:] - INFO  [Standalone server with clientPort:16623:NIOServerCnxnFactory@660] - binding to port 0.0.0.0/0.0.0.0:2181
+2021-11-08 11:18:29,667 [myid:] - ERROR [Standalone server with clientPort:16623:ZooKeeperServerMainTest$MainThread@131] - unexpected exception in run
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.Net.bind(Net.java:428)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:662)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:160)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:113)
+	at org.apache.zookeeper.server.ZooKeeperServerMainTest$MainThread.run(ZooKeeperServerMainTest.java:128)
+2021-11-08 11:18:31,688 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:31,939 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:33,971 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:34,222 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:36,274 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:36,538 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:38,583 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:38,833 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:40,876 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:41,126 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:43,158 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:43,408 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to 127.0.0.1 16623
+2021-11-08 11:18:45,419 [myid:] - INFO  [main:ClientBase@264] - server 127.0.0.1:16623 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:18:45,419 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testReadOnlyTxnLogDir() throws java.lang.Exception]
+2021-11-08 11:18:45,421 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testFaultyMetricsProviderOnStart() throws java.lang.Exception]
+2021-11-08 11:18:45,421 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 16624 from range 16607 - 19299.
+2021-11-08 11:18:45,427 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ZooKeeperServerMainTest.testFaultyMetricsProviderOnStart() throws java.lang.Exception]

@@ -1,0 +1,46 @@
+2021-11-08 11:08:03,487 [myid:] - INFO  [main:MiniKdc@222] - Configuration:
+2021-11-08 11:08:03,490 [myid:] - INFO  [main:MiniKdc@223] - ---------------------------------------------------------------
+2021-11-08 11:08:03,491 [myid:] - INFO  [main:MiniKdc@225] -   debug: false
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   transport: TCP
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   max.ticket.lifetime: 86400000
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   org.name: EXAMPLE
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   kdc.port: 0
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   org.domain: COM
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   max.renewable.lifetime: 604800000
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   instance: DefaultKrbServer
+2021-11-08 11:08:03,492 [myid:] - INFO  [main:MiniKdc@225] -   kdc.bind.address: localhost
+2021-11-08 11:08:03,493 [myid:] - INFO  [main:MiniKdc@227] - ---------------------------------------------------------------
+2021-11-08 11:08:03,585 [myid:] - INFO  [main:MiniKdc@281] - MiniKdc stated.
+2021-11-08 11:08:03,606 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.auth.MiniKdcTest.testKeytabGen() throws java.lang.Exception]
+2021-11-08 11:08:03,626 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.auth.MiniKdcTest.testKeytabGen() throws java.lang.Exception]
+2021-11-08 11:08:03,631 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.auth.MiniKdcTest.testMiniKdcStart()]
+2021-11-08 11:08:03,633 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.auth.MiniKdcTest.testMiniKdcStart()]
+2021-11-08 11:08:03,635 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.auth.MiniKdcTest.testKerberosLogin() throws java.lang.Exception]
+Debug is  true storeKey true useTicketCache true useKeyTab true doNotPrompt true ticketCache is null isInitiator true KeyTab is D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test250967303249095877.junit.dir\foo.keytab refreshKrb5Config is true principal is foo tryFirstPass is false useFirstPass is false storePass is false clearPass is false
+Refreshing Kerberos configuration
+Acquire TGT from Cache
+Principal is foo@EXAMPLE.COM
+null credentials from Ticket Cache
+2021-11-08 11:08:03,714 [myid:] - INFO  [pool-1-thread-1:KdcRequest@690] - The preauth data is empty.
+2021-11-08 11:08:03,718 [myid:] - INFO  [pool-1-thread-1:KdcHandler@177] - KRB error occurred while processing request: Additional pre-authentication required
+2021-11-08 11:08:03,789 [myid:] - INFO  [pool-1-thread-1:AsRequest@112] - AS_REQ ISSUE: authtime 1636340883787,foo@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM
+principal is foo@EXAMPLE.COM
+Will use keytab
+Commit Succeeded 
+
+		[Krb5LoginModule]: Entering logout
+		[Krb5LoginModule]: logged out Subject
+Debug is  true storeKey true useTicketCache true useKeyTab true doNotPrompt true ticketCache is null isInitiator false KeyTab is D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\surefire\test250967303249095877.junit.dir\foo.keytab refreshKrb5Config is true principal is foo tryFirstPass is false useFirstPass is false storePass is false clearPass is false
+Refreshing Kerberos configuration
+Acquire TGT from Cache
+Principal is foo@EXAMPLE.COM
+null credentials from Ticket Cache
+principal is foo@EXAMPLE.COM
+Will use keytab
+Commit Succeeded 
+
+		[Krb5LoginModule]: Entering logout
+		[Krb5LoginModule]: logged out Subject
+2021-11-08 11:08:03,795 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.auth.MiniKdcTest.testKerberosLogin() throws java.lang.Exception]
+2021-11-08 11:08:03,797 [myid:] - INFO  [main:DefaultInternalKdcServerImpl@102] - Default Internal kdc server stopped.
+2021-11-08 11:08:04,803 [myid:] - INFO  [main:MiniKdc@343] - MiniKdc stopped.

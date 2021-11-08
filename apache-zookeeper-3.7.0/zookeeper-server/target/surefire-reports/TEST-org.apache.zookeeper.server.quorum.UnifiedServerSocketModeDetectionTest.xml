@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="1.822" tests="64" errors="32" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="build.test.dir" value="D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target/surefire"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.class.path" value="D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\test-classes;D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\classes;D:\mysoft\maven\repository\com\github\spotbugs\spotbugs-annotations\4.0.2\spotbugs-annotations-4.0.2.jar;D:\mysoft\maven\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-library\2.2\hamcrest-library-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;D:\mysoft\maven\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;D:\mysoft\maven\repository\org\apache\zookeeper\zookeeper-jute\3.7.0\zookeeper-jute-3.7.0.jar;D:\mysoft\maven\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar;D:\mysoft\maven\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;D:\mysoft\maven\repository\io\netty\netty-handler\4.1.59.Final\netty-handler-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-common\4.1.59.Final\netty-common-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-resolver\4.1.59.Final\netty-resolver-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-buffer\4.1.59.Final\netty-buffer-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport\4.1.59.Final\netty-transport-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-codec\4.1.59.Final\netty-codec-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-epoll\4.1.59.Final\netty-transport-native-epoll-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-unix-common\4.1.59.Final\netty-transport-native-unix-common-4.1.59.Final.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-server\9.4.38.v20210224\jetty-server-9.4.38.v20210224.jar;D:\mysoft\maven\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-http\9.4.38.v20210224\jetty-http-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util\9.4.38.v20210224\jetty-util-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-io\9.4.38.v20210224\jetty-io-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-servlet\9.4.38.v20210224\jetty-servlet-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-security\9.4.38.v20210224\jetty-security-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util-ajax\9.4.38.v20210224\jetty-util-ajax-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-client\9.4.38.v20210224\jetty-client-9.4.38.v20210224.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-databind\2.10.5.1\jackson-databind-2.10.5.1.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.5\jackson-annotations-2.10.5.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-core\2.10.5\jackson-core-2.10.5.jar;D:\mysoft\maven\repository\org\bouncycastle\bcprov-jdk15on\1.60\bcprov-jdk15on-1.60.jar;D:\mysoft\maven\repository\org\bouncycastle\bcpkix-jdk15on\1.60\bcpkix-jdk15on-1.60.jar;D:\mysoft\maven\repository\jline\jline\2.14.6\jline-2.14.6.jar;D:\mysoft\maven\repository\io\dropwizard\metrics\metrics-core\4.1.12.1\metrics-core-4.1.12.1.jar;D:\mysoft\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-core\2.0.0\kerb-core-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-pkix\2.0.0\kerby-pkix-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-asn1\2.0.0\kerby-asn1-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-util\2.0.0\kerby-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-simplekdc\2.0.0\kerb-simplekdc-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-client\2.0.0\kerb-client-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-common\2.0.0\kerb-common-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-crypto\2.0.0\kerb-crypto-2.0.0.jar;D:\mysoft\maven\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-util\2.0.0\kerb-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\token-provider\2.0.0\token-provider-2.0.0.jar;D:\mysoft\maven\repository\com\nimbusds\nimbus-jose-jwt\4.41.2\nimbus-jose-jwt-4.41.2.jar;D:\mysoft\maven\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;D:\mysoft\maven\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;D:\mysoft\maven\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;D:\mysoft\maven\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-admin\2.0.0\kerb-admin-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-server\2.0.0\kerb-server-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-identity\2.0.0\kerb-identity-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-xdr\2.0.0\kerby-xdr-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-config\2.0.0\kerby-config-2.0.0.jar;D:\mysoft\maven\repository\org\mockito\mockito-core\3.6.28\mockito-core-3.6.28.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy-agent\1.10.18\byte-buddy-agent-1.10.18.jar;D:\mysoft\maven\repository\org\objenesis\objenesis\3.1\objenesis-3.1.jar;D:\mysoft\maven\repository\org\jmockit\jmockit\1.48\jmockit-1.48.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;D:\mysoft\maven\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;D:\mysoft\maven\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-runner\1.6.2\junit-platform-runner-1.6.2.jar;D:\mysoft\maven\repository\junit\junit\4.13\junit-4.13.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-launcher\1.6.2\junit-platform-launcher-1.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-suite-api\1.6.2\junit-platform-suite-api-1.6.2.jar;D:\mysoft\maven\repository\org\xerial\snappy\snappy-java\1.1.7.7\snappy-java-1.1.7.7.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 8.1"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_31\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\faisco\AppData\Local\Temp\surefire7017171567299321585\surefirebooter3446434909345585940.jar C:\Users\faisco\AppData\Local\Temp\surefire7017171567299321585 2021-11-08T11-05-05_200-jvmRun4 surefire1278262377423186018tmp surefire_1314554026642355095377tmp"/>
+    <property name="surefire.test.class.path" value="D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\test-classes;D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\classes;D:\mysoft\maven\repository\com\github\spotbugs\spotbugs-annotations\4.0.2\spotbugs-annotations-4.0.2.jar;D:\mysoft\maven\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-library\2.2\hamcrest-library-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;D:\mysoft\maven\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;D:\mysoft\maven\repository\org\apache\zookeeper\zookeeper-jute\3.7.0\zookeeper-jute-3.7.0.jar;D:\mysoft\maven\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar;D:\mysoft\maven\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;D:\mysoft\maven\repository\io\netty\netty-handler\4.1.59.Final\netty-handler-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-common\4.1.59.Final\netty-common-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-resolver\4.1.59.Final\netty-resolver-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-buffer\4.1.59.Final\netty-buffer-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport\4.1.59.Final\netty-transport-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-codec\4.1.59.Final\netty-codec-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-epoll\4.1.59.Final\netty-transport-native-epoll-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-unix-common\4.1.59.Final\netty-transport-native-unix-common-4.1.59.Final.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-server\9.4.38.v20210224\jetty-server-9.4.38.v20210224.jar;D:\mysoft\maven\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-http\9.4.38.v20210224\jetty-http-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util\9.4.38.v20210224\jetty-util-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-io\9.4.38.v20210224\jetty-io-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-servlet\9.4.38.v20210224\jetty-servlet-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-security\9.4.38.v20210224\jetty-security-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util-ajax\9.4.38.v20210224\jetty-util-ajax-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-client\9.4.38.v20210224\jetty-client-9.4.38.v20210224.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-databind\2.10.5.1\jackson-databind-2.10.5.1.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.5\jackson-annotations-2.10.5.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-core\2.10.5\jackson-core-2.10.5.jar;D:\mysoft\maven\repository\org\bouncycastle\bcprov-jdk15on\1.60\bcprov-jdk15on-1.60.jar;D:\mysoft\maven\repository\org\bouncycastle\bcpkix-jdk15on\1.60\bcpkix-jdk15on-1.60.jar;D:\mysoft\maven\repository\jline\jline\2.14.6\jline-2.14.6.jar;D:\mysoft\maven\repository\io\dropwizard\metrics\metrics-core\4.1.12.1\metrics-core-4.1.12.1.jar;D:\mysoft\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-core\2.0.0\kerb-core-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-pkix\2.0.0\kerby-pkix-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-asn1\2.0.0\kerby-asn1-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-util\2.0.0\kerby-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-simplekdc\2.0.0\kerb-simplekdc-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-client\2.0.0\kerb-client-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-common\2.0.0\kerb-common-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-crypto\2.0.0\kerb-crypto-2.0.0.jar;D:\mysoft\maven\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-util\2.0.0\kerb-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\token-provider\2.0.0\token-provider-2.0.0.jar;D:\mysoft\maven\repository\com\nimbusds\nimbus-jose-jwt\4.41.2\nimbus-jose-jwt-4.41.2.jar;D:\mysoft\maven\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;D:\mysoft\maven\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;D:\mysoft\maven\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;D:\mysoft\maven\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-admin\2.0.0\kerb-admin-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-server\2.0.0\kerb-server-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-identity\2.0.0\kerb-identity-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-xdr\2.0.0\kerby-xdr-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-config\2.0.0\kerby-config-2.0.0.jar;D:\mysoft\maven\repository\org\mockito\mockito-core\3.6.28\mockito-core-3.6.28.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy-agent\1.10.18\byte-buddy-agent-1.10.18.jar;D:\mysoft\maven\repository\org\objenesis\objenesis\3.1\objenesis-3.1.jar;D:\mysoft\maven\repository\org\jmockit\jmockit\1.48\jmockit-1.48.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;D:\mysoft\maven\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;D:\mysoft\maven\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-runner\1.6.2\junit-platform-runner-1.6.2.jar;D:\mysoft\maven\repository\junit\junit\4.13\junit-4.13.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-launcher\1.6.2\junit-platform-launcher-1.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-suite-api\1.6.2\junit-platform-suite-api-1.6.2.jar;D:\mysoft\maven\repository\org\xerial\snappy\snappy-java\1.1.7.7\snappy-java-1.1.7.7.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\faisco"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_31\jre"/>
+    <property name="zookeeper.DigestAuthenticationProvider.superDigest" value="super:D/InIHSb7yEEbrWz8b9l71RjZJU="/>
+    <property name="basedir" value="D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="test.junit.threads" value="8"/>
+    <property name="surefire.real.class.path" value="C:\Users\faisco\AppData\Local\Temp\surefire7017171567299321585\surefirebooter3446434909345585940.jar;D:\mysoft\maven\repository\org\jmockit\jmockit\1.48\jmockit-1.48.jar"/>
+    <property name="zookeeper.junit.threadid" value="4"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_31\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_31\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_31\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_31\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_31\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_31\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_31\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_31\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_31-b13"/>
+    <property name="user.name" value="faisco"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="6.3"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_31\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="idea.version2020.1" value="true"/>
+    <property name="localRepository" value="D:\mysoft\maven\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\faisco\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_31"/>
+    <property name="user.dir" value="D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\Python39\Scripts\;C:\Python39\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_31\bin;D:\soft\Git\cmd;D:\mysoft\maven\apache-maven-3.6.1\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;D:\mysoft\gradle-7.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\OpenVPN\bin;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;;D:\soft\Microsoft VS Code\bin;D:\soft\PyCharm Community Edition 2019.1.3\bin;;D:\soft\PyCharm 2019.2.3\bin;;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\bin;;C:\Users\faisco\AppData\Roaming\npm;."/>
+    <property name="junit.jupiter.extensions.autodetection.enabled" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.31-b07"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_31\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testGetTrafficClass{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.127">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetTrafficClass(UnifiedServerSocketModeDetectionTest.java:346)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,406 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetTrafficClass(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,436 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2021-11-08 11:12:47,441 [myid:] - INFO  [main:PortAssignment@154] - Test process 4/8 using ports from 19300 - 21992.
+2021-11-08 11:12:47,443 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19301 from range 19300 - 21992.
+2021-11-08 11:12:47,516 [myid:] - ERROR [pool-1-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,518 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetTrafficClass(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetTrafficClass{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.007"/>
+  <testcase name="testIsInputShutdown{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.006">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsInputShutdown(UnifiedServerSocketModeDetectionTest.java:432)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,536 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsInputShutdown(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,536 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19303 from range 19300 - 21992.
+2021-11-08 11:12:47,540 [myid:] - ERROR [pool-3-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,540 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsInputShutdown(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testIsInputShutdown{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004"/>
+  <testcase name="testGetLocalSocketAddress{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.006">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalSocketAddress(UnifiedServerSocketModeDetectionTest.java:199)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,547 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalSocketAddress(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,547 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19305 from range 19300 - 21992.
+2021-11-08 11:12:47,551 [myid:] - ERROR [pool-5-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,552 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalSocketAddress(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetLocalSocketAddress{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005"/>
+  <testcase name="testSetReceiveBufferSize{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.011">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetReceiveBufferSize(UnifiedServerSocketModeDetectionTest.java:315)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,558 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetReceiveBufferSize(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,559 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19307 from range 19300 - 21992.
+2021-11-08 11:12:47,564 [myid:] - ERROR [pool-7-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,565 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetReceiveBufferSize(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetReceiveBufferSize{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testClose{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.014">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testClose(UnifiedServerSocketModeDetectionTest.java:384)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,573 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testClose(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,574 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19309 from range 19300 - 21992.
+2021-11-08 11:12:47,583 [myid:] - ERROR [pool-9-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,583 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testClose(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testClose{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.016"/>
+  <testcase name="testGetTcpNoDelay{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.007">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetTcpNoDelay(UnifiedServerSocketModeDetectionTest.java:223)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,605 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetTcpNoDelay(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,605 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19311 from range 19300 - 21992.
+2021-11-08 11:12:47,610 [myid:] - ERROR [pool-11-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,610 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetTcpNoDelay(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetTcpNoDelay{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.012"/>
+  <testcase name="testGetLocalAddress{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.01">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalAddress(UnifiedServerSocketModeDetectionTest.java:167)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,625 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalAddress(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,626 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19313 from range 19300 - 21992.
+2021-11-08 11:12:47,633 [myid:] - ERROR [pool-13-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,634 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalAddress(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetLocalAddress{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.013"/>
+  <testcase name="testSetTrafficClass{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.011">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetTrafficClass(UnifiedServerSocketModeDetectionTest.java:354)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,650 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetTrafficClass(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,651 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19315 from range 19300 - 21992.
+2021-11-08 11:12:47,658 [myid:] - ERROR [pool-15-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,660 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetTrafficClass(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetTrafficClass{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.01"/>
+  <testcase name="testShutdownInput{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.007">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testShutdownInput(UnifiedServerSocketModeDetectionTest.java:392)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,676 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testShutdownInput(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,677 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19317 from range 19300 - 21992.
+2021-11-08 11:12:47,682 [myid:] - ERROR [pool-17-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,683 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testShutdownInput(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testShutdownInput{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.002"/>
+  <testcase name="testGetReceiveBufferSize{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.007">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetReceiveBufferSize(UnifiedServerSocketModeDetectionTest.java:307)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,689 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetReceiveBufferSize(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,690 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19319 from range 19300 - 21992.
+2021-11-08 11:12:47,695 [myid:] - ERROR [pool-19-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,696 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetReceiveBufferSize(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetReceiveBufferSize{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005"/>
+  <testcase name="testIsOutputShutdown{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.009">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsOutputShutdown(UnifiedServerSocketModeDetectionTest.java:442)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,703 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsOutputShutdown(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,703 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19321 from range 19300 - 21992.
+2021-11-08 11:12:47,711 [myid:] - ERROR [pool-21-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,712 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsOutputShutdown(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testIsOutputShutdown{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004"/>
+  <testcase name="testGetKeepAlive{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetKeepAlive(UnifiedServerSocketModeDetectionTest.java:327)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,718 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetKeepAlive(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,719 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19323 from range 19300 - 21992.
+2021-11-08 11:12:47,722 [myid:] - ERROR [pool-23-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,722 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetKeepAlive(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetKeepAlive{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005"/>
+  <testcase name="testGetReuseAddress{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.012">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetReuseAddress(UnifiedServerSocketModeDetectionTest.java:365)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,729 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetReuseAddress(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,730 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19325 from range 19300 - 21992.
+2021-11-08 11:12:47,740 [myid:] - ERROR [pool-25-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,741 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetReuseAddress(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetReuseAddress{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.03"/>
+  <testcase name="testGetPort{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.006">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetPort(UnifiedServerSocketModeDetectionTest.java:175)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,766 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetPort(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,767 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19327 from range 19300 - 21992.
+2021-11-08 11:12:47,774 [myid:] - ERROR [pool-27-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,774 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetPort(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetPort{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.006"/>
+  <testcase name="testSetTcpNoDelay{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetTcpNoDelay(UnifiedServerSocketModeDetectionTest.java:231)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,783 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetTcpNoDelay(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,783 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19329 from range 19300 - 21992.
+2021-11-08 11:12:47,787 [myid:] - ERROR [pool-29-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,788 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetTcpNoDelay(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetTcpNoDelay{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005"/>
+  <testcase name="testGetLocalPort{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.011">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalPort(UnifiedServerSocketModeDetectionTest.java:183)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,797 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalPort(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,798 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19331 from range 19300 - 21992.
+2021-11-08 11:12:47,811 [myid:] - ERROR [pool-31-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,812 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetLocalPort(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetLocalPort{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004"/>
+  <testcase name="testGetSoTimeout{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.006">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSoTimeout(UnifiedServerSocketModeDetectionTest.java:268)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,818 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSoTimeout(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,819 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19333 from range 19300 - 21992.
+2021-11-08 11:12:47,823 [myid:] - ERROR [pool-33-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,824 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSoTimeout(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetSoTimeout{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testIsConnected{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsConnected(UnifiedServerSocketModeDetectionTest.java:408)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,829 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsConnected(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,830 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19335 from range 19300 - 21992.
+2021-11-08 11:12:47,832 [myid:] - ERROR [pool-35-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,832 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsConnected(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testIsConnected{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testIsClosed{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.027">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsClosed(UnifiedServerSocketModeDetectionTest.java:424)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,838 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsClosed(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,840 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19337 from range 19300 - 21992.
+2021-11-08 11:12:47,856 [myid:] - ERROR [pool-37-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,863 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsClosed(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testIsClosed{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.079"/>
+  <testcase name="testSetReuseAddress{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetReuseAddress(UnifiedServerSocketModeDetectionTest.java:373)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,946 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetReuseAddress(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,947 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19339 from range 19300 - 21992.
+2021-11-08 11:12:47,950 [myid:] - ERROR [pool-39-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,950 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetReuseAddress(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetReuseAddress{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.002"/>
+  <testcase name="testSetSendBufferSize{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSendBufferSize(UnifiedServerSocketModeDetectionTest.java:295)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,954 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSendBufferSize(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,955 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19341 from range 19300 - 21992.
+2021-11-08 11:12:47,957 [myid:] - ERROR [pool-41-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,957 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSendBufferSize(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetSendBufferSize{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testSetKeepAlive{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetKeepAlive(UnifiedServerSocketModeDetectionTest.java:335)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,962 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetKeepAlive(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,962 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19343 from range 19300 - 21992.
+2021-11-08 11:12:47,964 [myid:] - ERROR [pool-43-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,964 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetKeepAlive(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetKeepAlive{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testGetInetAddress{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetInetAddress(UnifiedServerSocketModeDetectionTest.java:159)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,969 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetInetAddress(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,970 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19345 from range 19300 - 21992.
+2021-11-08 11:12:47,972 [myid:] - ERROR [pool-45-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,973 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetInetAddress(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetInetAddress{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.002"/>
+  <testcase name="testGetOutputStream{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.005">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetOutputStream(UnifiedServerSocketModeDetectionTest.java:215)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,978 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetOutputStream(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,978 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19347 from range 19300 - 21992.
+2021-11-08 11:12:47,982 [myid:] - ERROR [pool-47-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,982 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetOutputStream(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetOutputStream{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testSetSoTimeout{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSoTimeout(UnifiedServerSocketModeDetectionTest.java:276)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,989 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSoTimeout(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,990 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19349 from range 19300 - 21992.
+2021-11-08 11:12:47,992 [myid:] - ERROR [pool-49-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:47,993 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSoTimeout(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetSoTimeout{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testShutdownOutput{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testShutdownOutput(UnifiedServerSocketModeDetectionTest.java:400)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:47,999 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testShutdownOutput(boolean) throws java.lang.Exception]
+2021-11-08 11:12:47,999 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19351 from range 19300 - 21992.
+2021-11-08 11:12:48,001 [myid:] - ERROR [pool-51-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,002 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testShutdownOutput(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testShutdownOutput{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testGetSendBufferSize{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSendBufferSize(UnifiedServerSocketModeDetectionTest.java:287)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:48,007 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSendBufferSize(boolean) throws java.lang.Exception]
+2021-11-08 11:12:48,007 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19353 from range 19300 - 21992.
+2021-11-08 11:12:48,009 [myid:] - ERROR [pool-53-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,010 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSendBufferSize(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetSendBufferSize{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.003"/>
+  <testcase name="testIsBound{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsBound(UnifiedServerSocketModeDetectionTest.java:416)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:48,016 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsBound(boolean) throws java.lang.Exception]
+2021-11-08 11:12:48,016 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19355 from range 19300 - 21992.
+2021-11-08 11:12:48,019 [myid:] - ERROR [pool-55-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,020 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testIsBound(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testIsBound{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.008"/>
+  <testcase name="testSetSoLinger{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.014">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSoLinger(UnifiedServerSocketModeDetectionTest.java:250)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:48,024 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSoLinger(boolean) throws java.lang.Exception]
+2021-11-08 11:12:48,024 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19357 from range 19300 - 21992.
+2021-11-08 11:12:48,040 [myid:] - ERROR [pool-57-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,040 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testSetSoLinger(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testSetSoLinger{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.002"/>
+  <testcase name="testGetSoLinger{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.009">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSoLinger(UnifiedServerSocketModeDetectionTest.java:242)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:48,047 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSoLinger(boolean) throws java.lang.Exception]
+2021-11-08 11:12:48,048 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19359 from range 19300 - 21992.
+2021-11-08 11:12:48,055 [myid:] - ERROR [pool-59-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,055 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetSoLinger(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetSoLinger{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.012"/>
+  <testcase name="testGetInputStream{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetInputStream(UnifiedServerSocketModeDetectionTest.java:207)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:48,069 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetInputStream(boolean) throws java.lang.Exception]
+2021-11-08 11:12:48,070 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19361 from range 19300 - 21992.
+2021-11-08 11:12:48,072 [myid:] - ERROR [pool-61-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: socket closed
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:139)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,072 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetInputStream(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetInputStream{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004"/>
+  <testcase name="testGetRemoteSocketAddress{boolean}[1]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.008">
+    <error message="Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at javax.net.ssl.SSLSocket.setSSLParameters(SSLSocket.java:650)
+	at org.apache.zookeeper.common.SSLContextAndOptions.configureSSLSocket(SSLContextAndOptions.java:125)
+	at org.apache.zookeeper.common.SSLContextAndOptions.createSSLSocket(SSLContextAndOptions.java:80)
+	at org.apache.zookeeper.common.X509Util.createSSLSocket(X509Util.java:517)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.init(UnifiedServerSocketModeDetectionTest.java:134)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetRemoteSocketAddress(UnifiedServerSocketModeDetectionTest.java:191)
+</error>
+    <system-out><![CDATA[2021-11-08 11:12:48,078 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetRemoteSocketAddress(boolean) throws java.lang.Exception]
+2021-11-08 11:12:48,079 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 19363 from range 19300 - 21992.
+2021-11-08 11:12:48,085 [myid:] - ERROR [pool-63-thread-1:UnifiedServerSocketModeDetectionTest$1@128] - Error in accept()
+java.net.SocketException: Socket is closed
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocket.accept(UnifiedServerSocket.java:133)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:126)
+	at org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest$1.call(UnifiedServerSocketModeDetectionTest.java:122)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:12:48,085 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest.testGetRemoteSocketAddress(boolean) throws java.lang.Exception]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetRemoteSocketAddress{boolean}[2]" classname="org.apache.zookeeper.server.quorum.UnifiedServerSocketModeDetectionTest" time="0.004"/>
+</testsuite>

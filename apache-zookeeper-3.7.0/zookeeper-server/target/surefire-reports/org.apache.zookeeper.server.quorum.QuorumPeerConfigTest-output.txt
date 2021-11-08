@@ -1,0 +1,39 @@
+2021-11-08 11:10:20,762 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,765 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,783 [myid:] - INFO  [main:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:12345
+2021-11-08 11:10:20,783 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,783 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,783 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,788 [myid:] - ERROR [main:QuorumPeerConfig@706] - Invalid configuration, only one server specified (ignoring)
+2021-11-08 11:10:20,789 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,789 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,790 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,790 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,792 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,793 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,793 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,793 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,793 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,794 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,794 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,794 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,795 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,796 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,796 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,797 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,797 [myid:] - INFO  [main:QuorumPeerConfig@457] - secureClientPortAddress is 0.0.0.0:12345
+2021-11-08 11:10:20,800 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2021-11-08 11:10:20,800 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,800 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:10:20,801 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,802 [myid:] - INFO  [main:QuorumPeerConfig@457] - secureClientPortAddress is 0.0.0.0:12345
+2021-11-08 11:10:20,803 [myid:] - INFO  [main:QuorumPeerConfig@435] - clientPort is not set
+2021-11-08 11:10:20,804 [myid:] - INFO  [main:QuorumPeerConfig@448] - secureClientPort is not set
+2021-11-08 11:10:20,804 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:10:20,804 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider

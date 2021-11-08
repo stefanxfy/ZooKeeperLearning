@@ -1,0 +1,529 @@
+2021-11-08 11:06:37,226 [myid:] - INFO  [main:PortAssignment@154] - Test process 6/8 using ports from 24686 - 27378.
+2021-11-08 11:06:37,231 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 24687 from range 24686 - 27378.
+2021-11-08 11:06:37,232 [myid:] - INFO  [main:PortAssignment@87] - Assigned port 24688 from range 24686 - 27378.
+2021-11-08 11:06:37,246 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@53] - Current configuration is at C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\zookeeper.configuration8482045230291023603.properties
+2021-11-08 11:06:37,252 [myid:] - INFO  [main:QuorumPeerConfig@174] - Reading configuration from: C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\zookeeper.configuration8482045230291023603.properties
+2021-11-08 11:06:37,254 [myid:] - INFO  [main:QuorumPeerConfig@444] - clientPortAddress is 0.0.0.0:24687
+2021-11-08 11:06:37,254 [myid:] - INFO  [main:QuorumPeerConfig@457] - secureClientPortAddress is 0.0.0.0:24688
+2021-11-08 11:06:37,258 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2021-11-08 11:06:37,259 [myid:] - INFO  [main:QuorumPeerConfig@464] - observerMasterPort is not set
+2021-11-08 11:06:37,259 [myid:] - INFO  [main:QuorumPeerConfig@481] - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:06:37,260 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@56] - ServerID:-1
+2021-11-08 11:06:37,260 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@57] - DataDir:C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\data
+2021-11-08 11:06:37,260 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@58] - Servers:{}
+2021-11-08 11:06:37,261 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@59] - ElectionPort:2182
+2021-11-08 11:06:37,261 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@60] - SyncLimit:0
+2021-11-08 11:06:37,261 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@61] - PeerType:PARTICIPANT
+2021-11-08 11:06:37,262 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@62] - Distributed:false
+2021-11-08 11:06:37,262 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@63] - SyncEnabled:true
+2021-11-08 11:06:37,263 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@64] - MetricsProviderClassName:org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+2021-11-08 11:06:37,265 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@120] - Running ZK Server in single STANDALONE MODE
+2021-11-08 11:06:37,268 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2021-11-08 11:06:37,268 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2021-11-08 11:06:37,269 [myid:] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2021-11-08 11:06:37,270 [myid:] - INFO  [zkservermainrunner:ZooKeeperServerEmbeddedImpl$2@132] - ZK server starting
+2021-11-08 11:06:37,270 [myid:] - INFO  [zkservermainrunner:ZooKeeperServerMain@123] - Starting server
+2021-11-08 11:06:37,274 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to localhost 24687
+2021-11-08 11:06:37,287 [myid:] - INFO  [zkservermainrunner:ServerMetrics@62] - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@7da05d73
+2021-11-08 11:06:37,290 [myid:] - INFO  [zkservermainrunner:DigestAuthenticationProvider@47] - ACL digest algorithm is: SHA1
+2021-11-08 11:06:37,290 [myid:] - INFO  [zkservermainrunner:DigestAuthenticationProvider@61] - zookeeper.DigestAuthenticationProvider.enabled = true
+2021-11-08 11:06:37,336 [myid:] - INFO  [zkservermainrunner:FileTxnSnapLog@124] - zookeeper.snapshot.trust.empty : false
+2021-11-08 11:06:37,360 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] - 
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -   ______                  _                                          
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -  |___  /                 | |                                         
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -     / /    ___     ___   | | __   ___    ___   _ __     ___   _ __   
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -    / /    / _ \   / _ \  | |/ /  / _ \  / _ \ | '_ \   / _ \ | '__|
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -   / /__  | (_) | | (_) | |   <  |  __/ |  __/ | |_) | |  __/ | |    
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -  /_____|  \___/   \___/  |_|\_\  \___|  \___| | .__/   \___| |_|
+2021-11-08 11:06:37,361 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -                                               | |                     
+2021-11-08 11:06:37,362 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] -                                               |_|                     
+2021-11-08 11:06:37,362 [myid:] - INFO  [zkservermainrunner:ZookeeperBanner@42] - 
+2021-11-08 11:06:39,510 [myid:] - INFO  [main:ClientBase@264] - server localhost:24687 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:06:39,774 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to localhost 24687
+2021-11-08 11:06:41,985 [myid:] - INFO  [main:ClientBase@264] - server localhost:24687 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:06:42,248 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to localhost 24687
+2021-11-08 11:06:44,285 [myid:] - INFO  [main:ClientBase@264] - server localhost:24687 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:06:44,547 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to localhost 24687
+2021-11-08 11:06:46,378 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:zookeeper.version=3.7.0-02d8e7728613600d355308bb0a256b6f5b41360c-dirty, built on 2021-11-08 03:06 UTC
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:host.name=DESKTOP-3V3H020
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.version=1.8.0_31
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.vendor=Oracle Corporation
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.home=C:\Program Files\Java\jdk1.8.0_31\jre
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.class.path=D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\test-classes;D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\classes;D:\mysoft\maven\repository\com\github\spotbugs\spotbugs-annotations\4.0.2\spotbugs-annotations-4.0.2.jar;D:\mysoft\maven\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-library\2.2\hamcrest-library-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;D:\mysoft\maven\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;D:\mysoft\maven\repository\org\apache\zookeeper\zookeeper-jute\3.7.0\zookeeper-jute-3.7.0.jar;D:\mysoft\maven\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar;D:\mysoft\maven\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;D:\mysoft\maven\repository\io\netty\netty-handler\4.1.59.Final\netty-handler-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-common\4.1.59.Final\netty-common-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-resolver\4.1.59.Final\netty-resolver-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-buffer\4.1.59.Final\netty-buffer-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport\4.1.59.Final\netty-transport-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-codec\4.1.59.Final\netty-codec-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-epoll\4.1.59.Final\netty-transport-native-epoll-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-unix-common\4.1.59.Final\netty-transport-native-unix-common-4.1.59.Final.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-server\9.4.38.v20210224\jetty-server-9.4.38.v20210224.jar;D:\mysoft\maven\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-http\9.4.38.v20210224\jetty-http-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util\9.4.38.v20210224\jetty-util-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-io\9.4.38.v20210224\jetty-io-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-servlet\9.4.38.v20210224\jetty-servlet-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-security\9.4.38.v20210224\jetty-security-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util-ajax\9.4.38.v20210224\jetty-util-ajax-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-client\9.4.38.v20210224\jetty-client-9.4.38.v20210224.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-databind\2.10.5.1\jackson-databind-2.10.5.1.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.5\jackson-annotations-2.10.5.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-core\2.10.5\jackson-core-2.10.5.jar;D:\mysoft\maven\repository\org\bouncycastle\bcprov-jdk15on\1.60\bcprov-jdk15on-1.60.jar;D:\mysoft\maven\repository\org\bouncycastle\bcpkix-jdk15on\1.60\bcpkix-jdk15on-1.60.jar;D:\mysoft\maven\repository\jline\jline\2.14.6\jline-2.14.6.jar;D:\mysoft\maven\repository\io\dropwizard\metrics\metrics-core\4.1.12.1\metrics-core-4.1.12.1.jar;D:\mysoft\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-core\2.0.0\kerb-core-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-pkix\2.0.0\kerby-pkix-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-asn1\2.0.0\kerby-asn1-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-util\2.0.0\kerby-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-simplekdc\2.0.0\kerb-simplekdc-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-client\2.0.0\kerb-client-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-common\2.0.0\kerb-common-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-crypto\2.0.0\kerb-crypto-2.0.0.jar;D:\mysoft\maven\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-util\2.0.0\kerb-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\token-provider\2.0.0\token-provider-2.0.0.jar;D:\mysoft\maven\repository\com\nimbusds\nimbus-jose-jwt\4.41.2\nimbus-jose-jwt-4.41.2.jar;D:\mysoft\maven\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;D:\mysoft\maven\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;D:\mysoft\maven\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;D:\mysoft\maven\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-admin\2.0.0\kerb-admin-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-server\2.0.0\kerb-server-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-identity\2.0.0\kerb-identity-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-xdr\2.0.0\kerby-xdr-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-config\2.0.0\kerby-config-2.0.0.jar;D:\mysoft\maven\repository\org\mockito\mockito-core\3.6.28\mockito-core-3.6.28.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy-agent\1.10.18\byte-buddy-agent-1.10.18.jar;D:\mysoft\maven\repository\org\objenesis\objenesis\3.1\objenesis-3.1.jar;D:\mysoft\maven\repository\org\jmockit\jmockit\1.48\jmockit-1.48.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;D:\mysoft\maven\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;D:\mysoft\maven\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-runner\1.6.2\junit-platform-runner-1.6.2.jar;D:\mysoft\maven\repository\junit\junit\4.13\junit-4.13.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-launcher\1.6.2\junit-platform-launcher-1.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-suite-api\1.6.2\junit-platform-suite-api-1.6.2.jar;D:\mysoft\maven\repository\org\xerial\snappy\snappy-java\1.1.7.7\snappy-java-1.1.7.7.jar;
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.library.path=C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\Python39\Scripts\;C:\Python39\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_31\bin;D:\soft\Git\cmd;D:\mysoft\maven\apache-maven-3.6.1\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;D:\mysoft\gradle-7.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\OpenVPN\bin;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;;D:\soft\Microsoft VS Code\bin;D:\soft\PyCharm Community Edition 2019.1.3\bin;;D:\soft\PyCharm 2019.2.3\bin;;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\bin;;C:\Users\faisco\AppData\Roaming\npm;.
+2021-11-08 11:06:46,379 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.io.tmpdir=C:\Users\faisco\AppData\Local\Temp\
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:java.compiler=<NA>
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:os.name=Windows 8.1
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:os.arch=amd64
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:os.version=6.3
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:user.name=faisco
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:user.home=C:\Users\faisco
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:user.dir=D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:os.memory.free=228MB
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:os.memory.max=455MB
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:Environment@98] - Server environment:os.memory.total=243MB
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@138] - zookeeper.enableEagerACLCheck = false
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@151] - zookeeper.digest.enabled = true
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@155] - zookeeper.closeSessionTxn.enabled = true
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1499] - zookeeper.flushDelay=0
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1508] - zookeeper.maxWriteQueuePollTime=0
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1517] - zookeeper.maxBatchSize=1000
+2021-11-08 11:06:46,380 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@260] - zookeeper.intBufferStartingSizeBytes = 1024
+2021-11-08 11:06:46,382 [myid:] - INFO  [zkservermainrunner:BlueThrottle@141] - Weighed connection throttling is disabled
+2021-11-08 11:06:46,383 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1300] - minSessionTimeout set to 6000
+2021-11-08 11:06:46,383 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1309] - maxSessionTimeout set to 60000
+2021-11-08 11:06:46,384 [myid:] - INFO  [zkservermainrunner:ResponseCache@45] - getData response cache size is initialized with value 400.
+2021-11-08 11:06:46,384 [myid:] - INFO  [zkservermainrunner:ResponseCache@45] - getChildren response cache size is initialized with value 400.
+2021-11-08 11:06:46,385 [myid:] - INFO  [zkservermainrunner:RequestPathMetricsCollector@109] - zookeeper.pathStats.slotCapacity = 60
+2021-11-08 11:06:46,385 [myid:] - INFO  [zkservermainrunner:RequestPathMetricsCollector@110] - zookeeper.pathStats.slotDuration = 15
+2021-11-08 11:06:46,385 [myid:] - INFO  [zkservermainrunner:RequestPathMetricsCollector@111] - zookeeper.pathStats.maxDepth = 6
+2021-11-08 11:06:46,385 [myid:] - INFO  [zkservermainrunner:RequestPathMetricsCollector@112] - zookeeper.pathStats.initialDelay = 5
+2021-11-08 11:06:46,385 [myid:] - INFO  [zkservermainrunner:RequestPathMetricsCollector@113] - zookeeper.pathStats.delay = 5
+2021-11-08 11:06:46,385 [myid:] - INFO  [zkservermainrunner:RequestPathMetricsCollector@114] - zookeeper.pathStats.enabled = false
+2021-11-08 11:06:46,387 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1536] - The max bytes for all large requests are set to 104857600
+2021-11-08 11:06:46,387 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@1550] - The large request threshold is set to -1
+2021-11-08 11:06:46,387 [myid:] - INFO  [zkservermainrunner:AuthenticationHelper@66] - zookeeper.enforce.auth.enabled = false
+2021-11-08 11:06:46,387 [myid:] - INFO  [zkservermainrunner:AuthenticationHelper@67] - zookeeper.enforce.auth.schemes = []
+2021-11-08 11:06:46,388 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@361] - Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000 clientPortListenBacklog -1 datadir C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\data\version-2 snapdir C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\data\version-2
+2021-11-08 11:06:46,444 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@507] - zookeeper.client.portUnification=false
+2021-11-08 11:06:46,445 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@519] - zookeeper.netty.advancedFlowControl.enabled = false
+2021-11-08 11:06:46,445 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@106] - handshakeThrottlingEnabled = false, zookeeper.netty.server.outstandingHandshake.limit = -1
+2021-11-08 11:06:46,567 [myid:] - INFO  [main:ClientBase@264] - server localhost:24687 not up: java.net.ConnectException: Connection refused: connect
+2021-11-08 11:06:46,834 [myid:] - INFO  [main:FourLetterWordMain@94] - connecting to localhost 24687
+2021-11-08 11:06:46,978 [myid:] - INFO  [zkservermainrunner:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NettyServerCnxnFactory as server connection factory
+2021-11-08 11:06:46,979 [myid:] - WARN  [zkservermainrunner:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:06:46,979 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@606] - configure org.apache.zookeeper.server.NettyServerCnxnFactory@19897431 secure: false on addr 0.0.0.0/0.0.0.0:24687
+2021-11-08 11:06:46,979 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@695] - binding to port 0.0.0.0/0.0.0.0:24687
+2021-11-08 11:06:48,740 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@700] - bound to port 24687
+2021-11-08 11:06:48,752 [myid:] - INFO  [zkservermainrunner:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:06:48,752 [myid:] - INFO  [zkservermainrunner:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:06:48,753 [myid:] - INFO  [zkservermainrunner:ZKDatabase@133] - zookeeper.snapshotSizeFactor = 0.33
+2021-11-08 11:06:48,753 [myid:] - INFO  [zkservermainrunner:ZKDatabase@153] - zookeeper.commitLogCount=500
+2021-11-08 11:06:48,760 [myid:] - INFO  [zkservermainrunner:SnapStream@61] - zookeeper.snapshot.compression.method = CHECKED
+2021-11-08 11:06:48,760 [myid:] - INFO  [zkservermainrunner:FileTxnSnapLog@479] - Snapshotting: 0x0 to C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\data\version-2\snapshot.0
+2021-11-08 11:06:48,764 [myid:] - INFO  [zkservermainrunner:ZKDatabase@290] - Snapshot loaded in 11 ms, highest zxid is 0x0, digest is 1371985504
+2021-11-08 11:06:48,765 [myid:] - INFO  [zkservermainrunner:FileTxnSnapLog@479] - Snapshotting: 0x0 to C:\Users\faisco\AppData\Local\Temp\junit1142910728287498294\data\version-2\snapshot.0
+2021-11-08 11:06:48,766 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@543] - Snapshot taken in 1 ms
+2021-11-08 11:06:48,779 [myid:] - INFO  [zkservermainrunner:RequestThrottler@75] - zookeeper.request_throttler.shutdownTimeout = 10000
+2021-11-08 11:06:48,792 [myid:] - INFO  [ProcessThread(sid:0 cport:24687)::PrepRequestProcessor@137] - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+2021-11-08 11:06:48,832 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@507] - zookeeper.client.portUnification=false
+2021-11-08 11:06:48,832 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@519] - zookeeper.netty.advancedFlowControl.enabled = false
+2021-11-08 11:06:48,832 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@106] - handshakeThrottlingEnabled = false, zookeeper.netty.server.outstandingHandshake.limit = -1
+2021-11-08 11:06:49,171 [myid:] - INFO  [zkservermainrunner:ServerCnxnFactory@169] - Using org.apache.zookeeper.server.NettyServerCnxnFactory as server connection factory
+2021-11-08 11:06:49,172 [myid:] - WARN  [zkservermainrunner:ServerCnxnFactory@309] - maxCnxns is not configured, using default value 0.
+2021-11-08 11:06:49,172 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@606] - configure org.apache.zookeeper.server.NettyServerCnxnFactory@4e38b4f4 secure: true on addr 0.0.0.0/0.0.0.0:24688
+2021-11-08 11:06:49,172 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@695] - binding to port 0.0.0.0/0.0.0.0:24688
+2021-11-08 11:06:49,173 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@700] - bound to port 24688
+2021-11-08 11:06:49,175 [myid:] - INFO  [zkservermainrunner:ContainerManager@84] - Using checkIntervalMs=60000 maxPerMinute=10000 maxNeverUsedIntervalMs=0
+2021-11-08 11:06:49,175 [myid:] - INFO  [zkservermainrunner:ZKAuditProvider@42] - ZooKeeper audit is disabled.
+2021-11-08 11:06:49,214 [myid:] - INFO  [nioEventLoopGroup-4-1:FourLetterCommands@223] - The list of known four letter word commands is : [{1936881266=srvr, 1937006964=stat, 2003003491=wchc, 1685417328=dump, 1668445044=crst, 1936880500=srst, 1701738089=envi, 1668247142=conf, -720899=telnet close, 1751217000=hash, 2003003507=wchs, 2003003504=wchp, 1684632179=dirs, 1668247155=cons, 1835955314=mntr, 1769173615=isro, 1920298859=ruok, 1735683435=gtmk, 1937010027=stmk}]
+2021-11-08 11:06:49,214 [myid:] - INFO  [nioEventLoopGroup-4-1:FourLetterCommands@224] - The list of enabled four letter word commands is : [[wchs, stat, wchp, dirs, stmk, conf, ruok, mntr, srvr, wchc, envi, srst, isro, dump, gtmk, telnet close, crst, hash, cons]]
+2021-11-08 11:06:49,214 [myid:] - INFO  [nioEventLoopGroup-4-1:NettyServerCnxn@294] - Processing stat command from /127.0.0.1:9347
+2021-11-08 11:06:49,218 [myid:] - INFO  [nioEventLoopGroup-4-1:StatCommand@52] - Stat command output
+2021-11-08 11:06:58,253 [myid:] - INFO  [main:Environment@98] - Client environment:zookeeper.version=3.7.0-02d8e7728613600d355308bb0a256b6f5b41360c-dirty, built on 2021-11-08 03:06 UTC
+2021-11-08 11:06:58,253 [myid:] - INFO  [main:Environment@98] - Client environment:host.name=DESKTOP-3V3H020
+2021-11-08 11:06:58,253 [myid:] - INFO  [main:Environment@98] - Client environment:java.version=1.8.0_31
+2021-11-08 11:06:58,253 [myid:] - INFO  [main:Environment@98] - Client environment:java.vendor=Oracle Corporation
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:java.home=C:\Program Files\Java\jdk1.8.0_31\jre
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:java.class.path=D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\test-classes;D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server\target\classes;D:\mysoft\maven\repository\com\github\spotbugs\spotbugs-annotations\4.0.2\spotbugs-annotations-4.0.2.jar;D:\mysoft\maven\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-library\2.2\hamcrest-library-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;D:\mysoft\maven\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;D:\mysoft\maven\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;D:\mysoft\maven\repository\org\apache\zookeeper\zookeeper-jute\3.7.0\zookeeper-jute-3.7.0.jar;D:\mysoft\maven\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar;D:\mysoft\maven\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;D:\mysoft\maven\repository\io\netty\netty-handler\4.1.59.Final\netty-handler-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-common\4.1.59.Final\netty-common-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-resolver\4.1.59.Final\netty-resolver-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-buffer\4.1.59.Final\netty-buffer-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport\4.1.59.Final\netty-transport-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-codec\4.1.59.Final\netty-codec-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-epoll\4.1.59.Final\netty-transport-native-epoll-4.1.59.Final.jar;D:\mysoft\maven\repository\io\netty\netty-transport-native-unix-common\4.1.59.Final\netty-transport-native-unix-common-4.1.59.Final.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;D:\mysoft\maven\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-server\9.4.38.v20210224\jetty-server-9.4.38.v20210224.jar;D:\mysoft\maven\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-http\9.4.38.v20210224\jetty-http-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util\9.4.38.v20210224\jetty-util-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-io\9.4.38.v20210224\jetty-io-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-servlet\9.4.38.v20210224\jetty-servlet-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-security\9.4.38.v20210224\jetty-security-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-util-ajax\9.4.38.v20210224\jetty-util-ajax-9.4.38.v20210224.jar;D:\mysoft\maven\repository\org\eclipse\jetty\jetty-client\9.4.38.v20210224\jetty-client-9.4.38.v20210224.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-databind\2.10.5.1\jackson-databind-2.10.5.1.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.5\jackson-annotations-2.10.5.jar;D:\mysoft\maven\repository\com\fasterxml\jackson\core\jackson-core\2.10.5\jackson-core-2.10.5.jar;D:\mysoft\maven\repository\org\bouncycastle\bcprov-jdk15on\1.60\bcprov-jdk15on-1.60.jar;D:\mysoft\maven\repository\org\bouncycastle\bcpkix-jdk15on\1.60\bcpkix-jdk15on-1.60.jar;D:\mysoft\maven\repository\jline\jline\2.14.6\jline-2.14.6.jar;D:\mysoft\maven\repository\io\dropwizard\metrics\metrics-core\4.1.12.1\metrics-core-4.1.12.1.jar;D:\mysoft\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-core\2.0.0\kerb-core-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-pkix\2.0.0\kerby-pkix-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-asn1\2.0.0\kerby-asn1-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-util\2.0.0\kerby-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-simplekdc\2.0.0\kerb-simplekdc-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-client\2.0.0\kerb-client-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-common\2.0.0\kerb-common-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-crypto\2.0.0\kerb-crypto-2.0.0.jar;D:\mysoft\maven\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-util\2.0.0\kerb-util-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\token-provider\2.0.0\token-provider-2.0.0.jar;D:\mysoft\maven\repository\com\nimbusds\nimbus-jose-jwt\4.41.2\nimbus-jose-jwt-4.41.2.jar;D:\mysoft\maven\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;D:\mysoft\maven\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;D:\mysoft\maven\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;D:\mysoft\maven\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-admin\2.0.0\kerb-admin-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-server\2.0.0\kerb-server-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerb-identity\2.0.0\kerb-identity-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-xdr\2.0.0\kerby-xdr-2.0.0.jar;D:\mysoft\maven\repository\org\apache\kerby\kerby-config\2.0.0\kerby-config-2.0.0.jar;D:\mysoft\maven\repository\org\mockito\mockito-core\3.6.28\mockito-core-3.6.28.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;D:\mysoft\maven\repository\net\bytebuddy\byte-buddy-agent\1.10.18\byte-buddy-agent-1.10.18.jar;D:\mysoft\maven\repository\org\objenesis\objenesis\3.1\objenesis-3.1.jar;D:\mysoft\maven\repository\org\jmockit\jmockit\1.48\jmockit-1.48.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;D:\mysoft\maven\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;D:\mysoft\maven\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;D:\mysoft\maven\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-runner\1.6.2\junit-platform-runner-1.6.2.jar;D:\mysoft\maven\repository\junit\junit\4.13\junit-4.13.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-launcher\1.6.2\junit-platform-launcher-1.6.2.jar;D:\mysoft\maven\repository\org\junit\platform\junit-platform-suite-api\1.6.2\junit-platform-suite-api-1.6.2.jar;D:\mysoft\maven\repository\org\xerial\snappy\snappy-java\1.1.7.7\snappy-java-1.1.7.7.jar;
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_31\jre\bin;C:\Python39\Scripts\;C:\Python39\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_31\bin;D:\soft\Git\cmd;D:\mysoft\maven\apache-maven-3.6.1\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;D:\mysoft\gradle-7.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\OpenVPN\bin;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;;D:\soft\Microsoft VS Code\bin;D:\soft\PyCharm Community Edition 2019.1.3\bin;;D:\soft\PyCharm 2019.2.3\bin;;C:\Users\faisco\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\bin;;C:\Users\faisco\AppData\Roaming\npm;.
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:java.io.tmpdir=C:\Users\faisco\AppData\Local\Temp\
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:java.compiler=<NA>
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:os.name=Windows 8.1
+2021-11-08 11:06:58,254 [myid:] - INFO  [main:Environment@98] - Client environment:os.arch=amd64
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:os.version=6.3
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:user.name=faisco
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:user.home=C:\Users\faisco
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:user.dir=D:\mysoft\faiscoGit\myStudy\ZooKeeperLearning\apache-zookeeper-3.7.0\zookeeper-server
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:os.memory.free=199MB
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:os.memory.max=455MB
+2021-11-08 11:06:58,255 [myid:] - INFO  [main:Environment@98] - Client environment:os.memory.total=243MB
+2021-11-08 11:06:58,257 [myid:] - INFO  [main:ZooKeeper@637] - Initiating client connection, connectString=localhost:24688 sessionTimeout=60000 watcher=org.apache.zookeeper.server.embedded.ZookeeperServerSslEmbeddedTest$$Lambda$299/1704629915@2473d930
+2021-11-08 11:06:58,259 [myid:] - INFO  [main:ClientCnxnSocket@239] - jute.maxbuffer value is 1048575 Bytes
+2021-11-08 11:06:58,267 [myid:] - INFO  [main:ClientCnxn@1726] - zookeeper.request.timeout value is 0. feature enabled=false
+2021-11-08 11:06:58,273 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/127.0.0.1:24688.
+2021-11-08 11:06:58,273 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:06:58,455 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x6dff83a7]
+2021-11-08 11:06:58,467 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /127.0.0.1:9553, server: localhost/127.0.0.1:24688
+2021-11-08 11:06:58,469 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x6dff83a7, L:/127.0.0.1:9553 - R:localhost/127.0.0.1:24688]
+2021-11-08 11:06:58,517 [myid:] - WARN  [nioEventLoopGroup-7-1:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0xf2a0f294, L:/127.0.0.1:24688 - R:/127.0.0.1:9553]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:06:58,522 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x6dff83a7, L:/127.0.0.1:9553 ! R:localhost/127.0.0.1:24688]
+2021-11-08 11:06:58,522 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:06:58,522 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/127.0.0.1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:00,132 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:24688.
+2021-11-08 11:07:00,132 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:00,136 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x46d0c0e2]
+2021-11-08 11:07:00,137 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /0:0:0:0:0:0:0:1:9563, server: localhost/0:0:0:0:0:0:0:1:24688
+2021-11-08 11:07:00,137 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x46d0c0e2, L:/0:0:0:0:0:0:0:1:9563 - R:localhost/0:0:0:0:0:0:0:1:24688]
+2021-11-08 11:07:00,143 [myid:] - WARN  [nioEventLoopGroup-7-2:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0xa8ef3617, L:/0:0:0:0:0:0:0:1:24688 - R:/0:0:0:0:0:0:0:1:9563]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:00,144 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x46d0c0e2, L:/0:0:0:0:0:0:0:1:9563 ! R:localhost/0:0:0:0:0:0:0:1:24688]
+2021-11-08 11:07:00,144 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:00,144 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/0:0:0:0:0:0:0:1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:01,265 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/127.0.0.1:24688.
+2021-11-08 11:07:01,265 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:01,267 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x0cc7a64a]
+2021-11-08 11:07:01,267 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /127.0.0.1:9571, server: localhost/127.0.0.1:24688
+2021-11-08 11:07:01,268 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x0cc7a64a, L:/127.0.0.1:9571 - R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:01,270 [myid:] - WARN  [nioEventLoopGroup-7-3:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0xa169f53d, L:/127.0.0.1:24688 - R:/127.0.0.1:9571]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:01,270 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x0cc7a64a, L:/127.0.0.1:9571 ! R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:01,270 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:01,270 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/127.0.0.1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:02,340 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/127.0.0.1:24688.
+2021-11-08 11:07:02,340 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:02,342 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x356ee5ab]
+2021-11-08 11:07:02,343 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /127.0.0.1:9572, server: localhost/127.0.0.1:24688
+2021-11-08 11:07:02,344 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x356ee5ab, L:/127.0.0.1:9572 - R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:02,347 [myid:] - WARN  [nioEventLoopGroup-7-4:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0x728c302b, L:/127.0.0.1:24688 - R:/127.0.0.1:9572]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:02,348 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x356ee5ab, L:/127.0.0.1:9572 ! R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:02,348 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:02,348 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/127.0.0.1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:03,441 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:24688.
+2021-11-08 11:07:03,442 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:03,444 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0xfc5b27d8]
+2021-11-08 11:07:03,445 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /0:0:0:0:0:0:0:1:9583, server: localhost/0:0:0:0:0:0:0:1:24688
+2021-11-08 11:07:03,445 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0xfc5b27d8, L:/0:0:0:0:0:0:0:1:9583 - R:localhost/0:0:0:0:0:0:0:1:24688]
+2021-11-08 11:07:03,467 [myid:] - WARN  [nioEventLoopGroup-7-5:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0x8722bec2, L:/0:0:0:0:0:0:0:1:24688 - R:/0:0:0:0:0:0:0:1:9583]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:03,468 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0xfc5b27d8, L:/0:0:0:0:0:0:0:1:9583 ! R:localhost/0:0:0:0:0:0:0:1:24688]
+2021-11-08 11:07:03,468 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:03,468 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/0:0:0:0:0:0:0:1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:04,809 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/127.0.0.1:24688.
+2021-11-08 11:07:04,809 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:04,811 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x61f98629]
+2021-11-08 11:07:04,811 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /127.0.0.1:9597, server: localhost/127.0.0.1:24688
+2021-11-08 11:07:04,812 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x61f98629, L:/127.0.0.1:9597 - R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:04,812 [myid:] - WARN  [nioEventLoopGroup-7-6:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0x1c5db939, L:/127.0.0.1:24688 - R:/127.0.0.1:9597]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:04,813 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x61f98629, L:/127.0.0.1:9597 ! R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:04,813 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:04,813 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/127.0.0.1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:06,319 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:24688.
+2021-11-08 11:07:06,319 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:06,321 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x52399532]
+2021-11-08 11:07:06,321 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /0:0:0:0:0:0:0:1:9614, server: localhost/0:0:0:0:0:0:0:1:24688
+2021-11-08 11:07:06,321 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x52399532, L:/0:0:0:0:0:0:0:1:9614 - R:localhost/0:0:0:0:0:0:0:1:24688]
+2021-11-08 11:07:06,323 [myid:] - WARN  [nioEventLoopGroup-7-7:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0x15603736, L:/0:0:0:0:0:0:0:1:24688 - R:/0:0:0:0:0:0:0:1:9614]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:06,324 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x52399532, L:/0:0:0:0:0:0:0:1:9614 ! R:localhost/0:0:0:0:0:0:0:1:24688]
+2021-11-08 11:07:06,324 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:06,324 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/0:0:0:0:0:0:0:1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:07,852 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/127.0.0.1:24688.
+2021-11-08 11:07:07,852 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:07,854 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0xd96e51c2]
+2021-11-08 11:07:07,854 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /127.0.0.1:9655, server: localhost/127.0.0.1:24688
+2021-11-08 11:07:07,854 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0xd96e51c2, L:/127.0.0.1:9655 - R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:07,855 [myid:] - WARN  [nioEventLoopGroup-7-8:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0x354bd466, L:/127.0.0.1:24688 - R:/127.0.0.1:9655]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:07,856 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0xd96e51c2, L:/127.0.0.1:9655 ! R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:07,856 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:07,856 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1290] - Session 0x0 for sever localhost/127.0.0.1:24688, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:09,398 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1171] - Opening socket connection to server localhost/127.0.0.1:24688.
+2021-11-08 11:07:09,398 [myid:localhost:24688] - INFO  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1173] - SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2021-11-08 11:07:09,400 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientPipelineFactory@454] - SSL handler added for channel: [id: 0x9ea4a4c1]
+2021-11-08 11:07:09,400 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxn$SendThread@1005] - Socket connection established, initiating session, client: /127.0.0.1:9667, server: localhost/127.0.0.1:24688
+2021-11-08 11:07:09,401 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$1@184] - channel is connected: [id: 0x9ea4a4c1, L:/127.0.0.1:9667 - R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:09,402 [myid:] - WARN  [nioEventLoopGroup-7-9:ChannelInitializer@97] - Failed to initialize a channel. Closing: [id: 0x2f067751, L:/127.0.0.1:24688 - R:/127.0.0.1:9667]
+java.lang.IllegalArgumentException: Cannot support TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 with currently installed providers
+	at sun.security.ssl.CipherSuiteList.<init>(CipherSuiteList.java:92)
+	at sun.security.ssl.SSLEngineImpl.setEnabledCipherSuites(SSLEngineImpl.java:2038)
+	at io.netty.handler.ssl.JdkSslContext.configureAndWrapEngine(JdkSslContext.java:341)
+	at io.netty.handler.ssl.JdkSslContext.newEngine(JdkSslContext.java:331)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:956)
+	at io.netty.handler.ssl.SslContext.newHandler(SslContext.java:948)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.initSSL(NettyServerCnxnFactory.java:575)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory.access$1300(NettyServerCnxnFactory.java:80)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:540)
+	at org.apache.zookeeper.server.NettyServerCnxnFactory$1.initChannel(NettyServerCnxnFactory.java:532)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1115)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:650)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:502)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:417)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:474)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+2021-11-08 11:07:09,402 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty$ZKClientHandler@469] - channel is disconnected: [id: 0x9ea4a4c1, L:/127.0.0.1:9667 ! R:localhost/127.0.0.1:24688]
+2021-11-08 11:07:09,403 [myid:localhost:24688] - INFO  [nioEventLoopGroup-8-1:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:09,403 [myid:localhost:24688] - WARN  [main-SendThread(localhost:24688):ClientCnxn$SendThread@1284] - An exception was thrown while closing send thread for session 0x0.
+EndOfStreamException: channel for sessionid 0x0 is lost
+	at org.apache.zookeeper.ClientCnxnSocketNetty.doTransport(ClientCnxnSocketNetty.java:285)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1280)
+2021-11-08 11:07:09,405 [myid:] - INFO  [main:ClientCnxnSocketNetty@249] - channel is told closing
+2021-11-08 11:07:09,407 [myid:] - INFO  [main:ZooKeeper@1232] - Session: 0x0 closed
+2021-11-08 11:07:09,408 [myid:] - INFO  [main:ZooKeeperServerEmbeddedImpl@153] - Stopping ZK Server
+2021-11-08 11:07:09,408 [myid:] - INFO  [main-EventThread:ClientCnxn$EventThread@570] - EventThread shut down for session: 0x0
+2021-11-08 11:07:09,411 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@647] - shutdown called /0:0:0:0:0:0:0:0:24687
+2021-11-08 11:07:09,415 [myid:] - INFO  [zkservermainrunner:ZooKeeperServer@829] - shutting down
+2021-11-08 11:07:09,415 [myid:] - INFO  [zkservermainrunner:RequestThrottler@258] - Shutting down
+2021-11-08 11:07:09,416 [myid:] - INFO  [RequestThrottler:RequestThrottler@219] - Draining request throttler queue
+2021-11-08 11:07:09,416 [myid:] - INFO  [RequestThrottler:RequestThrottler@195] - RequestThrottler shutdown. Dropped 0 requests
+2021-11-08 11:07:09,421 [myid:] - INFO  [zkservermainrunner:SessionTrackerImpl@252] - Shutting down
+2021-11-08 11:07:09,421 [myid:] - INFO  [zkservermainrunner:PrepRequestProcessor@1066] - Shutting down
+2021-11-08 11:07:09,422 [myid:] - INFO  [zkservermainrunner:SyncRequestProcessor@255] - Shutting down
+2021-11-08 11:07:09,422 [myid:] - INFO  [ProcessThread(sid:0 cport:24687)::PrepRequestProcessor@161] - PrepRequestProcessor exited loop!
+2021-11-08 11:07:09,422 [myid:] - INFO  [SyncThread:0:SyncRequestProcessor@224] - SyncRequestProcessor exited!
+2021-11-08 11:07:09,422 [myid:] - INFO  [zkservermainrunner:FinalRequestProcessor@684] - shutdown of request processor complete
+2021-11-08 11:07:09,423 [myid:] - INFO  [zkservermainrunner:NettyServerCnxnFactory@647] - shutdown called /0:0:0:0:0:0:0:0:24688
+2021-11-08 11:07:09,423 [myid:] - INFO  [zkservermainrunner:ZooKeeperServerEmbeddedImpl$2@134] - ZK server died. Requesting stop on JVM

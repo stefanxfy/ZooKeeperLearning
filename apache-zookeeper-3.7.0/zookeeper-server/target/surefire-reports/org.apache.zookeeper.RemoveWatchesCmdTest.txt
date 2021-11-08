@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.RemoveWatchesCmdTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 51.923 s <<< FAILURE! - in org.apache.zookeeper.RemoveWatchesCmdTest
+testRemoveNodeDeletedWatches  Time elapsed: 13.529 s  <<< ERROR!
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /testnode1/testnode2
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:102)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:54)
+	at org.apache.zookeeper.ZooKeeper.delete(ZooKeeper.java:1614)
+	at org.apache.zookeeper.RemoveWatchesCmdTest.testRemoveNodeDeletedWatches(RemoveWatchesCmdTest.java:209)
+

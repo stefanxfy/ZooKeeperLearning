@@ -1,0 +1,8 @@
+2021-11-08 11:21:41,816 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.KeeperStateTest.testDeprecatedCodeOkInSwitch()]
+2021-11-08 11:21:41,826 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.KeeperStateTest.testDeprecatedCodeOkInSwitch()]
+2021-11-08 11:21:41,831 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.KeeperStateTest.testCodeOKInSwitch()]
+2021-11-08 11:21:41,835 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.KeeperStateTest.testCodeOKInSwitch()]
+2021-11-08 11:21:41,836 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.KeeperStateTest.testIntConversion()]
+2021-11-08 11:21:41,839 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.KeeperStateTest.testIntConversion()]
+2021-11-08 11:21:41,840 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.KeeperStateTest.testInvalidIntConversion()]
+2021-11-08 11:21:41,841 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.KeeperStateTest.testInvalidIntConversion()]

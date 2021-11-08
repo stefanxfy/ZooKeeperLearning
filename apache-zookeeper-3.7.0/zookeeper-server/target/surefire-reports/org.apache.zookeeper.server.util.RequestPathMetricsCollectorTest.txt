@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.util.RequestPathMetricsCollectorTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 56.823 s <<< FAILURE! - in org.apache.zookeeper.server.util.RequestPathMetricsCollectorTest
+testMultiThreadPerf  Time elapsed: 3.642 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.apache.zookeeper.server.util.RequestPathMetricsCollectorTest.testMultiThreadPerf(RequestPathMetricsCollectorTest.java:448)
+

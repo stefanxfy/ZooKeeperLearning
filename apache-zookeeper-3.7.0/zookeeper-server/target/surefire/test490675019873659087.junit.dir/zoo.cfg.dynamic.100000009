@@ -1,0 +1,3 @@
+server.0=localhost:11223:11224:participant;localhost:11222
+server.1=localhost:11226:11227:participant;localhost:11225
+server.2=localhost:11229:11230:participant;localhost:11228

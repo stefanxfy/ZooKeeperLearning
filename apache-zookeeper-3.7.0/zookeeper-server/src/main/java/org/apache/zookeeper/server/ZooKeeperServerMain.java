@@ -102,7 +102,7 @@ public class ZooKeeperServerMain {
         } catch (JMException e) {
             LOG.warn("Unable to register log4j JMX control", e);
         }
-
+        args = new String[]{"D:\\mysoft\\faiscoGit\\myStudy\\ZooKeeperLearning\\apache-zookeeper-3.7.0\\conf\\zoo_sample.cfg"};
         ServerConfig config = new ServerConfig();
         if (args.length == 1) {
             config.parse(args[0]);

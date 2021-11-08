@@ -1,0 +1,13 @@
+2021-11-08 11:05:54,092 [myid:] - INFO  [main:PortAssignment@154] - Test process 1/8 using ports from 11221 - 13913.
+2021-11-08 11:05:54,109 [myid:] - INFO  [main:PortAssignment@154] - Test process 2/8 using ports from 13914 - 16606.
+2021-11-08 11:05:54,111 [myid:] - INFO  [main:PortAssignment@154] - Test process 3/8 using ports from 16607 - 19299.
+2021-11-08 11:05:54,113 [myid:] - INFO  [main:PortAssignment@154] - Test process 4/8 using ports from 19300 - 21992.
+2021-11-08 11:05:54,115 [myid:] - INFO  [main:PortAssignment@154] - Test process 5/8 using ports from 21993 - 24685.
+2021-11-08 11:05:54,118 [myid:] - INFO  [main:PortAssignment@154] - Test process 6/8 using ports from 24686 - 27378.
+2021-11-08 11:05:54,120 [myid:] - INFO  [main:PortAssignment@154] - Test process 7/8 using ports from 27379 - 30071.
+2021-11-08 11:05:54,122 [myid:] - INFO  [main:PortAssignment@154] - Test process 8/8 using ports from 30072 - 32764.
+2021-11-08 11:05:54,124 [myid:] - INFO  [main:PortAssignment@159] - Single test process using ports from 11221 - 32767.
+2021-11-08 11:05:54,126 [myid:] - INFO  [main:PortAssignment@154] - Test process 1/2 using ports from 11221 - 21993.
+2021-11-08 11:05:54,127 [myid:] - INFO  [main:PortAssignment@154] - Test process 2/2 using ports from 21994 - 32766.
+2021-11-08 11:05:54,129 [myid:] - INFO  [main:PortAssignment@159] - Single test process using ports from 11221 - 32767.
+2021-11-08 11:05:54,130 [myid:] - INFO  [main:PortAssignment@159] - Single test process using ports from 11221 - 32767.

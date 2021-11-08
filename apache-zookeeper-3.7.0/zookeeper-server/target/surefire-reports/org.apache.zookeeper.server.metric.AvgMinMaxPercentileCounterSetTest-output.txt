@@ -1,0 +1,4 @@
+2021-11-08 11:07:02,235 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.metric.AvgMinMaxPercentileCounterSetTest.testReset()]
+2021-11-08 11:07:02,255 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.metric.AvgMinMaxPercentileCounterSetTest.testReset()]
+2021-11-08 11:07:02,261 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.metric.AvgMinMaxPercentileCounterSetTest.testValues()]
+2021-11-08 11:07:02,265 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.metric.AvgMinMaxPercentileCounterSetTest.testValues()]

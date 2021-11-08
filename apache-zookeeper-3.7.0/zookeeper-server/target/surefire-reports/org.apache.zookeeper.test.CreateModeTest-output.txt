@@ -1,0 +1,8 @@
+2021-11-08 11:19:18,156 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.CreateModeTest.testBasicCreateMode()]
+2021-11-08 11:19:18,168 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.CreateModeTest.testBasicCreateMode()]
+2021-11-08 11:19:18,174 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.CreateModeTest.testInvalidFlagConversion() throws org.apache.zookeeper.KeeperException]
+2021-11-08 11:19:18,174 [myid:] - ERROR [main:CreateMode@137] - Received an invalid flag value: 99 to convert to a CreateMode
+2021-11-08 11:19:18,182 [myid:] - ERROR [main:CreateMode@137] - Received an invalid flag value: -1 to convert to a CreateMode
+2021-11-08 11:19:18,182 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.CreateModeTest.testInvalidFlagConversion() throws org.apache.zookeeper.KeeperException]
+2021-11-08 11:19:18,184 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.test.CreateModeTest.testFlagConversion() throws org.apache.zookeeper.KeeperException]
+2021-11-08 11:19:18,184 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.test.CreateModeTest.testFlagConversion() throws org.apache.zookeeper.KeeperException]

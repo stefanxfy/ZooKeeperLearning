@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.server.quorum.EagerACLFilterTest
+-------------------------------------------------------------------------------
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 763.084 s - in org.apache.zookeeper.server.quorum.EagerACLFilterTest

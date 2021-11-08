@@ -1,0 +1,40 @@
+2021-11-08 11:14:12,171 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testDeadWatchers(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:12,217 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:14:14,973 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testDeadWatchers(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:14,981 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testDeadWatchers(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:14,985 [myid:] - INFO  [main:WatcherCleaner@86] - watcherCleanThreshold=10, watcherCleanIntervalInSeconds=1, watcherCleanThreadsNum=2, maxInProcessingDeadWatchers=-1
+2021-11-08 11:14:14,986 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManagerOptimized as watch manager
+2021-11-08 11:14:15,086 [myid:] - INFO  [Thread-11:WatcherCleaner@157] - Processing 10 dead watchers
+2021-11-08 11:14:15,094 [myid:] - INFO  [DeadWatcherCleannerThread-1:WatcherCleaner$1@164] - Takes 0 to process 10 watches
+2021-11-08 11:14:15,106 [myid:] - INFO  [Thread-11:WatcherCleaner@157] - Processing 11 dead watchers
+2021-11-08 11:14:15,107 [myid:] - INFO  [DeadWatcherCleannerThread-2:WatcherCleaner$1@164] - Takes 0 to process 11 watches
+2021-11-08 11:14:15,139 [myid:] - INFO  [Thread-11:WatcherCleaner@157] - Processing 10 dead watchers
+2021-11-08 11:14:15,140 [myid:] - INFO  [DeadWatcherCleannerThread-1:WatcherCleaner$1@164] - Takes 1 to process 10 watches
+2021-11-08 11:14:15,169 [myid:] - INFO  [Thread-11:WatcherCleaner@157] - Processing 10 dead watchers
+2021-11-08 11:14:15,170 [myid:] - INFO  [DeadWatcherCleannerThread-2:WatcherCleaner$1@164] - Takes 0 to process 10 watches
+2021-11-08 11:14:15,189 [myid:] - INFO  [Thread-11:WatcherCleaner@157] - Processing 10 dead watchers
+2021-11-08 11:14:15,189 [myid:] - INFO  [DeadWatcherCleannerThread-1:WatcherCleaner$1@164] - Takes 0 to process 10 watches
+2021-11-08 11:14:16,190 [myid:] - INFO  [Thread-11:WatcherCleaner@157] - Processing 2 dead watchers
+2021-11-08 11:14:16,190 [myid:] - INFO  [DeadWatcherCleannerThread-2:WatcherCleaner$1@164] - Takes 0 to process 2 watches
+2021-11-08 11:14:17,368 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testDeadWatchers(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:17,371 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testRemoveWatcherOnPath(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:17,372 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:14:18,279 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testRemoveWatcherOnPath(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:18,281 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testRemoveWatcherOnPath(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:18,282 [myid:] - INFO  [main:WatcherCleaner@86] - watcherCleanThreshold=10, watcherCleanIntervalInSeconds=1, watcherCleanThreadsNum=2, maxInProcessingDeadWatchers=-1
+2021-11-08 11:14:18,282 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManagerOptimized as watch manager
+2021-11-08 11:14:19,102 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testRemoveWatcherOnPath(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,105 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testWatcherMetrics(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,107 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:14:19,118 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testWatcherMetrics(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,119 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testWatcherMetrics(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,120 [myid:] - INFO  [main:WatcherCleaner@86] - watcherCleanThreshold=10, watcherCleanIntervalInSeconds=1, watcherCleanThreadsNum=2, maxInProcessingDeadWatchers=-1
+2021-11-08 11:14:19,120 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManagerOptimized as watch manager
+2021-11-08 11:14:19,123 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testWatcherMetrics(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,126 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testAddAndTriggerWatcher(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,127 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+2021-11-08 11:14:19,733 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testAddAndTriggerWatcher(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,735 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testAddAndTriggerWatcher(java.lang.String) throws java.io.IOException]
+2021-11-08 11:14:19,736 [myid:] - INFO  [main:WatcherCleaner@86] - watcherCleanThreshold=10, watcherCleanIntervalInSeconds=1, watcherCleanThreadsNum=2, maxInProcessingDeadWatchers=-1
+2021-11-08 11:14:19,736 [myid:] - INFO  [main:WatchManagerFactory@42] - Using org.apache.zookeeper.server.watch.WatchManagerOptimized as watch manager
+2021-11-08 11:14:20,494 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchManagerTest.testAddAndTriggerWatcher(java.lang.String) throws java.io.IOException]

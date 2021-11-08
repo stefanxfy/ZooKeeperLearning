@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.test.FollowerResyncConcurrencyTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 232.512 s - in org.apache.zookeeper.test.FollowerResyncConcurrencyTest
