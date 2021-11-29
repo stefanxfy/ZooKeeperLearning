@@ -130,6 +130,7 @@ public final class StaticHostProvider implements HostProvider {
         if (serverAddresses.isEmpty()) {
             throw new IllegalArgumentException("A HostProvider may not be empty!");
         }
+        // 打乱 serverAddresses
         this.serverAddresses = shuffle(serverAddresses);
         currentIndex = -1;
         lastIndex = -1;
@@ -350,6 +351,10 @@ public final class StaticHostProvider implements HostProvider {
             if (currentIndex == serverAddresses.size()) {
                 currentIndex = 0;
             }
+            // 一个环，两个游标currentIndex、lastIndex
+            // currentIndex 当前选择的位置，lastIndex上次的位置，
+            // 每次 currentIndex+1，若currentIndex = serverAddresses.size,则置为0，因此形成一个环
+            // currentIndex = lastIndex，会睡眠 spinDelay
             addr = serverAddresses.get(currentIndex);
             needToSleep = needToSleep || (currentIndex == lastIndex && spinDelay > 0);
             if (lastIndex == -1) {

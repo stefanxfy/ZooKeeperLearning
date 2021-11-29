@@ -428,7 +428,7 @@ public class ClientCnxn {
         this.sessionId = sessionId;
         this.sessionPasswd = sessionPasswd;
         this.readOnly = canBeReadOnly;
-
+        // 初始化 watchManager、
         this.watchManager = new ZKWatchManager(
                 clientConfig.getBoolean(ZKClientConfig.DISABLE_AUTO_WATCH_RESET),
                 defaultWatcher);
@@ -436,6 +436,7 @@ public class ClientCnxn {
         this.connectTimeout = sessionTimeout / hostProvider.size();
         this.readTimeout = sessionTimeout * 2 / 3;
 
+        // 初始化 sendThread 和 eventThread
         this.sendThread = new SendThread(clientCnxnSocket);
         this.eventThread = new EventThread();
         initRequestTimeout();
@@ -1002,12 +1003,14 @@ public class ClientCnxn {
          * Setup session, previous watches, authentication.
          */
         void primeConnection() throws IOException {
+            // 建立连接之后，建立 session
             LOG.info(
                 "Socket connection established, initiating session, client: {}, server: {}",
                 clientCnxnSocket.getLocalSocketAddress(),
                 clientCnxnSocket.getRemoteSocketAddress());
             isFirstConnect = false;
             long sessId = (seenRwServerBefore) ? sessionId : 0;
+            // 构建 ConnectRequest
             ConnectRequest conReq = new ConnectRequest(0, lastZxid, sessionTimeout, sessId, sessionPasswd);
             // We add backwards since we are pushing into the front
             // Only send if there's a pending watch
@@ -1088,7 +1091,9 @@ public class ClientCnxn {
                         null,
                         null));
             }
+            // conReq --> Packet --> outgoingQueue
             outgoingQueue.addFirst(new Packet(null, null, conReq, null, null, readOnly));
+            // ClientCnxnSocketNIO 注册读写事件
             clientCnxnSocket.connectionPrimed();
             LOG.debug("Session establishment request sent on {}", clientCnxnSocket.getRemoteSocketAddress());
         }
@@ -1194,6 +1199,7 @@ public class ClientCnxn {
                             serverAddress = rwServerAddress;
                             rwServerAddress = null;
                         } else {
+                            // 从 hostProvider 挑一个 地址 serverAddress
                             serverAddress = hostProvider.next(1000);
                         }
                         onConnecting(serverAddress);
@@ -1677,6 +1683,7 @@ public class ClientCnxn {
                 outgoingQueue.add(packet);
             }
         }
+        // 唤醒 sendThread线程
         sendThread.getClientCnxnSocket().packetAdded();
         return packet;
     }

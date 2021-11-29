@@ -106,13 +106,13 @@ abstract class ClientCnxnSocket {
         this.lastHeard = now;
     }
 
-    void updateLastSend() {
-        this.lastSend = now;
-    }
-
     void updateLastSendAndHeard() {
         this.lastSend = now;
         this.lastHeard = now;
+    }
+
+    void updateLastSend() {
+        this.lastSend = now;
     }
 
     void readLength() throws IOException {

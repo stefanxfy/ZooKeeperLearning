@@ -642,6 +642,9 @@ public class ZooKeeper implements AutoCloseable {
 
         this.clientConfig = clientConfig != null ? clientConfig : new ZKClientConfig();
         this.hostProvider = hostProvider;
+        // 解析connectString，以英文逗号分隔，例如：127.0.0.1:2181,127.0.0.1:2182
+        // 也可以 127.0.0.1:2181,127.0.0.1:2182/chrootPath
+        // ip port 构建 InetSocketAddress list
         ConnectStringParser connectStringParser = new ConnectStringParser(connectString);
 
         cnxn = createConnection(
@@ -1035,6 +1038,9 @@ public class ZooKeeper implements AutoCloseable {
             (sessionPasswd == null ? "<null>" : "<hidden>"));
 
         this.clientConfig = clientConfig != null ? clientConfig : new ZKClientConfig();
+        // 解析connectString，以英文逗号分隔，例如：127.0.0.1:2181,127.0.0.1:2182
+        // 也可以 127.0.0.1:2181,127.0.0.1:2182/chrootPath
+        // ip port 构建 InetSocketAddress list
         ConnectStringParser connectStringParser = new ConnectStringParser(connectString);
         this.hostProvider = hostProvider;
 
@@ -1965,6 +1971,7 @@ public class ZooKeeper implements AutoCloseable {
         h.setType(ZooDefs.OpCode.getData);
         GetDataRequest request = new GetDataRequest();
         request.setPath(serverPath);
+        // 标记 request 是否 有监听
         request.setWatch(watcher != null);
         GetDataResponse response = new GetDataResponse();
         ReplyHeader r = cnxn.submitRequest(h, request, response, wcb);
@@ -3027,6 +3034,8 @@ public class ZooKeeper implements AutoCloseable {
     }
 
     private ClientCnxnSocket getClientCnxnSocket() throws IOException {
+        // 反射获取 ClientCnxnSocket，ClientCnxnSocketNetty or ClientCnxnSocketNIO，
+        // 默认 ClientCnxnSocketNIO
         String clientCnxnSocketName = getClientConfig().getProperty(ZKClientConfig.ZOOKEEPER_CLIENT_CNXN_SOCKET);
         if (clientCnxnSocketName == null) {
             clientCnxnSocketName = ClientCnxnSocketNIO.class.getName();
