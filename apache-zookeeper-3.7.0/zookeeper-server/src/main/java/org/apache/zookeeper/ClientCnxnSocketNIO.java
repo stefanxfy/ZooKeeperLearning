@@ -83,6 +83,8 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                     recvCount.getAndIncrement();
                     readLength();
                 } else if (!initialized) {
+                    // 如果尚未完成初始化，那么就认为该响应一定是会话创建请求的响应，
+                    // 直接交由readConnectResult方法来处理该响应。
                     readConnectResult();
                     enableRead();
                     if (findSendablePacket(outgoingQueue, sendThread.tunnelAuthInProgress()) != null) {

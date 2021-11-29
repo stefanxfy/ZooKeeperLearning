@@ -149,8 +149,8 @@ abstract class ClientCnxnSocket {
             // doesn't contain readOnly field
             LOG.warn("Connected to an old server; r-o mode will be unavailable");
         }
-
         this.sessionId = conRsp.getSessionId();
+        // session建立成功，生成一个SyncConnected事件
         sendThread.onConnected(conRsp.getTimeOut(), this.sessionId, conRsp.getPasswd(), isRO);
     }
 
