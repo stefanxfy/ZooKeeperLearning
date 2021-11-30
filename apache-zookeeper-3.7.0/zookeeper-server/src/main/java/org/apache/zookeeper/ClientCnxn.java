@@ -511,6 +511,7 @@ public class ClientCnxn {
             final Set<Watcher> watchers;
             if (materializedWatchers == null) {
                 // materialize the watchers based on the event
+                // 找到具体watchers时，还会删除，也是watcher是一次性的
                 watchers = watchManager.materialize(event.getState(), event.getType(), event.getPath());
             } else {
                 watchers = new HashSet<>(materializedWatchers);
@@ -549,6 +550,7 @@ public class ClientCnxn {
             try {
                 isRunning = true;
                 while (true) {
+                    // 从 waitingEvents 中阻塞拉取 event
                     Object event = waitingEvents.take();
                     if (event == eventOfDeath) {
                         wasKilled = true;
@@ -575,6 +577,7 @@ public class ClientCnxn {
             try {
                 if (event instanceof WatcherSetEventPair) {
                     // each watcher will process the event
+                    // 触发 watcher process
                     WatcherSetEventPair pair = (WatcherSetEventPair) event;
                     for (Watcher watcher : pair.watchers) {
                         try {
@@ -876,7 +879,7 @@ public class ClientCnxn {
             ByteBufferInputStream bbis = new ByteBufferInputStream(incomingBuffer);
             BinaryInputArchive bbia = BinaryInputArchive.getArchive(bbis);
             ReplyHeader replyHdr = new ReplyHeader();
-
+            // 解码
             replyHdr.deserialize(bbia, "header");
             switch (replyHdr.getXid()) {
             case PING_XID:
@@ -894,12 +897,15 @@ public class ClientCnxn {
                 }
               return;
             case NOTIFICATION_XID:
+                // 通知 响应
                 LOG.debug("Got notification session id: 0x{}",
                     Long.toHexString(sessionId));
+                // 解析 WatcherEvent
                 WatcherEvent event = new WatcherEvent();
                 event.deserialize(bbia, "response");
 
                 // convert from a server path to a client path
+                // 有chrootPath 转换
                 if (chrootPath != null) {
                     String serverPath = event.getPath();
                     if (serverPath.compareTo(chrootPath) == 0) {
@@ -911,9 +917,10 @@ public class ClientCnxn {
                              event.getPath(), chrootPath);
                      }
                 }
-
+                // WatcherEvent --> WatchedEvent
                 WatchedEvent we = new WatchedEvent(event);
                 LOG.debug("Got {} for session id 0x{}", we, Long.toHexString(sessionId));
+                // WatchedEvent交给 eventThread
                 eventThread.queueEvent(we);
                 return;
             default:
@@ -942,6 +949,7 @@ public class ClientCnxn {
              * to the first request!
              */
             try {
+                // 必须按顺序响应 处理
                 if (packet.requestHeader.getXid() != replyHdr.getXid()) {
                     packet.replyHeader.setErr(KeeperException.Code.CONNECTIONLOSS.intValue());
                     throw new IOException("Xid out of order. Got Xid " + replyHdr.getXid()
@@ -1256,10 +1264,13 @@ public class ClientCnxn {
                     if (state.isConnected()) {
                         //1000(1 second) is to prevent race condition missing to send the second ping
                         //also make sure not to send too many pings when readTimeout is small
+                        // readTimeout = sessionTimeout * 2 / 3
+                        // getIdleSend 距离上次发送时长
                         int timeToNextPing = readTimeout / 2
                                              - clientCnxnSocket.getIdleSend()
                                              - ((clientCnxnSocket.getIdleSend() > 1000) ? 1000 : 0);
                         //send a ping request either time is due or no packet sent out within MAX_SEND_PING_INTERVAL
+                        // 定时发送 ping，维持长链接，至少 timeToNextPing= readTimeout / 2 - 1000
                         if (timeToNextPing <= 0 || clientCnxnSocket.getIdleSend() > MAX_SEND_PING_INTERVAL) {
                             sendPing();
                             clientCnxnSocket.updateLastSend();

@@ -71,6 +71,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
             throw new IOException("Socket is null!");
         }
         if (sockKey.isReadable()) {
+            // 读取 响应数据 至 incomingBuffer
             int rc = sock.read(incomingBuffer);
             if (rc < 0) {
                 throw new EndOfStreamException("Unable to read additional data from server sessionid 0x"
@@ -78,6 +79,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                                                + ", likely server has closed socket");
             }
             if (!incomingBuffer.hasRemaining()) {
+                // 切换 读 incomingBuffer
                 incomingBuffer.flip();
                 if (incomingBuffer == lenBuffer) {
                     recvCount.getAndIncrement();
@@ -97,6 +99,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                     updateLastHeard();
                     initialized = true;
                 } else {
+                    // 响应 + 回调
                     sendThread.readResponse(incomingBuffer);
                     lenBuffer.clear();
                     incomingBuffer = lenBuffer;
@@ -116,8 +119,10 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                         && (p.requestHeader.getType() != OpCode.auth)) {
                         p.requestHeader.setXid(cnxn.getXid());
                     }
+                    // 编码
                     p.createBB();
                 }
+                // 写
                 sock.write(p.bb);
                 if (!p.bb.hasRemaining()) {
                     sentCount.getAndIncrement();
@@ -151,6 +156,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                 disableWrite();
             } else {
                 // Just in case
+                // 没有写完 ，继续注册写
                 enableWrite();
             }
         }
@@ -350,6 +356,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                 if (sc.finishConnect()) {
                     updateLastSendAndHeard();
                     updateSocketAddresses();
+                    // 连接建立之后，开始建立session
                     sendThread.primeConnection();
                 }
             } else if ((k.readyOps() & (SelectionKey.OP_READ | SelectionKey.OP_WRITE)) != 0) {
