@@ -57,7 +57,6 @@ public class SaslServerPrincipal {
             ZKClientConfig.ZK_SASL_CLIENT_USERNAME,
             ZKClientConfig.ZK_SASL_CLIENT_USERNAME_DEFAULT);
         String hostName = addr.getHostName();
-
         boolean canonicalize = true;
         String canonicalizeText = clientConfig.getProperty(
             ZKClientConfig.ZK_SASL_CLIENT_CANONICALIZE_HOSTNAME,

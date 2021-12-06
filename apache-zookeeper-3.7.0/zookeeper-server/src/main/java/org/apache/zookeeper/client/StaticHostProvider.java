@@ -139,7 +139,8 @@ public final class StaticHostProvider implements HostProvider {
     private InetSocketAddress resolve(InetSocketAddress address) {
         try {
             String curHostString = address.getHostString();
-            List<InetAddress> resolvedAddresses = new ArrayList<>(Arrays.asList(this.resolver.getAllByName(curHostString)));
+            InetAddress[] inetAddresses = this.resolver.getAllByName(curHostString);
+            List<InetAddress> resolvedAddresses = new ArrayList<>(Arrays.asList(inetAddresses));
             if (resolvedAddresses.isEmpty()) {
                 return address;
             }

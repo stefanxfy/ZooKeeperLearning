@@ -190,7 +190,7 @@ public class QuorumPeerConfig {
 
             /* Read entire config file as initial configuration */
             initialConfig = new String(Files.readAllBytes(configFile.toPath()));
-
+            // 详细解析 zoo.cfg
             parseProperties(cfg);
         } catch (IOException e) {
             throw new ConfigException("Error processing " + path, e);

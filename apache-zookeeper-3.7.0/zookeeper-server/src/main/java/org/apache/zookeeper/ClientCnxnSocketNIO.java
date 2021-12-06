@@ -28,6 +28,7 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.nio.channels.UnresolvedAddressException;
 import java.nio.channels.UnsupportedAddressTypeException;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.Set;
@@ -71,6 +72,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
             throw new IOException("Socket is null!");
         }
         if (sockKey.isReadable()) {
+            // 每次请求分2次读，第一次读len，第二次读请求 session
             // 读取 响应数据 至 incomingBuffer
             int rc = sock.read(incomingBuffer);
             if (rc < 0) {
@@ -79,16 +81,20 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                                                + ", likely server has closed socket");
             }
             if (!incomingBuffer.hasRemaining()) {
-                // 切换 读 incomingBuffer
                 incomingBuffer.flip();
                 if (incomingBuffer == lenBuffer) {
+                    // java.nio.DirectByteBuffer[pos=0 lim=4 cap=4]
+                    LOG.info("Readable len, incomingBuffer={}", incomingBuffer.toString());
                     recvCount.getAndIncrement();
                     readLength();
                 } else if (!initialized) {
                     // 如果尚未完成初始化，那么就认为该响应一定是会话创建请求的响应，
                     // 直接交由readConnectResult方法来处理该响应。
+                    // java.nio.HeapByteBuffer[pos=0 lim=37 cap=37]
+                    LOG.info("Readable not initialized, incomingBuffer={}", incomingBuffer.toString());
                     readConnectResult();
                     enableRead();
+
                     if (findSendablePacket(outgoingQueue, sendThread.tunnelAuthInProgress()) != null) {
                         // Since SASL authentication has completed (if client is configured to do so),
                         // outgoing packets waiting in the outgoingQueue can now be sent.
@@ -100,6 +106,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                     initialized = true;
                 } else {
                     // 响应 + 回调
+                    LOG.info("Readable readResponse, incomingBuffer={}", incomingBuffer.toString());
                     sendThread.readResponse(incomingBuffer);
                     lenBuffer.clear();
                     incomingBuffer = lenBuffer;
@@ -109,7 +116,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
         }
         if (sockKey.isWritable()) {
             Packet p = findSendablePacket(outgoingQueue, sendThread.tunnelAuthInProgress());
-
+            LOG.info("Writable, Packet={}", p.toString());
             if (p != null) {
                 updateLastSend();
                 // If we already started writing p, p.bb will already exist
@@ -125,6 +132,8 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                 // 写
                 sock.write(p.bb);
                 if (!p.bb.hasRemaining()) {
+                    // 如果还有剩余没有发完，再次接着发送，
+                    // 发送完了，就从队列中删除，并加到pendingQueue，等待响应
                     sentCount.getAndIncrement();
                     outgoingQueue.removeFirstOccurrence(p);
                     if (p.requestHeader != null
@@ -168,6 +177,7 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
         }
         // If we've already starting sending the first packet, we better finish
         if (outgoingQueue.getFirst().bb != null || !tunneledAuthInProgres) {
+            // 如果 第一个包已经在发送了，即已编码  or 已经认证（无论失败或者成功）
             return outgoingQueue.getFirst();
         }
         // Since client's authentication with server is in progress,
@@ -346,6 +356,12 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
         synchronized (this) {
             selected = selector.selectedKeys();
         }
+        LOG.info("doTransport, selected={}", selected);
+        for (SelectionKey selectionKey : selected) {
+            LOG.info("selectionKey,OP_CONNECT={},OP_READ={},OP_WRITE={}", (selectionKey.readyOps() & SelectionKey.OP_CONNECT) != 0,
+                    (selectionKey.readyOps() & SelectionKey.OP_READ) != 0, (selectionKey.readyOps() & SelectionKey.OP_WRITE) != 0);
+        }
+
         // Everything below and until we get back to the select is
         // non blocking, so time is effectively a constant. That is
         // Why we just have to do this once, here

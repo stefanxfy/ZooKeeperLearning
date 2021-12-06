@@ -88,6 +88,7 @@ public class QuorumPeerMain {
     public static void main(String[] args) {
         QuorumPeerMain main = new QuorumPeerMain();
         try {
+            // 解析参数
             main.initializeAndRun(args);
         } catch (IllegalArgumentException e) {
             LOG.error("Invalid arguments, exiting abnormally", e);
@@ -124,10 +125,12 @@ public class QuorumPeerMain {
         QuorumPeerConfig config = new QuorumPeerConfig();
 //        args = new String[]{"D:\\mysoft\\faiscoGit\\myStudy\\ZooKeeperLearning\\conf\\zoo_1.cfg"};
         if (args.length == 1) {
+            // 解析zoo.cfg
             config.parse(args[0]);
         }
 
         // Start and schedule the the purge task
+        // 创建并启动历史文件清理器 DatadirCleanupManager
         DatadirCleanupManager purgeMgr = new DatadirCleanupManager(
             config.getDataDir(),
             config.getDataLogDir(),
@@ -227,7 +230,7 @@ public class QuorumPeerMain {
             if (config.jvmPauseMonitorToRun) {
                 quorumPeer.setJvmPauseMonitor(new JvmPauseMonitor(config));
             }
-
+            // 启动
             quorumPeer.start();
             ZKAuditProvider.addZKStartStopAuditLog();
             quorumPeer.join();

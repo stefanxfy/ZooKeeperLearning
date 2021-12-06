@@ -28,16 +28,8 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Queue;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -433,6 +425,7 @@ public class ClientCnxn {
                 clientConfig.getBoolean(ZKClientConfig.DISABLE_AUTO_WATCH_RESET),
                 defaultWatcher);
 
+        // 如果sessionTimeout=30000，ipport是3个， connectTimeout=10000，readTimeout=20000
         this.connectTimeout = sessionTimeout / hostProvider.size();
         this.readTimeout = sessionTimeout * 2 / 3;
 
@@ -883,6 +876,7 @@ public class ClientCnxn {
             replyHdr.deserialize(bbia, "header");
             switch (replyHdr.getXid()) {
             case PING_XID:
+                // java.nio.HeapByteBuffer[pos=0 lim=16 cap=16]
                 LOG.debug("Got ping response for session id: 0x{} after {}ms.",
                     Long.toHexString(sessionId),
                     ((System.nanoTime() - lastPingSentNs) / 1000000));
@@ -1125,7 +1119,9 @@ public class ClientCnxn {
 
         private void sendPing() {
             lastPingSentNs = System.nanoTime();
+            // xid = -2 , type = 11
             RequestHeader h = new RequestHeader(ClientCnxn.PING_XID, OpCode.ping);
+            System.out.println(new Date() + "------------------sendPing=" + h.toString());
             queuePacket(h, null, null, null, null, null, null, null, null);
         }
 
@@ -1156,12 +1152,14 @@ public class ClientCnxn {
             String hostPort = addr.getHostString() + ":" + addr.getPort();
             MDC.put("myid", hostPort);
             setName(getName().replaceAll("\\(.*\\)", "(" + hostPort + ")"));
+            // 默认开启 sasl 认证
             if (clientConfig.isSaslClientEnabled()) {
                 try {
                     if (zooKeeperSaslClient != null) {
                         zooKeeperSaslClient.shutdown();
                     }
-                    zooKeeperSaslClient = new ZooKeeperSaslClient(SaslServerPrincipal.getServerPrincipal(addr, clientConfig), clientConfig);
+                    String serverPrincipal = SaslServerPrincipal.getServerPrincipal(addr, clientConfig);
+                    zooKeeperSaslClient = new ZooKeeperSaslClient(serverPrincipal, clientConfig);
                 } catch (LoginException e) {
                     // An authentication error occurred when the SASL client tried to initialize:
                     // for Kerberos this means that the client failed to authenticate with the KDC.
@@ -1270,7 +1268,8 @@ public class ClientCnxn {
                                              - clientCnxnSocket.getIdleSend()
                                              - ((clientCnxnSocket.getIdleSend() > 1000) ? 1000 : 0);
                         //send a ping request either time is due or no packet sent out within MAX_SEND_PING_INTERVAL
-                        // 定时发送 ping，维持长链接，至少 timeToNextPing= readTimeout / 2 - 1000
+                        // 定时发送 ping，维持长链接，readTimeout/2
+                        System.out.println(new Date() + "readTimeout=" +readTimeout+ ", timeToNextPing=" + timeToNextPing + ", to=" + to);
                         if (timeToNextPing <= 0 || clientCnxnSocket.getIdleSend() > MAX_SEND_PING_INTERVAL) {
                             sendPing();
                             clientCnxnSocket.updateLastSend();
@@ -1293,7 +1292,7 @@ public class ClientCnxn {
                         }
                         to = Math.min(to, pingRwTimeout - idlePingRwServer);
                     }
-
+                    System.out.println(new Date() + "to=" + to);
                     clientCnxnSocket.doTransport(to, pendingQueue, ClientCnxn.this);
                 } catch (Throwable e) {
                     if (closing) {
@@ -1427,6 +1426,7 @@ public class ClientCnxn {
             long _sessionId,
             byte[] _sessionPasswd,
             boolean isRO) throws IOException {
+            // negotiatedSessionTimeout 最新4000
             negotiatedSessionTimeout = _negotiatedSessionTimeout;
             if (negotiatedSessionTimeout <= 0) {
                 changeZkState(States.CLOSED);
