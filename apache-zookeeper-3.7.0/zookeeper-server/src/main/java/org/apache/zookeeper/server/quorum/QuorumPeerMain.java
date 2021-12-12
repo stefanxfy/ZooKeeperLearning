@@ -149,6 +149,7 @@ public class QuorumPeerMain {
 
     public void runFromConfig(QuorumPeerConfig config) throws IOException, AdminServerException {
         try {
+            // todo MBeanServer研究
             ManagedUtil.registerLog4jMBeans();
         } catch (JMException e) {
             LOG.warn("Unable to register log4j JMX control", e);
@@ -157,6 +158,7 @@ public class QuorumPeerMain {
         LOG.info("Starting quorum peer, myid=" + config.getServerId());
         final MetricsProvider metricsProvider;
         try {
+            // 反射 初始化 MetricsProvider，比如默认内置的PrometheusMetricsProvider
             metricsProvider = MetricsProviderBootstrap.startMetricsProvider(
                 config.getMetricsProviderClassName(),
                 config.getMetricsProviderConfiguration());
@@ -164,26 +166,30 @@ public class QuorumPeerMain {
             throw new IOException("Cannot boot MetricsProvider " + config.getMetricsProviderClassName(), error);
         }
         try {
+            // todo 如何收集指标并上报
             ServerMetrics.metricsProviderInitialized(metricsProvider);
             ProviderRegistry.initialize();
             ServerCnxnFactory cnxnFactory = null;
             ServerCnxnFactory secureCnxnFactory = null;
 
+            // 服务端提供客户端连接的端口以及监听 默认 NIOServerCnxnFactory
             if (config.getClientPortAddress() != null) {
                 cnxnFactory = ServerCnxnFactory.createFactory();
                 cnxnFactory.configure(config.getClientPortAddress(), config.getMaxClientCnxns(), config.getClientPortListenBacklog(), false);
             }
 
+            // 安全端口以及监听
             if (config.getSecureClientPortAddress() != null) {
                 secureCnxnFactory = ServerCnxnFactory.createFactory();
                 secureCnxnFactory.configure(config.getSecureClientPortAddress(), config.getMaxClientCnxns(), config.getClientPortListenBacklog(), true);
             }
-
+            // quorum protocol
             quorumPeer = getQuorumPeer();
+            // FileTxnSnapLog
             quorumPeer.setTxnFactory(new FileTxnSnapLog(config.getDataLogDir(), config.getDataDir()));
             quorumPeer.enableLocalSessions(config.areLocalSessionsEnabled());
             quorumPeer.enableLocalSessionsUpgrading(config.isLocalSessionsUpgradingEnabled());
-            //quorumPeer.setQuorumPeers(config.getAllMembers());
+//            quorumPeer.setQuorumPeers(config.getAllMembers());
             quorumPeer.setElectionType(config.getElectionAlg());
             quorumPeer.setMyid(config.getServerId());
             quorumPeer.setTickTime(config.getTickTime());
@@ -195,16 +201,21 @@ public class QuorumPeerMain {
             quorumPeer.setObserverMasterPort(config.getObserverMasterPort());
             quorumPeer.setConfigFileName(config.getConfigFilename());
             quorumPeer.setClientPortListenBacklog(config.getClientPortListenBacklog());
+            // ZKDatabase
             quorumPeer.setZKDatabase(new ZKDatabase(quorumPeer.getTxnFactory()));
             quorumPeer.setQuorumVerifier(config.getQuorumVerifier(), false);
             if (config.getLastSeenQuorumVerifier() != null) {
                 quorumPeer.setLastSeenQuorumVerifier(config.getLastSeenQuorumVerifier(), false);
             }
+            // initConfigInZKDatabase
             quorumPeer.initConfigInZKDatabase();
+            // set ServerCnxnFactory
             quorumPeer.setCnxnFactory(cnxnFactory);
             quorumPeer.setSecureCnxnFactory(secureCnxnFactory);
+
             quorumPeer.setSslQuorum(config.isSslQuorum());
             quorumPeer.setUsePortUnification(config.shouldUsePortUnification());
+            // setLearnerType, default PARTICIPANT, 还有 OBSERVER
             quorumPeer.setLearnerType(config.getPeerType());
             quorumPeer.setSyncEnabled(config.getSyncEnabled());
             quorumPeer.setQuorumListenOnAllIPs(config.getQuorumListenOnAllIPs());
@@ -230,9 +241,10 @@ public class QuorumPeerMain {
             if (config.jvmPauseMonitorToRun) {
                 quorumPeer.setJvmPauseMonitor(new JvmPauseMonitor(config));
             }
-            // 启动
+            // 启动 quorumPeer本身也是一个线程
             quorumPeer.start();
             ZKAuditProvider.addZKStartStopAuditLog();
+            // 阻塞
             quorumPeer.join();
         } catch (InterruptedException e) {
             // warn, but generally this is ok

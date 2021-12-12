@@ -68,6 +68,7 @@ public class WorkerService {
         this.threadNamePrefix = (name == null ? "" : name) + "Thread";
         this.numWorkerThreads = numThreads;
         this.threadsAreAssignable = useAssignableThreads;
+        // 分配线程池
         start();
     }
 
@@ -200,9 +201,11 @@ public class WorkerService {
         if (numWorkerThreads > 0) {
             if (threadsAreAssignable) {
                 for (int i = 1; i <= numWorkerThreads; ++i) {
+                    // 每个工作线程 一个线程池，且线程数为 1，TODO 应该为的是 隔离吧
                     workers.add(Executors.newFixedThreadPool(1, new DaemonThreadFactory(threadNamePrefix, i)));
                 }
             } else {
+                // 一个线程池即可
                 workers.add(Executors.newFixedThreadPool(numWorkerThreads, new DaemonThreadFactory(threadNamePrefix)));
             }
         }

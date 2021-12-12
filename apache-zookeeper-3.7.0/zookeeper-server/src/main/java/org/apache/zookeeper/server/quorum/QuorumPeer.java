@@ -1127,16 +1127,22 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
         if (!getView().containsKey(myid)) {
             throw new RuntimeException("My id " + myid + " not in the peer list");
         }
+        // 先恢复数据，TODO 如何恢复呢
         loadDataBase();
+        // NIOServerCnxnFactory 一个工作线程池workerPool、三个核心线程SelectorThread、acceptThread、expirerThread
         startServerCnxnFactory();
         try {
+            // 默认开启一个 jetty服务器
             adminServer.start();
         } catch (AdminServerException e) {
             LOG.warn("Problem starting AdminServer", e);
             System.out.println(e);
         }
+        // 开启leader选举（启动时）
         startLeaderElection();
+        // TODO 先不管是干嘛的
         startJvmPauseMonitor();
+        // main loop
         super.start();
     }
 
@@ -1424,7 +1430,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
                 if (unavailableStartTime == 0) {
                     unavailableStartTime = Time.currentElapsedTime();
                 }
-
+                // QuorumPeer处理不同状态所作的事情
                 switch (getPeerState()) {
                 case LOOKING:
                     LOG.info("LOOKING");
@@ -1432,7 +1438,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
 
                     if (Boolean.getBoolean("readonlymode.enabled")) {
                         LOG.info("Attempting to start ReadOnlyZooKeeperServer");
-
+                        // 启动只读 server
                         // Create read-only server but don't start it immediately
                         final ReadOnlyZooKeeperServer roZk = new ReadOnlyZooKeeperServer(logFactory, this, this.zkDb);
 

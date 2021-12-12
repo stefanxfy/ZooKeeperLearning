@@ -3,3 +3,5 @@
 /apache-zookeeper-3.7.0/zookeeper-recipes/target/
 /apache-zookeeper-3.7.0/zookeeper-metrics-providers/target/
 /apache-zookeeper-3.7.0/zookeeper-jute/target/
+/data/
+/conf/

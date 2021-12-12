@@ -718,10 +718,13 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
 
     @Override
     public void start() {
+        // 一个工作线程池workerPool、三个核心线程SelectorThread、acceptThread、expirerThread
         stopped = false;
         if (workerPool == null) {
+            // 分配工作线程池
             workerPool = new WorkerService("NIOWorker", numWorkerThreads, false);
         }
+        // 线程模型 acceptor-1：Selector-n
         for (SelectorThread thread : selectorThreads) {
             if (thread.getState() == Thread.State.NEW) {
                 thread.start();

@@ -51,7 +51,7 @@ public class ZooKeeperServerController {
 
         cnxnFactory = new ControllableConnectionFactory();
         cnxnFactory.configure(config.getClientPortAddress(), config.getMaxClientCnxns(), config.getClientPortListenBacklog());
-        quorumPeer = QuorumPeer.createFromConfig(config);
+        quorumPeer = QuorumPeer. createFromConfig(config);
         quorumPeer.setCnxnFactory(cnxnFactory);
     }
 
