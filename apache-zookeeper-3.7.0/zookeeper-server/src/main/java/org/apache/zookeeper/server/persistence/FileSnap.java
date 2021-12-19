@@ -73,6 +73,7 @@ public class FileSnap implements SnapShot {
         // we run through 100 snapshots (not all of them)
         // if we cannot get it running within 100 snapshots
         // we should  give up
+        // 获取至多 100个 快照文件按zxid降序排
         List<File> snapList = findNValidSnapshots(100);
         if (snapList.size() == 0) {
             return -1L;
@@ -83,10 +84,14 @@ public class FileSnap implements SnapShot {
         for (int i = 0, snapListSize = snapList.size(); i < snapListSize; i++) {
             snap = snapList.get(i);
             LOG.info("Reading snapshot {}", snap);
+            // snapshot.200000000
+            // 截取 zxid
             snapZxid = Util.getZxidFromName(snap.getName(), SNAPSHOT_FILE_PREFIX);
             try (CheckedInputStream snapIS = SnapStream.getInputStream(snap)) {
                 InputArchive ia = BinaryInputArchive.getArchive(snapIS);
+                // 反序列化 sessions、dataTree
                 deserialize(dt, sessions, ia);
+                // checksum 验证完整性
                 SnapStream.checkSealIntegrity(snapIS, ia);
 
                 // Digest feature was added after the CRC to make it backward
@@ -127,6 +132,7 @@ public class FileSnap implements SnapShot {
      * @throws IOException
      */
     public void deserialize(DataTree dt, Map<Long, Integer> sessions, InputArchive ia) throws IOException {
+        // 校验文件头，验证魔法数Magic
         FileHeader header = new FileHeader();
         header.deserialize(ia, "fileheader");
         if (header.getMagic() != SNAP_MAGIC) {

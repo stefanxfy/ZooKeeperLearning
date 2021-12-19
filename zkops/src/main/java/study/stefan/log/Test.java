@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 
 public class Test {
     public static void main(String[] args) throws FileNotFoundException {
-        String filepath = "C:\\Users\\stefan\\Downloads\\zk\\snapshot.5100000c94";
+        String filepath = "C:\\study\\myStudy\\ZooKeeperLearning\\data\\zoo-1\\version-2\\snapshot.200000000";
         String dest = filepath + ".txt";
         FileOutputStream fileOutputStream = new FileOutputStream(dest, true);
         SystemLogHandler.startCapture(fileOutputStream);

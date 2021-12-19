@@ -29,19 +29,19 @@ public class ZkLogTest {
         String dest = filepath + ".txt";
         logFormat(filepath, dest);*/
         // snapshot.5100000c94
-        String filepath = "C:\\Users\\stefan\\Downloads\\zk\\snapshot.5100000c94";
+        String filepath = "C:\\study\\myStudy\\ZooKeeperLearning\\data\\zoo-1\\version-2\\snapshot.200000000";
         String dest = filepath + ".txt";
         snapshotFormat(filepath, dest);
     }
     public static void snapshotFormat(String filepath, String dest) throws IOException, InterruptedException {
-//        FileOutputStream fileOutputStream = new FileOutputStream(dest, true);
-//        SystemLogHandler.startCapture(fileOutputStream);
-//        new SnapshotFormatter().run(filepath);
-//        SystemLogHandler.stopCapture();
+        FileOutputStream fileOutputStream = new FileOutputStream(dest, true);
+        SystemLogHandler.startCapture(fileOutputStream);
+        new SnapshotFormatter().run(filepath,false, false);
+        SystemLogHandler.stopCapture();
     }
 
-    public static void logFormat(String filepath, String dest) throws IOException {
-/*        FileInputStream fis = new FileInputStream(filepath);
+    /*public static void logFormat(String filepath, String dest) throws IOException {
+        FileInputStream fis = new FileInputStream(filepath);
         BinaryInputArchive logStream = BinaryInputArchive.getArchive(fis);
         FileHeader fhdr = new FileHeader();
         fhdr.deserialize(logStream, "fileheader");
@@ -94,6 +94,6 @@ public class ZkLogTest {
                 throw new EOFException("Last transaction was partial.");
             }
             count++;
-        }*/
-    }
+        }
+    }*/
 }

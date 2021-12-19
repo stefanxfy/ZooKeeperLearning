@@ -1127,7 +1127,9 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
         if (!getView().containsKey(myid)) {
             throw new RuntimeException("My id " + myid + " not in the peer list");
         }
-        // 先恢复数据，TODO 如何恢复呢
+        // 先恢复数据，
+        // 通过 快照文件反序列化一个DataTree，再根据事务文件增量恢复
+        // 校验 currentEpoch 和 acceptedEpoch
         loadDataBase();
         // NIOServerCnxnFactory 一个工作线程池workerPool、三个核心线程SelectorThread、acceptThread、expirerThread
         startServerCnxnFactory();
@@ -1148,11 +1150,17 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
 
     private void loadDataBase() {
         try {
+            // 通过 快照文件反序列化一个DataTree，再根据事务文件增量恢复
             zkDb.loadDataBase();
 
             // load the epochs
             long lastProcessedZxid = zkDb.getDataTree().lastProcessedZxid;
+            // 获取任期epoch
             long epochOfZxid = ZxidUtils.getEpochFromZxid(lastProcessedZxid);
+            // 校对 currentEpoch 和 acceptedEpoch
+            // currentEpoch 不能小于 epochOfZxid，acceptedEpoch 不能小于 currentEpoch
+            // 一般情况currentEpoch = acceptedEpoch
+            // 初始没有 currentEpoch 和 acceptedEpoch 文件，抛 FileNotFoundException，分别创建，并写入epochOfZxid
             try {
                 currentEpoch = readLongFromFile(CURRENT_EPOCH_FILENAME);
             } catch (FileNotFoundException e) {

@@ -526,6 +526,7 @@ public class DataTree {
             updateQuotaStat(lastPrefix, bytes, 1);
         }
         updateWriteStat(path, bytes);
+        // 触发 watch
         dataWatches.triggerWatch(path, Event.EventType.NodeCreated);
         childWatches.triggerWatch(parentName.equals("") ? "/" : parentName, Event.EventType.NodeChildrenChanged);
     }
@@ -1394,6 +1395,7 @@ public class DataTree {
                     list.add(path);
                 }
             }
+            // 读取下一个
             path = ia.readString("path");
         }
         // have counted digest for root node with "", ignore here to avoid

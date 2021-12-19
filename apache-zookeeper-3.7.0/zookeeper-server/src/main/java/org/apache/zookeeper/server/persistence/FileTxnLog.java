@@ -436,6 +436,7 @@ public class FileTxnLog implements TxnLog, Closeable {
 
     /**
      * start reading all the transactions from the given zxid.
+     * 开始从给定的zxid读取所有事务。
      *
      * @param zxid the zxid to start reading transactions from
      * @param fastForward true if the iterator should be fast forwarded to point
@@ -652,10 +653,12 @@ public class FileTxnLog implements TxnLog, Closeable {
          */
         void init() throws IOException {
             storedFiles = new ArrayList<>();
+            // 事务文件降序排
             List<File> files = Util.sortDataDir(
                 FileTxnLog.getLogFiles(logDir.listFiles(), 0),
                 LOG_FILE_PREFIX,
                 false);
+            // storedFiles 只加 >= zxid 的 文件，但是 会加第一个 < zxid的文件，应该是为了容错吧
             for (File f : files) {
                 if (Util.getZxidFromName(f.getName(), LOG_FILE_PREFIX) >= zxid) {
                     storedFiles.add(f);
@@ -665,7 +668,9 @@ public class FileTxnLog implements TxnLog, Closeable {
                     break;
                 }
             }
+            // 准备读取下一个文件流
             goToNextLog();
+            // 读取下一个node数据
             next();
         }
 

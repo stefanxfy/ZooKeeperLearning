@@ -674,6 +674,10 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
         }
     }
 
+    public synchronized void startup() {
+        startupWithServerState(State.RUNNING);
+    }
+
     public void startdata() throws IOException, InterruptedException {
         //check to see if zkDb is not null
         if (zkDb == null) {
@@ -682,10 +686,6 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
         if (!zkDb.isInitialized()) {
             loadData();
         }
-    }
-
-    public synchronized void startup() {
-        startupWithServerState(State.RUNNING);
     }
 
     public synchronized void startupWithoutServing() {
@@ -734,6 +734,8 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
     }
 
     protected void setupRequestProcessors() {
+        // 请求链 PrepRequestProcessor ---> SyncRequestProcessor ---> FinalRequestProcessor 都实现了RequestProcessor
+        // PrepRequestProcessor 和 SyncRequestProcessor 又继承了 ZooKeeperCriticalThread
         RequestProcessor finalProcessor = new FinalRequestProcessor(this);
         RequestProcessor syncProcessor = new SyncRequestProcessor(this, finalProcessor);
         ((SyncRequestProcessor) syncProcessor).start();
@@ -1677,6 +1679,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
                     si.setLargeRequestSize(length);
                 }
                 si.setOwner(ServerCnxn.me);
+                // 提交给 requestThrottler 处理
                 submitRequest(si);
             }
         }

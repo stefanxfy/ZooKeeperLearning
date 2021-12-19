@@ -185,6 +185,7 @@ public class RequestThrottler extends ZooKeeperCriticalThread {
                       request.setIsThrottled(true);
                       ServerMetrics.getMetrics().THROTTLED_OPS.add(1);
                     }
+                    // 提交给 ZooKeeperServer
                     zks.submitRequestNow(request);
                 }
             }

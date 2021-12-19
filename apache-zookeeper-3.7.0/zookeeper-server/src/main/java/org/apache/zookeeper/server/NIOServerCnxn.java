@@ -184,6 +184,7 @@ public class NIOServerCnxn extends ServerCnxn {
             incomingBuffer.flip();
             packetReceived(4 + incomingBuffer.remaining());
             if (!initialized) {
+                // 处理 session 连接请求
                 readConnectRequest();
             } else {
                 readRequest();
@@ -335,6 +336,7 @@ public class NIOServerCnxn extends ServerCnxn {
                 if (incomingBuffer.remaining() == 0) {
                     boolean isPayload;
                     if (incomingBuffer == lenBuffer) { // start of next request
+                        // 先读 len, 分配 incomingBuffer
                         incomingBuffer.flip();
                         isPayload = readLength(k);
                         incomingBuffer.clear();

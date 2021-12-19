@@ -24,8 +24,11 @@ import org.apache.jute.Record; // JDK14 needs explicit import due to clash with 
 import org.apache.yetus.audience.InterfaceAudience;
 @InterfaceAudience.Public
 public class FileHeader implements Record {
+  // 1514885966
   private int magic;
+  // 2
   private int version;
+  // -1
   private long dbid;
   public FileHeader() {
   }

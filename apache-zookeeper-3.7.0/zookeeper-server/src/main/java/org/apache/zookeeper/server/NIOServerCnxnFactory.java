@@ -140,6 +140,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
             if (sc != null) {
                 try {
                     // Hard close immediately, discarding buffers
+                    // 立即强制关闭，丢弃缓冲区
                     sc.socket().setSoLinger(true, 0);
                 } catch (SocketException e) {
                     LOG.warn("Unable to set socket linger to 0, socket close may stall in CLOSE_WAIT", e);
@@ -262,6 +263,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
                 if (limitTotalNumberOfCnxns()) {
                     throw new IOException("Too many connections max allowed is " + maxCnxns);
                 }
+                // 一个ip 连接次数会限制 maxClientCnxns，默认60
                 InetAddress ia = sc.socket().getInetAddress();
                 int cnxncount = getClientCnxnCount(ia);
 
@@ -274,10 +276,13 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
                 sc.configureBlocking(false);
 
                 // Round-robin assign this connection to a selector thread
+                // 一个 环 轮询
                 if (!selectorIterator.hasNext()) {
                     selectorIterator = selectorThreads.iterator();
                 }
+
                 SelectorThread selectorThread = selectorIterator.next();
+                // SocketChannel 放进 acceptedQueue，并唤醒 selector
                 if (!selectorThread.addAcceptedConnection(sc)) {
                     throw new IOException("Unable to add connection to selector queue"
                                           + (stopped ? " (shutdown in progress)" : ""));
@@ -365,8 +370,11 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
             try {
                 while (!stopped) {
                     try {
+                        // select 和 IO 处理
                         select();
+                        // 遍历 acceptedQueue 注册 OP_READ事件
                         processAcceptedConnections();
+                        // 遍历 updateQueue 并更新 感兴趣的事件
                         processInterestOpsUpdateRequests();
                     } catch (RuntimeException e) {
                         LOG.warn("Ignoring unexpected runtime exception", e);
@@ -415,6 +423,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
                         continue;
                     }
                     if (key.isReadable() || key.isWritable()) {
+                        // 处理IO事件
                         handleIO(key);
                     } else {
                         LOG.warn("Unexpected ops in select {}", key.readyOps());
@@ -438,7 +447,9 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
             // connection
             cnxn.disableSelectable();
             key.interestOps(0);
+            // 激活 NIOServerCnxn 的 过期时间
             touchCnxn(cnxn);
+            // 分配到线程池处理
             workerPool.schedule(workRequest);
         }
 
@@ -451,7 +462,9 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
             while (!stopped && (accepted = acceptedQueue.poll()) != null) {
                 SelectionKey key = null;
                 try {
+                    // 遍历 acceptedQueue 注册 OP_READ事件
                     key = accepted.register(selector, SelectionKey.OP_READ);
+                    // 一个客户端连接就是一个 NIOServerCnxn 对象
                     NIOServerCnxn cnxn = createConnection(accepted, key, this);
                     key.attach(cnxn);
                     addCnxn(cnxn);
@@ -505,6 +518,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
             }
 
             if (key.isReadable() || key.isWritable()) {
+                // NIOServerCnxn 处理IO
                 cnxn.doIO(key);
 
                 // Check if we shutdown or doIO() closed this connection
@@ -722,6 +736,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
         stopped = false;
         if (workerPool == null) {
             // 分配工作线程池
+            // WorkRequest -- > IOWorkRequest -- > task ScheduledWorkRequest
             workerPool = new WorkerService("NIOWorker", numWorkerThreads, false);
         }
         // 线程模型 acceptor-1：Selector-n
@@ -796,6 +811,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
     }
 
     private void addCnxn(NIOServerCnxn cnxn) throws IOException {
+        // 记录 该客户端ip 连接个数ipMap，并激活 session 过期时间，即重新计算
         InetAddress addr = cnxn.getSocketAddress();
         if (addr == null) {
             throw new IOException("Socket of " + cnxn + " has been closed");
@@ -819,6 +835,7 @@ public class NIOServerCnxnFactory extends ServerCnxnFactory {
         set.add(cnxn);
 
         cnxns.add(cnxn);
+        // 激活 session
         touchCnxn(cnxn);
     }
 

@@ -113,7 +113,7 @@ public class WorkerService {
             workRequest.cleanup();
             return;
         }
-
+        // 封装的task
         ScheduledWorkRequest scheduledWorkRequest = new ScheduledWorkRequest(workRequest);
 
         // If we have a worker thread pool, use that; otherwise, do the work
