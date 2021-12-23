@@ -332,6 +332,7 @@ public class QuorumCnxManager {
         this.authLearner = authLearner;
         this.quorumSaslAuthEnabled = quorumSaslAuthEnabled;
 
+        // 初始化 ConnectionExecutor
         initializeConnectionExecutor(mySid, quorumCnxnThreadsSize);
 
         // Starts listener thread that waits for connection requests
@@ -589,6 +590,7 @@ public class QuorumCnxManager {
 
         @Override
         public void run() {
+            // 异步接收
             receiveConnection(sock);
         }
 
@@ -641,6 +643,7 @@ public class QuorumCnxManager {
              * up, so we have to shut down the workers before trying to open a
              * new connection.
              */
+            // 当前服务器发现自己的SID值更大，那么会断开当前连接，然后自己主动去和远程服务器建立连接
             SendWorker sw = senderWorkerMap.get(sid);
             if (sw != null) {
                 sw.finish();
@@ -663,6 +666,9 @@ public class QuorumCnxManager {
             LOG.warn("We got a connection request from a server with our own ID. "
                      + "This should be either a configuration error, or a bug.");
         } else { // Otherwise start worker threads to receive data.
+            // sid > self.getId()
+            // 只允许 SID 大的服务器主动和其他服务器建立连接，否则断开连接
+            // 一旦建立起连接，就会根据远程服务器的 SID 来创建相应的消息发送器 SendWorker和消息接收器RecvWorker，并启动他们。
             SendWorker sw = new SendWorker(sock, sid);
             RecvWorker rw = new RecvWorker(sock, din, sid, sw);
             sw.setRecv(rw);
@@ -699,6 +705,7 @@ public class QuorumCnxManager {
         } else {
             /*
              * Start a new connection if doesn't have one already.
+             * 如果还没有新的连接，就开始一个新的连接。
              */
             BlockingQueue<ByteBuffer> bq = queueSendMap.computeIfAbsent(sid, serverId -> new CircularBlockingQueue<>(SEND_CAPACITY));
             addToSendQueue(bq, b);
@@ -1062,6 +1069,7 @@ public class QuorumCnxManager {
 
                 while ((!shutdown) && (portBindMaxRetry == 0 || numRetries < portBindMaxRetry)) {
                     try {
+                        // 创建 监听 投票端口
                         serverSocket = createNewServerSocket();
                         LOG.info("{} is accepting connections now, my election bind port: {}", QuorumCnxManager.this.mySid, address.toString());
                         while (!shutdown) {
@@ -1075,6 +1083,7 @@ public class QuorumCnxManager {
                                 // authentication process may take few seconds to finish,
                                 // this may delay next peer connection requests.
                                 if (quorumSaslAuthEnabled) {
+                                    // 异步处理连接
                                     receiveConnectionAsync(client);
                                 } else {
                                     receiveConnection(client);
@@ -1193,6 +1202,7 @@ public class QuorumCnxManager {
         }
 
         synchronized boolean finish() {
+            // close socket and remove map and decre
             LOG.debug("Calling SendWorker.finish for {}", sid);
 
             if (!running) {
@@ -1249,6 +1259,7 @@ public class QuorumCnxManager {
                  * stale message, we should send the message in the send queue.
                  */
                 BlockingQueue<ByteBuffer> bq = queueSendMap.get(sid);
+                // 若 发送队列为空，则发送最近一次发送的投票包。接收方在消息接收前，或者是在接收到消息后服务器挂掉了，导致消息尚未被正确处理
                 if (bq == null || isSendQueueEmpty(bq)) {
                     ByteBuffer b = lastMessageSent.get(sid);
                     if (b != null) {
@@ -1267,6 +1278,8 @@ public class QuorumCnxManager {
 
                     ByteBuffer b = null;
                     try {
+                        // sid ---> queueSend
+                        // queueSend 不能为空，如何保证一直有数据发送呢？
                         BlockingQueue<ByteBuffer> bq = queueSendMap.get(sid);
                         if (bq != null) {
                             b = pollSendQueue(bq, 1000, TimeUnit.MILLISECONDS);
@@ -1276,7 +1289,9 @@ public class QuorumCnxManager {
                         }
 
                         if (b != null) {
+                            // 存一个最近发送的，为的是故障重发
                             lastMessageSent.put(sid, b);
+                            // 发送
                             send(b);
                         }
                     } catch (InterruptedException e) {
@@ -1389,8 +1404,10 @@ public class QuorumCnxManager {
                     /**
                      * Allocates a new ByteBuffer to receive the message
                      */
+                    // 先读取len，开辟一个接收缓冲，再读取数据
                     final byte[] msgArray = new byte[length];
                     din.readFully(msgArray, 0, length);
+                    // 然后封装成 Message 放进 recvQueue
                     addToRecvQueue(new Message(ByteBuffer.wrap(msgArray), sid));
                 }
             } catch (Exception e) {

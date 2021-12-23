@@ -609,7 +609,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
      * QuorumVerifier implementation; default (majority).
      */
 
-    //last committed quorum verifier
+    //last committed quorum verifier 默认 QuorumMaj
     private QuorumVerifier quorumVerifier;
 
     //last proposed quorum verifier
@@ -1352,6 +1352,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
             }
             QuorumCnxManager.Listener listener = qcm.listener;
             if (listener != null) {
+                // Listener start 开启监听投票端口，接收连接等
                 listener.start();
                 FastLeaderElection fle = new FastLeaderElection(this, qcm);
                 fle.start();

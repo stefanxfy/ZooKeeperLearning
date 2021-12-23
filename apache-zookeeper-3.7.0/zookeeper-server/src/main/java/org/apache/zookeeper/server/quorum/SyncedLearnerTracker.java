@@ -24,6 +24,7 @@ import org.apache.zookeeper.server.quorum.flexible.QuorumVerifier;
 
 public class SyncedLearnerTracker {
 
+    // 可以有多个仲裁器
     protected ArrayList<QuorumVerifierAcksetPair> qvAcksetPairs = new ArrayList<QuorumVerifierAcksetPair>();
 
     public void addQuorumVerifier(QuorumVerifier qv) {
@@ -51,6 +52,7 @@ public class SyncedLearnerTracker {
     }
 
     public boolean hasAllQuorums() {
+        // 需要所有的仲裁器 都 通过
         for (QuorumVerifierAcksetPair qvAckset : qvAcksetPairs) {
             if (!qvAckset.getQuorumVerifier().containsQuorum(qvAckset.getAckset())) {
                 return false;
