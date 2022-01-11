@@ -182,6 +182,7 @@ public class QuorumPeerConfig {
             Properties cfg = new Properties();
             FileInputStream in = new FileInputStream(configFile);
             try {
+                // 1、读取配置文件，并装配Properties
                 cfg.load(in);
                 configFileStr = path;
             } finally {
@@ -190,14 +191,14 @@ public class QuorumPeerConfig {
 
             /* Read entire config file as initial configuration */
             initialConfig = new String(Files.readAllBytes(configFile.toPath()));
-            // 详细解析 zoo.cfg
+            // 2、详细解析 zoo.cfg
             parseProperties(cfg);
         } catch (IOException e) {
             throw new ConfigException("Error processing " + path, e);
         } catch (IllegalArgumentException e) {
             throw new ConfigException("Error processing " + path, e);
         }
-
+        // 3、动态配置的方式可参考 https://zookeeper.apache.org/doc/r3.5.3-beta/zookeeperReconfig.html
         if (dynamicConfigFileStr != null) {
             try {
                 Properties dynamicCfg = new Properties();
@@ -217,6 +218,8 @@ public class QuorumPeerConfig {
                 } finally {
                     inConfig.close();
                 }
+                // 动态配置文件里可以配置 分级仲裁，也可以配置 普通过半数仲裁
+                // 设置仲裁器
                 setupQuorumPeerConfig(dynamicCfg, false);
 
             } catch (IOException e) {
@@ -224,6 +227,8 @@ public class QuorumPeerConfig {
             } catch (IllegalArgumentException e) {
                 throw new ConfigException("Error processing " + dynamicConfigFileStr, e);
             }
+            // zoo.cfg.dynamic.next
+            // 是否还存在一个 动态配置文件，如果有那就再加载，设置 lastSeenQuorumVerifier
             File nextDynamicConfigFile = new File(configFileStr + nextDynamicConfigFileSuffix);
             if (nextDynamicConfigFile.exists()) {
                 try {
@@ -328,6 +333,7 @@ public class QuorumPeerConfig {
             } else if (key.equals("quorumListenOnAllIPs")) {
                 quorumListenOnAllIPs = parseBoolean(key, value);
             } else if (key.equals("peerType")) {
+                // 角色类型设置
                 if (value.toLowerCase().equals("observer")) {
                     peerType = LearnerType.OBSERVER;
                 } else if (value.toLowerCase().equals("participant")) {
@@ -346,6 +352,7 @@ public class QuorumPeerConfig {
             } else if (key.equals("standaloneEnabled")) {
                 setStandaloneEnabled(parseBoolean(key, value));
             } else if (key.equals("reconfigEnabled")) {
+                // 从3.5.3开始，动态配置特性默认是禁用的，必须通过 reconfigEnabled 配置选项显式打开。
                 setReconfigEnabled(parseBoolean(key, value));
             } else if (key.equals("sslQuorum")) {
                 sslQuorum = parseBoolean(key, value);
@@ -355,6 +362,7 @@ public class QuorumPeerConfig {
                 sslQuorumReloadCertFiles = parseBoolean(key, value);
             } else if ((key.startsWith("server.") || key.startsWith("group") || key.startsWith("weight"))
                        && zkProp.containsKey("dynamicConfigFile")) {
+                // 如果有动态配置文件，则server. 、 group、weight配置项必须在动态配置文件里
                 throw new ConfigException("parameter: " + key + " must be in a separate dynamic config file");
             } else if (key.equals(QuorumAuth.QUORUM_SASL_AUTH_ENABLED)) {
                 quorumEnableSasl = parseBoolean(key, value);
@@ -416,6 +424,7 @@ public class QuorumPeerConfig {
         // Reset to MIN_SNAP_RETAIN_COUNT if invalid (less than 3)
         // PurgeTxnLog.purge(File, File, int) will not allow to purge less
         // than 3.
+        // snapRetainCount 至少3个
         if (snapRetainCount < MIN_SNAP_RETAIN_COUNT) {
             LOG.warn("Invalid autopurge.snapRetainCount: "
                      + snapRetainCount
@@ -427,6 +436,7 @@ public class QuorumPeerConfig {
         if (dataDir == null) {
             throw new IllegalArgumentException("dataDir is not set");
         }
+        // 如果 dataLogDir 为null，则与dataDir相等
         if (dataLogDir == null) {
             dataLogDir = dataDir;
         }
@@ -460,6 +470,10 @@ public class QuorumPeerConfig {
             configureSSLAuth();
         }
 
+        // observerMasterPort
+        // Followers 基于 observerMasterPort 创建一个 ObserverMaster 线程来监听观察者的激活连接
+        // 从而可以为leader分担一些压力管理观察者的压力，专心于协调写操作。
+        // 参考 https://blog.csdn.net/weixin_36586120/article/details/122156700
         if (observerMasterPort <= 0) {
             LOG.info("observerMasterPort is not set");
         } else {
@@ -470,7 +484,9 @@ public class QuorumPeerConfig {
         if (tickTime == 0) {
             throw new IllegalArgumentException("tickTime is not set");
         }
-
+        // 没有设置minSessionTimeout，默认为 2*tickTime
+        // 同理maxSessionTimeout默认20*tickTime
+        // maxSessionTimeout 必须大于 minSessionTimeout
         minSessionTimeout = minSessionTimeout == -1 ? tickTime * 2 : minSessionTimeout;
         maxSessionTimeout = maxSessionTimeout == -1 ? tickTime * 20 : maxSessionTimeout;
 
@@ -488,6 +504,7 @@ public class QuorumPeerConfig {
         // backward compatibility - dynamic configuration in the same file as
         // static configuration params see writeDynamicConfig()
         if (dynamicConfigFileStr == null) {
+            // 设置 仲裁器
             setupQuorumPeerConfig(zkProp, true);
             if (isDistributed() && isReconfigEnabled()) {
                 // we don't backup static config for standalone mode.
@@ -668,6 +685,7 @@ public class QuorumPeerConfig {
     }
 
     /**
+     * 解析动态配置文件，正常返回一个 仲裁器QuorumVerifier
      * Parse dynamic configuration file and return
      * quorumVerifier for new configuration.
      * @param dynamicConfigProp Properties to parse from.
@@ -679,8 +697,10 @@ public class QuorumPeerConfig {
         for (Entry<Object, Object> entry : dynamicConfigProp.entrySet()) {
             String key = entry.getKey().toString().trim();
             if (key.startsWith("group") || key.startsWith("weight")) {
+                // 分级仲裁器，即 server 分配到不同组，每个server分配一个权重
                 isHierarchical = true;
             } else if (!configBackwardCompatibilityMode && !key.startsWith("server.") && !key.equals("version")) {
+                // configBackwardCompatibilityMode 配置是否兼容，false不兼容，则key必须是group、weight、server、version，不能有其他配置项
                 LOG.info(dynamicConfigProp.toString());
                 throw new ConfigException("Unrecognised parameter: " + key);
             }
@@ -710,8 +730,10 @@ public class QuorumPeerConfig {
         } else {
             if (warnings) {
                 if (numParticipators <= 2) {
+                    // 建议至少3个服务器。
                     LOG.warn("No server failure will be tolerated. You need at least 3 servers.");
                 } else if (numParticipators % 2 == 0) {
+                    // 建议服务器数量为奇数
                     LOG.warn("Non-optimial configuration, consider an odd number of servers.");
                 }
             }

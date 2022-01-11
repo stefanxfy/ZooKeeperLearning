@@ -770,6 +770,8 @@ public class PrepRequestProcessor extends ZooKeeperCriticalThread implements Req
         request.setTxn(null);
 
         if (!request.isThrottled()) {
+            // 对于事务请求，PrepRequestProcessor 处理器会对其进行一系列预处理，
+            // 诸如创建请求事务头、事务体，会话检查、ACL检查和版本检查等。
           pRequestHelper(request);
         }
 

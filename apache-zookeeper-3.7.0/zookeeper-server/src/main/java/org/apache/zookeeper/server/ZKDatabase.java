@@ -592,6 +592,7 @@ public class ZKDatabase {
     }
 
     /**
+     * TODO 截断ZKDatabase到指定的zxid
      * Truncate the ZKDatabase to the specified zxid
      * @param zxid the zxid to truncate zk database to
      * @return true if the truncate is successful and false if not

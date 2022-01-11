@@ -51,6 +51,7 @@ public final class VerifyingFileFactory {
 
     private void doFailForNonExistingPath(File file) {
         if (!file.exists()) {
+            // 文件不存在
             throw new IllegalArgumentException(file.toString() + " file is missing");
         }
     }
@@ -62,6 +63,7 @@ public final class VerifyingFileFactory {
         if (file.getPath().substring(0, 2).equals("." + File.separator)) {
             return;
         }
+        // 相对路径 提示
         log.warn(file.getPath() + " is relative. Prepend ." + File.separator + " to indicate that you're sure!");
     }
 

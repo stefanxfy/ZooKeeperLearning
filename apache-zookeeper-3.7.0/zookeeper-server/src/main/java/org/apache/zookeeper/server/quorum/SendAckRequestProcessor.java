@@ -38,6 +38,10 @@ public class SendAckRequestProcessor implements RequestProcessor, Flushable {
     }
 
     public void processRequest(Request si) {
+        // 其主要负责在SyncRequestProcessor处理器完成事务日志记录后，向Proposal的投票收集器进行反馈
+        // SendAckRequestProcessor处理器同样承担了事务日志记录反馈的角色，
+        // 在完成事务日志记录后，会向Leader服务器发送ACK消息以表明自身完成了事务日志的记录工作。
+        // AckRequestProcessor处理器和Leader服务器在同一个服务器上，因此它的ACK反馈仅仅是一个本地操作；而SendAckRequestProcessor处理器由于在Follower服务器上，因此需要通过以ACK消息的形式来向Leader服务器进行反馈。
         if (si.type != OpCode.sync) {
             QuorumPacket qp = new QuorumPacket(Leader.ACK, si.getHdr().getZxid(), null, null);
             try {

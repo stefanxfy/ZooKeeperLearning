@@ -145,6 +145,8 @@ public class FinalRequestProcessor implements RequestProcessor {
     }
 
     public void processRequest(Request request) {
+        // 该处理器主要用来进行客户端请求返回之前的收尾工作，包括创建客户端请求的响应；
+        // 针对事务请求，该处理器还会负责将事务应用到内存数据库中去。
         LOG.debug("Processing request:: {}", request);
 
         if (LOG.isTraceEnabled()) {

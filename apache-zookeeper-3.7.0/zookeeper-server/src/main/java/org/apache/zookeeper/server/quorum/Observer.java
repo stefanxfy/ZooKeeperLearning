@@ -104,23 +104,29 @@ public class Observer extends Learner {
         long connectTime = 0;
         boolean completedSync = false;
         try {
+            // DISCOVERY ---> SYNCHRONIZATION ---> BROADCAST
+            // 发现状态
             self.setZabState(QuorumPeer.ZabState.DISCOVERY);
+            // 寻址 LearnerMaster
             QuorumServer master = findLearnerMaster();
             try {
+                // 向LearnerMaster发起连接
                 connectToLeader(master.addr, master.hostname);
                 connectTime = System.currentTimeMillis();
                 long newLeaderZxid = registerWithLeader(Leader.OBSERVERINFO);
                 if (self.isReconfigStateChange()) {
                     throw new Exception("learned about role change");
                 }
-
                 self.setLeaderAddressAndId(master.addr, master.getId());
+                // 同步数据
                 self.setZabState(QuorumPeer.ZabState.SYNCHRONIZATION);
                 syncWithLeader(newLeaderZxid);
                 self.setZabState(QuorumPeer.ZabState.BROADCAST);
                 completedSync = true;
+                // read a packet from the leader and response
                 QuorumPacket qp = new QuorumPacket();
                 while (this.isRunning() && nextLearnerMaster.get() == null) {
+                    // 循环处理packet
                     readPacket(qp);
                     processPacket(qp);
                 }
@@ -151,9 +157,11 @@ public class Observer extends Learner {
         QuorumPeer.QuorumServer prescribedLearnerMaster = nextLearnerMaster.getAndSet(null);
         if (prescribedLearnerMaster != null
             && self.validateLearnerMaster(Long.toString(prescribedLearnerMaster.id)) == null) {
+            // 不在observerMasters里即为不是有效的 LearnerMaster
             LOG.warn("requested next learner master {} is no longer valid", prescribedLearnerMaster);
             prescribedLearnerMaster = null;
         }
+        //
         final QuorumPeer.QuorumServer master = (prescribedLearnerMaster == null)
             ? self.findLearnerMaster(findLeader())
             : prescribedLearnerMaster;

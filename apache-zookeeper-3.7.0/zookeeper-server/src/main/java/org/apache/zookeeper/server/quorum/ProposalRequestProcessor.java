@@ -77,15 +77,21 @@ public class ProposalRequestProcessor implements RequestProcessor {
             zks.getLeader().processSync((LearnerSyncRequest) request);
         } else {
             if (shouldForwardToNextProcessor(request)) {
+                // 处理器，也是Leader服务器事务处理流程的发起者。
+                // 对于非事务请求，ProposalRequestProcessor会直接将请求流转到CommitProcessor处理器，不再做其他处理
                 nextProcessor.processRequest(request);
             }
             if (request.getHdr() != null) {
+                // 对于事务请求，除了将请求交给CommitProcessor处理器外，
+                // 还会根据请求类型创建对应的Proposal提议，
+                // 并发送给所有的 Follower服务器来发起一次集群内的事务投票
                 // We need to sync and get consensus on any transactions
                 try {
                     zks.getLeader().propose(request);
                 } catch (XidRolloverException e) {
                     throw new RequestProcessorException(e.getMessage(), e);
                 }
+                // ProposalRequestProcessor 还会将事务请求交付给SyncRequestProcessor 进行事务日志的记录。
                 syncProcessor.processRequest(request);
             }
         }

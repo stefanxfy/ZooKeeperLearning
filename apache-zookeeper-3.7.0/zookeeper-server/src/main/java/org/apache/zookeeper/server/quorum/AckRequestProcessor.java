@@ -41,6 +41,8 @@ class AckRequestProcessor implements RequestProcessor {
      * Forward the request as an ACK to the leader
      */
     public void processRequest(Request request) {
+        // AckRequestProcessor处理器是Leader特有的处理器，其主要负责在SyncRequest Processor处理器完成事务日志记录后，
+        // 向Proposal的投票收集器发送ACK反馈，以通知投票收集器当前服务器已经完成了对该Proposal的事务日志记录。
         QuorumPeer self = leader.self;
         if (self != null) {
             request.logLatency(ServerMetrics.getMetrics().PROPOSAL_ACK_CREATION_LATENCY);

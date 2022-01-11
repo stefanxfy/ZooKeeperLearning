@@ -203,6 +203,7 @@ public class QuorumPeerMain {
             quorumPeer.setClientPortListenBacklog(config.getClientPortListenBacklog());
             // ZKDatabase
             quorumPeer.setZKDatabase(new ZKDatabase(quorumPeer.getTxnFactory()));
+            // 设置 过半数仲裁器
             quorumPeer.setQuorumVerifier(config.getQuorumVerifier(), false);
             if (config.getLastSeenQuorumVerifier() != null) {
                 quorumPeer.setLastSeenQuorumVerifier(config.getLastSeenQuorumVerifier(), false);

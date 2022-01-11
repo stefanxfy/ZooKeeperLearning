@@ -82,6 +82,9 @@ public class QuorumMaj implements QuorumVerifier {
     }
 
     public QuorumMaj(Properties props) throws ConfigException {
+        //server.1 = 127.0.0.1:2888:3888
+        //server.2 = 127.0.0.1:2889:3889
+        //server.3 = 127.0.0.1:2890:3890
         for (Entry<Object, Object> entry : props.entrySet()) {
             String key = entry.getKey().toString();
             String value = entry.getValue().toString();
@@ -92,8 +95,10 @@ public class QuorumMaj implements QuorumVerifier {
                 QuorumServer qs = new QuorumServer(sid, value);
                 allMembers.put(Long.valueOf(sid), qs);
                 if (qs.type == LearnerType.PARTICIPANT) {
+                    // 参与者 具有投票权
                     votingMembers.put(Long.valueOf(sid), qs);
                 } else {
+                    // 观察者
                     observingMembers.put(Long.valueOf(sid), qs);
                 }
             } else if (key.equals("version")) {

@@ -63,6 +63,9 @@ public class FollowerRequestProcessor extends ZooKeeperCriticalThread implements
     @Override
     public void run() {
         try {
+            // FollowerRequestProcessor是Follower服务器的第一个请求处理器，其主要工作就是识别出当前请求是否是事务请求。
+            // 如果是事务请求，那么Follower就会将该事务请求转发给 Leader服务器，
+            // Leader 服务器在接收到这个事务请求后，就会将其提交到请求处理链，按照正常事务请求进行处理。
             while (!finished) {
                 ServerMetrics.getMetrics().LEARNER_REQUEST_PROCESSOR_QUEUE_SIZE.add(queuedRequests.size());
 

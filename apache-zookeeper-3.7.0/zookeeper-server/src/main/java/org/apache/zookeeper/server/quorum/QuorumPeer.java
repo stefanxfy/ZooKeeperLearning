@@ -275,6 +275,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
 
         QuorumServer(long sid, String addressStr, Function<InetSocketAddress, InetAddress> getInetAddress) throws ConfigException {
             this.id = sid;
+            // TODO initializeWithAddressString
             initializeWithAddressString(addressStr, getInetAddress);
         }
 
@@ -1479,6 +1480,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
                                 shuttingDownLE = false;
                                 startLeaderElection();
                             }
+                            // 寻找 leader
                             setCurrentVote(makeLEStrategy().lookForLeader());
                         } catch (Exception e) {
                             LOG.warn("Unexpected exception", e);
@@ -1496,6 +1498,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
                                 shuttingDownLE = false;
                                 startLeaderElection();
                             }
+                            // 寻找 leader
                             setCurrentVote(makeLEStrategy().lookForLeader());
                         } catch (Exception e) {
                             LOG.warn("Unexpected exception", e);
@@ -1507,6 +1510,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
                     try {
                         LOG.info("OBSERVING");
                         setObserver(makeObserver(logFactory));
+                        // 连接leader、同步数据、接收来自leader的包并作出不同响应
                         observer.observeLeader();
                     } catch (Exception e) {
                         LOG.warn("Unexpected exception", e);
@@ -1542,6 +1546,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
                     LOG.info("LEADING");
                     try {
                         setLeader(makeLeader(logFactory));
+                        // TODO
                         leader.lead();
                         setLeader(null);
                     } catch (Exception e) {
@@ -2332,6 +2337,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
         }
         observerMasters.clear();
         StringBuilder sb = new StringBuilder();
+        // 初始化 observerMasters
         for (QuorumServer server : quorumVerifier.getVotingMembers().values()) {
             InetAddress address = server.addr.getReachableOrOne().getAddress();
             InetSocketAddress addr = new InetSocketAddress(address, observerMasterPort);
@@ -2368,6 +2374,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
             return nextObserverMaster();
         } else {
             // Add delay jitter to reduce the load on the leader
+            // 添加延迟抖动以减少前导负载
             if (isRunning()) {
                 Observer.waitForReconnectDelay();
             }

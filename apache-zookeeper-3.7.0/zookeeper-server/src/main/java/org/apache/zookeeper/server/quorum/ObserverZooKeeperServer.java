@@ -86,6 +86,13 @@ public class ObserverZooKeeperServer extends LearnerZooKeeperServer {
      */
     @Override
     protected void setupRequestProcessors() {
+        // Observer服务器在工作原理上和Follower基本是一致的，对于非事务请求，都可以进行独立的处理，
+        // 而对于事务请求，则会转发给Leader服务器进行处理。和Follower唯一的区别在于，
+        // Observer不参与任何形式的投票，包括事务请求Proposal的投票和Leader选举投票
+        // Observer 服务器在初始化阶段会将SyncRequestProcessor处理器也组装上去，
+        // 但是在实际运行过程中，Leader服务器不会将事务请求的投票发送给Observer服务器。
+        // ObserverRequestProcessor--->CommitProcessor--->FinalRequestProcessor
+        // SyncRequestProcessor--->null
         // We might consider changing the processor behaviour of
         // Observers to, for example, remove the disk sync requirements.
         // Currently, they behave almost exactly the same as followers.

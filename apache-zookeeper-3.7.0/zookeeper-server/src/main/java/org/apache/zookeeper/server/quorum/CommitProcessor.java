@@ -306,6 +306,9 @@ public class CommitProcessor extends ZooKeeperCriticalThread implements RequestP
                     Set<Long> queuesToDrain = new HashSet<>();
                     long startWriteTime = Time.currentElapsedTime();
                     int commitsProcessed = 0;
+                    // 对于非事务请求，该处理器会直接将其交付给下一级处理器进行处理；
+                    // 而对于事务请求，CommitProcessor处理器会等待集群内针对Proposal的投票直到该Proposal可被提交。
+                    // 利用CommitProcessor处理器，每个服务器都可以很好地控制对事务请求的顺序处理。
                     while (commitIsWaiting && !stopped && commitsToProcess > 0) {
 
                         // Process committed head

@@ -292,7 +292,7 @@ public class Leader extends LearnerMaster {
         } else {
             addresses = self.getQuorumAddress().getAllAddresses();
         }
-
+        // 绑定 server socket
         addresses.stream()
           .map(address -> createServerSocket(address, self.shouldUsePortUnification(), self.isSslQuorum()))
           .filter(Optional::isPresent)
@@ -451,7 +451,8 @@ public class Leader extends LearnerMaster {
             if (!stop.get() && !serverSockets.isEmpty()) {
                 ExecutorService executor = Executors.newFixedThreadPool(serverSockets.size());
                 CountDownLatch latch = new CountDownLatch(serverSockets.size());
-
+                // LearnerCnxAcceptor --> LearnerCnxAcceptorHandler --> LearnerHandler
+                // 一个LearnerCnxAcceptor 遍历serverSockets，封装LearnerCnxAcceptorHandler，扔进一个线程池，每个连接 新建一个LearnerHandler
                 serverSockets.forEach(serverSocket ->
                         executor.submit(new LearnerCnxAcceptorHandler(serverSocket, latch)));
 
@@ -518,6 +519,7 @@ public class Leader extends LearnerMaster {
                     socket.setTcpNoDelay(nodelay);
 
                     BufferedInputStream is = new BufferedInputStream(socket.getInputStream());
+                    // 每个连接 维护一个 LearnerHandler
                     LearnerHandler fh = new LearnerHandler(socket, is, Leader.this);
                     fh.start();
                 } catch (SocketException e) {
@@ -590,15 +592,17 @@ public class Leader extends LearnerMaster {
         try {
             self.setZabState(QuorumPeer.ZabState.DISCOVERY);
             self.tick.set(0);
+            // 加载 数据
             zk.loadData();
 
             leaderStateSummary = new StateSummary(self.getCurrentEpoch(), zk.getLastProcessedZxid());
 
             // Start thread that waits for connection requests from
             // new followers.
+            // 启动 LearnerCnxAcceptor
             cnxAcceptor = new LearnerCnxAcceptor();
             cnxAcceptor.start();
-
+            // 如果 没有过半确认，会阻塞等待
             long epoch = getEpochToPropose(self.getId(), self.getAcceptedEpoch());
 
             zk.setZxid(ZxidUtils.makeZxid(epoch, 0));
@@ -1074,6 +1078,9 @@ public class Leader extends LearnerMaster {
          * @see org.apache.zookeeper.server.RequestProcessor#processRequest(org.apache.zookeeper.server.Request)
          */
         public void processRequest(Request request) throws RequestProcessorException {
+            // 有一个toBeApp lied队列，专门用来存储那些已经被CommitProcessor处理过的可被提交的Proposal
+            // ToBeCommitProcessor处理器将这些请求逐个交付给FinalRequestProcessor处理器进行处理
+            // 等到FinalRequestProcessor 处理器处理完之后，再将其从toBeApplied队列中移除。
             next.processRequest(request);
 
             // The only requests that should be on toBeApplied are write
@@ -1403,6 +1410,7 @@ public class Leader extends LearnerMaster {
             if (connectingFollowers.contains(self.getId()) && verifier.containsQuorum(connectingFollowers)) {
                 waitingForNewEpoch = false;
                 self.setAcceptedEpoch(epoch);
+                // 过半了 唤醒
                 connectingFollowers.notifyAll();
             } else {
                 long start = Time.currentElapsedTime();

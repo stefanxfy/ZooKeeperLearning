@@ -110,6 +110,7 @@ public class ObserverRequestProcessor extends ZooKeeperCriticalThread implements
                 case OpCode.setACL:
                 case OpCode.multi:
                 case OpCode.check:
+                    // send a request packet to the leader
                     zks.getObserver().request(request);
                     break;
                 case OpCode.createSession:

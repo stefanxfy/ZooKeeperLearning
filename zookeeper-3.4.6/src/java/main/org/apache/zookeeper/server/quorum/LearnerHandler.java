@@ -421,6 +421,13 @@ public class LearnerHandler extends Thread {
                                 if (firstPacket) {
                                     firstPacket = false;
                                     // Does the peer have some proposals that the leader hasn't seen yet
+                                    // 0x500000001  0x500000002  0x500000003  0x500000004  0x500000005
+                                    // peerLastZxid  minCommittedLog  maxCommittedLog
+                                    // 0x500000003   0x500000001      0x500000005
+
+                                    // 0x500000001  0x500000002  0x600000001   0x600000002
+                                    // peerLastZxid  minCommittedLog  maxCommittedLog
+                                    // 0x500000003   0x500000001      0x600000002
                                     if (prevProposalZxid < peerLastZxid) {
                                         // send a trunc message before sending the diff
                                         packetToSend = Leader.TRUNC;                                        

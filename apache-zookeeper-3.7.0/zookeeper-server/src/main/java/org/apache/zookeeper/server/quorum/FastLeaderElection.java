@@ -956,6 +956,7 @@ public class FastLeaderElection implements Election {
              * if v.electionEpoch == logicalclock. The current participant uses recvset to deduce on whether a majority
              * of participants has voted for it.
              */
+            // 选举状态的归档选票
             Map<Long, Vote> recvset = new HashMap<Long, Vote>();
 
             /*
@@ -965,6 +966,7 @@ public class FastLeaderElection implements Election {
              * outofelection to learn which participant is the leader if it arrives late (i.e., higher logicalclock than
              * the electionEpoch of the received notifications) in a leader election.
              */
+            // 加入一个 已经有leader的集群 归档选票
             Map<Long, Vote> outofelection = new HashMap<Long, Vote>();
 
             int notTimeout = minNotificationInterval;
@@ -986,6 +988,7 @@ public class FastLeaderElection implements Election {
             // 由发送器WorkerSender负责发送出去。
             sendNotifications();
 
+            // 过半数机制仲裁器
             SyncedLearnerTracker voteSet;
 
             /*
@@ -1021,6 +1024,7 @@ public class FastLeaderElection implements Election {
                     notTimeout = Math.min(tmpTimeOut, maxNotificationInterval);
                     LOG.info("Notification time out: {}", notTimeout);
                 } else if (validVoter(n.sid) && validVoter(n.leader)) {
+                    // 具有选举权的才往下走
                     /*
                      * Only proceed if the vote comes from a replica in the current or next
                      * voting view for a replica in the current or next voting view.

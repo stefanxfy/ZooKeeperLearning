@@ -522,6 +522,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
                         .forEach(session -> killSession(session, zkDb.getDataTreeLastProcessedZxid()));
 
         // Make a clean snapshot
+        // 快照
         takeSnapshot();
     }
 
