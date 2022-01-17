@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.apache.zookeeper.server.embedded.ZookeeperServerSslEmbeddedTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 32.952 s <<< FAILURE! - in org.apache.zookeeper.server.embedded.ZookeeperServerSslEmbeddedTest
-testStart  Time elapsed: 32.922 s  <<< FAILURE!
-java.lang.AssertionError
-	at org.apache.zookeeper.server.embedded.ZookeeperServerSslEmbeddedTest.testStart(ZookeeperServerSslEmbeddedTest.java:115)
-

@@ -318,6 +318,7 @@ public class PrepRequestProcessor extends ZooKeeperCriticalThread implements Req
      */
     protected void pRequest2Txn(int type, long zxid, Request request, Record record, boolean deserialize) throws KeeperException, IOException, RequestProcessorException {
         if (request.getHdr() == null) {
+            // 创建请求事务头
             request.setHdr(new TxnHeader(request.sessionId, request.cxid, zxid,
                     Time.currentWallTime(), type));
         }
@@ -573,9 +574,13 @@ public class PrepRequestProcessor extends ZooKeeperCriticalThread implements Req
         case OpCode.createSession:
             request.request.rewind();
             int to = request.request.getInt();
+            // 创建事务体 CreateSessionTxn
             request.setTxn(new CreateSessionTxn(to));
             request.request.rewind();
             // only add the global session tracker but not to ZKDb
+            // 此处进行会话注册与激活的目的是处理由非 Leader 服务器转发过来的会话创建请求。
+            // 在这种情况下，其实尚未在Leader的SessionTracker中进行会话的注册，因此需要在此处进行一次注册与激活。
+            // TODO
             zks.sessionTracker.trackSession(request.sessionId, to);
             zks.setOwner(request.sessionId, request.getOwner());
             break;

@@ -721,7 +721,7 @@ public class Leader extends LearnerMaster {
             boolean tickSkip = true;
             // If not null then shutdown this leader
             String shutdownMessage = null;
-
+            // Leader 定时 ping Learner
             while (true) {
                 synchronized (this) {
                     long start = Time.currentElapsedTime();
@@ -1228,6 +1228,9 @@ public class Leader extends LearnerMaster {
          * Address the rollover issue. All lower 32bits set indicate a new leader
          * election. Force a re-election instead. See ZOOKEEPER-1277
          */
+        // 在发起事务投票之前，首先会检查当前服务端的ZXID是否可用。
+        // 关于ZooKeeper的 ZXID 可用性检查，如果当前服务端的 ZXID 不可用，
+        // 那么将会抛出XidRolloverException异常。
         if ((request.zxid & 0xffffffffL) == 0xffffffffL) {
             String msg = "zxid lower 32 bits have rolled over, forcing re-election, and therefore new epoch start";
             shutdown(msg);
@@ -1236,6 +1239,8 @@ public class Leader extends LearnerMaster {
 
         byte[] data = SerializeUtils.serializeRequest(request);
         proposalStats.setLastBufferSize(data.length);
+        // ZooKeeper会将之前创建的请求头和事务体，以及ZXID和请求本身序列化到Proposal对象中
+        // 此处生成的Proposal对象就是一个提议，即针对ZooKeeper服务器状态的一次变更申请。
         QuorumPacket pp = new QuorumPacket(Leader.PROPOSAL, request.zxid, data, null);
 
         Proposal p = new Proposal();
@@ -1254,7 +1259,8 @@ public class Leader extends LearnerMaster {
             }
 
             LOG.debug("Proposing:: {}", request);
-
+            // 生成提议后，Leader 服务器会以 ZXID 作为标识，将该提议放入投票箱outstandingProposals中，
+            // 同时会将该提议广播给所有的Follower服务器。
             lastProposed = p.packet.getZxid();
             outstandingProposals.put(lastProposed, p);
             sendPacket(pp);

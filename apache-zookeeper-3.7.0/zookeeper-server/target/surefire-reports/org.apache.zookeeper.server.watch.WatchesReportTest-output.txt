@@ -1,6 +1,0 @@
-2021-11-08 11:14:09,525 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchesReportTest.testGetPaths()]
-2021-11-08 11:14:09,560 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchesReportTest.testGetPaths()]
-2021-11-08 11:14:09,567 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchesReportTest.testToMap()]
-2021-11-08 11:14:09,569 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchesReportTest.testToMap()]
-2021-11-08 11:14:09,571 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.watch.WatchesReportTest.testHasPaths()]
-2021-11-08 11:14:09,572 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.watch.WatchesReportTest.testHasPaths()]

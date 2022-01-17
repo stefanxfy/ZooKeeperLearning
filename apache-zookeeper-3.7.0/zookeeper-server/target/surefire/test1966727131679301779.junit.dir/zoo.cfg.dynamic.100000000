@@ -1,3 +1,0 @@
-server.0=localhost:19321:19322:participant;localhost:19320
-server.1=localhost:19324:19325:participant;localhost:19323
-server.2=localhost:19327:19328:participant;localhost:19326

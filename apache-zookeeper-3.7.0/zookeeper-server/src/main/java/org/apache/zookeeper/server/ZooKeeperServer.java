@@ -991,7 +991,9 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
             // Possible since it's just deserialized from a packet on the wire.
             passwd = new byte[0];
         }
+        // 生成 session
         long sessionId = sessionTracker.createSession(timeout);
+        // 生成会话密码
         Random r = new Random(sessionId ^ superSecret);
         r.nextBytes(passwd);
         ByteBuffer to = ByteBuffer.allocate(4);
@@ -1376,6 +1378,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
         throws IOException, ClientCnxnLimitException {
 
         BinaryInputArchive bia = BinaryInputArchive.getArchive(new ByteBufferInputStream(incomingBuffer));
+        // 1、反序列化ConnectRequest请求
         ConnectRequest connReq = new ConnectRequest();
         connReq.deserialize(bia, "connect");
         LOG.debug(
@@ -1403,7 +1406,6 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
         ServerMetrics.getMetrics().CONNECTION_TOKEN_DEFICIT.add(connThrottle.getDeficit());
 
         ServerMetrics.getMetrics().CONNECTION_REQUEST_COUNT.add(1);
-
         boolean readOnly = false;
         try {
             readOnly = bia.readBool("readOnly");
@@ -1415,11 +1417,15 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
                 "Connection request from old client {}; will be dropped if server is in r-o mode",
                 cnxn.getRemoteSocketAddress());
         }
+        // 2、ZooKeeper服务器是以ReadOnly模式启动的，那么所有来自非 ReadOnly 型客户端的请求将无法被处理。
         if (!readOnly && this instanceof ReadOnlyZooKeeperServer) {
             String msg = "Refusing session request for not-read-only client " + cnxn.getRemoteSocketAddress();
             LOG.info(msg);
             throw new CloseRequestException(msg, ServerCnxn.DisconnectReason.NOT_READ_ONLY_CLIENT);
         }
+        // 3、检查客户端ZXID
+        // 在正常情况下，同一个ZooKeeper集群中，服务端的ZXID必定大于客户端的ZXID，
+        // 因此如果发现客户端的 ZXID 值大于服务端的 ZXID 值，那么服务端将不接受该客户端的“会话创建”请求。
         if (connReq.getLastZxidSeen() > zkDb.dataTree.lastProcessedZxid) {
             String msg = "Refusing session request for client "
                          + cnxn.getRemoteSocketAddress()
@@ -1432,6 +1438,9 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
             LOG.info(msg);
             throw new CloseRequestException(msg, ServerCnxn.DisconnectReason.CLIENT_ZXID_AHEAD);
         }
+        // 4、协商sessionTimeout
+        // ZooKeeper 服务端对超时时间的限制介于 2 个tickTime 到 20 个tickTime之间。
+        // 即如果我们设置tickTime值为2000（单位：毫秒）的话，那么服务端就会限制客户端的超时时间，使之介于4秒到40秒之间。
         int sessionTimeout = connReq.getTimeOut();
         byte[] passwd = connReq.getPasswd();
         int minSessionTimeout = getMinSessionTimeout();
@@ -1446,6 +1455,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
         // We don't want to receive any packets until we are sure that the
         // session is setup
         cnxn.disableRecv();
+        // 判断是否需要重新创建会话。
         if (sessionId == 0) {
             long id = createSession(cnxn, passwd, sessionTimeout);
             LOG.debug(
@@ -1468,6 +1478,8 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
             if (secureServerCnxnFactory != null) {
                 secureServerCnxnFactory.closeSession(sessionId, ServerCnxn.DisconnectReason.CLIENT_RECONNECT);
             }
+            // 如果客户端请求中已经包含了sessionID，那么就认为该客户端正在进行会话重连。
+            // 在这种情况下，服务端只需要重新打开这个会话，否则需要重新创建。
             cnxn.setSessionId(sessionId);
             reopenSession(cnxn, sessionId, passwd, sessionTimeout);
             ServerMetrics.getMetrics().CONNECTION_REVALIDATE_COUNT.add(1);

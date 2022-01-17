@@ -1,4 +1,0 @@
-2021-11-08 11:13:39,101 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.util.BitMapTest.testAddAndRemove()]
-2021-11-08 11:13:39,116 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.util.BitMapTest.testAddAndRemove()]
-2021-11-08 11:13:39,121 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.util.BitMapTest.testBitReuse()]
-2021-11-08 11:13:39,122 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.util.BitMapTest.testBitReuse()]

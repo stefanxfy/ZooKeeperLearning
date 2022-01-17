@@ -1,6 +1,0 @@
-2021-11-08 11:09:48,915 [myid:] - INFO  [main:LearnerMaster@47] - zookeeper.leader.maxConcurrentSnapSyncs = 10
-2021-11-08 11:09:48,918 [myid:] - INFO  [main:LearnerMaster@50] - zookeeper.leader.maxConcurrentDiffSyncs = 100
-2021-11-08 11:09:48,918 [myid:] - INFO  [main:Leader@87] - TCP NoDelay set to: true
-2021-11-08 11:09:48,918 [myid:] - INFO  [main:Leader@108] - zookeeper.leader.ackLoggingFrequency = 1000
-2021-11-08 11:09:48,919 [myid:] - INFO  [main:Leader@1345] - zookeeper.leader.maxTimeToWaitForEpoch = -1ms
-2021-11-08 11:09:49,042 [myid:] - INFO  [main:LearnerHandler@72] - leader.closeSocketAsync = false

@@ -183,8 +183,9 @@ public class NIOServerCnxn extends ServerCnxn {
         if (incomingBuffer.remaining() == 0) { // have we read length bytes?
             incomingBuffer.flip();
             packetReceived(4 + incomingBuffer.remaining());
+            // 每个会话都会对应一个NIOServerCnxn实体，判断NIOServerCnxn实体是否被初始化
             if (!initialized) {
-                // 处理 session 连接请求
+                // 没有初始化，说明是会话建立，处理 session 连接请求
                 readConnectRequest();
             } else {
                 readRequest();

@@ -1,9 +1,0 @@
-2021-11-08 11:05:22,345 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testClientCanonicalizationToIp() throws java.io.IOException,java.lang.InterruptedException]
-2021-11-08 11:05:23,117 [myid:] - INFO  [main:X509Util@77] - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
-2021-11-08 11:05:23,127 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testClientCanonicalizationToIp() throws java.io.IOException,java.lang.InterruptedException]
-2021-11-08 11:05:23,132 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testGetServerPrincipalReturnConfiguredPrincipalName()]
-2021-11-08 11:05:23,133 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testGetServerPrincipalReturnConfiguredPrincipalName()]
-2021-11-08 11:05:23,134 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testClientNoCanonicalization() throws java.io.IOException,java.lang.InterruptedException]
-2021-11-08 11:05:23,136 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testClientNoCanonicalization() throws java.io.IOException,java.lang.InterruptedException]
-2021-11-08 11:05:23,137 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testClientCanonicalization() throws java.io.IOException,java.lang.InterruptedException]
-2021-11-08 11:05:23,138 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.ClientCanonicalizeTest.testClientCanonicalization() throws java.io.IOException,java.lang.InterruptedException]

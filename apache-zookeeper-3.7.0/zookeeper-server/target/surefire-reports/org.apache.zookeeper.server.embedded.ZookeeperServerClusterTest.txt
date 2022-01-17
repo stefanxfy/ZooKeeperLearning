@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.apache.zookeeper.server.embedded.ZookeeperServerClusterTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.55 s - in org.apache.zookeeper.server.embedded.ZookeeperServerClusterTest

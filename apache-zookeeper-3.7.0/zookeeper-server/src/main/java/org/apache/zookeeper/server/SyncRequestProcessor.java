@@ -178,6 +178,8 @@ public class SyncRequestProcessor extends ZooKeeperCriticalThread implements Req
                 ServerMetrics.getMetrics().SYNC_PROCESSOR_QUEUE_TIME.add(startProcessTime - si.syncQueueStartTime);
                 // SyncRequestProcessor 是事务日志记录处理器，该处理器主要用来将事务请求记录到事务日志文件中去，
                 // 同时还会触发ZooKeeper 进行数据快照
+                // 针对每个事务请求，都会通过事务日志的形式将其记录下来。
+                // Leader服务器和 Follower服务器的请求处理链路中都会有这个处理器，两者在事务日志的记录功能上是完全一致的
                 // track the number of records written to the log
                 if (!si.isThrottled() && zks.getZKDatabase().append(si)) {
                     if (shouldSnapshot()) {

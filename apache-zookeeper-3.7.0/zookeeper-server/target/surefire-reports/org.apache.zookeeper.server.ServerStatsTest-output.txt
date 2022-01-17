@@ -1,8 +1,0 @@
-2021-11-08 11:13:20,157 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ServerStatsTest.testLatencyMetrics()]
-2021-11-08 11:13:20,519 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ServerStatsTest.testLatencyMetrics()]
-2021-11-08 11:13:20,524 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ServerStatsTest.testReset()]
-2021-11-08 11:13:20,526 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ServerStatsTest.testReset()]
-2021-11-08 11:13:20,527 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ServerStatsTest.testPacketsMetrics()]
-2021-11-08 11:13:20,528 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ServerStatsTest.testPacketsMetrics()]
-2021-11-08 11:13:20,529 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.server.ServerStatsTest.testFsyncThresholdExceedMetrics()]
-2021-11-08 11:13:20,530 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.server.ServerStatsTest.testFsyncThresholdExceedMetrics()]

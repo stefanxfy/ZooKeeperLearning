@@ -1,7 +1,0 @@
-2021-11-08 11:23:14,125 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public final void org.apache.zookeeper.test.OSMXBeanTest.testGetUnix()]
-2021-11-08 11:23:14,134 [myid:] - INFO  [main:OSMXBeanTest@47] - Running in a Windows system! Output won't be printed!
-2021-11-08 11:23:14,141 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public final void org.apache.zookeeper.test.OSMXBeanTest.testGetUnix()]
-2021-11-08 11:23:14,148 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public final void org.apache.zookeeper.test.OSMXBeanTest.testGetMaxFileDescriptorCount()]
-2021-11-08 11:23:14,149 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public final void org.apache.zookeeper.test.OSMXBeanTest.testGetMaxFileDescriptorCount()]
-2021-11-08 11:23:14,151 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public final void org.apache.zookeeper.test.OSMXBeanTest.testGetOpenFileDescriptorCount()]
-2021-11-08 11:23:14,152 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public final void org.apache.zookeeper.test.OSMXBeanTest.testGetOpenFileDescriptorCount()]

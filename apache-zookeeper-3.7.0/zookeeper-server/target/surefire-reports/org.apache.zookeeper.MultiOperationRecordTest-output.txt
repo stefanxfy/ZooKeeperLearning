@@ -1,4 +1,0 @@
-2021-11-08 11:05:49,665 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.MultiOperationRecordTest.testEmptyRoundTrip() throws java.io.IOException]
-2021-11-08 11:05:49,682 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.MultiOperationRecordTest.testEmptyRoundTrip() throws java.io.IOException]
-2021-11-08 11:05:49,689 [myid:] - INFO  [main:ZKTestCase@77] - STARTING Optional[public void org.apache.zookeeper.MultiOperationRecordTest.testRoundTrip() throws java.io.IOException]
-2021-11-08 11:05:49,698 [myid:] - INFO  [main:ZKTestCase@82] - FINISHED Optional[public void org.apache.zookeeper.MultiOperationRecordTest.testRoundTrip() throws java.io.IOException]

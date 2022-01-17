@@ -902,7 +902,6 @@ public class LearnerHandler extends ZooKeeperThread {
                 needSnap = false;
             } else if (peerLastZxid < minCommittedLog && txnLogSyncEnabled) {
                 // Use txnlog and committedLog to sync
-                // 全量同步（SNAP同步）
                 // Calculate sizeLimit that we allow to retrieve txnlog from disk
                 long sizeLimit = db.calculateTxnLogSizeLimit();
                 // This method can return empty iterator if the requested zxid
@@ -1037,10 +1036,10 @@ public class LearnerHandler extends ZooKeeperThread {
                     // peerLastZxid  minCommittedLog  maxCommittedLog
                     // 0x500000003   0x500000001      0x500000005
 
-                    // 0x500000001  0x500000002 0x600000001   0x600000002
+                    // 0x500000001  0x500000002  0x600000001   0x600000002
                     // peerLastZxid  minCommittedLog  maxCommittedLog
                     // 0x500000003   0x500000001      0x600000002
-
+                    // ????
                     LOG.info(
                         "Sending TRUNC zxid=0x{}  for peer sid: {}",
                         Long.toHexString(prevProposalZxid),

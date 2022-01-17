@@ -1,9 +1,0 @@
-tickTime=4000
-initLimit=10
-syncLimit=5
-connectToLearnerMasterLimit=5
-dataDir=D:/mysoft/faiscoGit/myStudy/ZooKeeperLearning/apache-zookeeper-3.7.0/zookeeper-server/target/surefire/test6134128486984498714.junit.dir/data
-clientPort=24768
-server.1=localhost:24766:24767:participant;localhost:24765
-server.2=localhost:24769:24770:participant;localhost:24768
-

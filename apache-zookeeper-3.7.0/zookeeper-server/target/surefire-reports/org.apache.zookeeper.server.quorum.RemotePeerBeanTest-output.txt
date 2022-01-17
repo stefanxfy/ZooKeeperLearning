@@ -1,1 +1,0 @@
-2021-11-08 11:11:48,889 [myid:] - INFO  [main:QuorumPeer@796] - zookeeper.quorumCnxnTimeoutMs=-1
