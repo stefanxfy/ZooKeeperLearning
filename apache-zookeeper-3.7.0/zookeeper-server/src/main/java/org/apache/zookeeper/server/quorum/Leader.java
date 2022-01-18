@@ -373,22 +373,28 @@ public class Leader extends LearnerMaster {
     public static final int ACKEPOCH = 18;
 
     /**
+     * 请求转发给Leader
+     * 所有的事务请求必须由Leader服务器处理，当Learner收到客户端的事务请求时，必须将请求以REQUEST的消息形式转发给Leader
      * This message type is sent to a leader to request and mutation operation.
      * The payload will consist of a request header followed by a request.
      */
     static final int REQUEST = 1;
 
     /**
+     * 在处理事务请求时，Leader服务器会将事务请求以PROPOSAL消息的形式创建投票发送给集群中所有的Follower，进行事务日志的记录
      * This message type is sent by a leader to propose a mutation.
      */
     public static final int PROPOSAL = 2;
 
     /**
+     * Follower服务器接收到来自Leader的PROPOSAL消息后，会进行事务日志的记录，记录完毕后，会以ACK的消息形式反馈给Leader服务器
      * This message type is sent by a follower after it has synced a proposal.
      */
     static final int ACK = 3;
 
     /**
+     * Leader服务器在收到过半的Follower服务器发来的ACK后，进入事务请求的第二阶段：提交阶段，
+     * 生成COMMIT消息，广播给所有Follower服务器，告知其可以提交事务了
      * This message type is sent by a leader to commit a proposal and cause
      * followers to start serving the corresponding data.
      */
@@ -401,11 +407,14 @@ public class Leader extends LearnerMaster {
     static final int PING = 5;
 
     /**
+     * Learner服务校验会话是否有效，同时也会激活会话
+     * 通常发生在客户端重连的过程中，新的服务器需要向Leader服务器发送REVALIDATE消息以确认该会话是否已超时
      * This message type is to validate a session that should be active.
      */
     static final int REVALIDATE = 6;
 
     /**
+     * 通知Learner服务器已经完成了Sync操作
      * This message is a reply to a synchronize command flushing the pipe
      * between the leader and the follower.
      */
@@ -906,6 +915,7 @@ public class Leader extends LearnerMaster {
         // in order to be committed, a proposal must be accepted by a quorum.
         //
         // getting a quorum from all necessary configurations.
+        // 仲裁
         if (!p.hasAllQuorums()) {
             return false;
         }
@@ -953,7 +963,14 @@ public class Leader extends LearnerMaster {
             informAndActivate(p, designatedLeader);
         } else {
             p.request.logLatency(ServerMetrics.getMetrics().QUORUM_ACK_LATENCY);
+            // Create a commit packet and send it to all the members of the quorum
+            // 一旦 ZooKeeper 确认一个提议已经可以被提交了，
+            // 那么 Leader 服务器就会向Follower和Observer服务器发送COMMIT消息，以便所有服务器都能够提交该提议
             commit(zxid);
+            // 由于 Observer 服务器并未参加之前的提议投票，因此 Observer 服务器尚未保存任何关于该提议的信息，
+            // 所以在广播COMMIT消息的时候，需要区别对待，
+            // Leader会向其发送一种被称为“INFORM”的消息，该消息体中包含了当前提议的内容。
+            // 而对于 Follower 服务器，由于已经保存了所有关于该提议的信息，因此Leader服务器只需要向其发送ZXID即可。
             inform(p);
         }
         zk.commitProcessor.commit(p.request);
@@ -1021,7 +1038,7 @@ public class Leader extends LearnerMaster {
         }
 
         p.addAck(sid);
-
+        // 尝试 commit
         boolean hasCommitted = tryToCommit(p, zxid, followerAddr);
 
         // If p is a reconfiguration, multiple other operations may be ready to be committed,

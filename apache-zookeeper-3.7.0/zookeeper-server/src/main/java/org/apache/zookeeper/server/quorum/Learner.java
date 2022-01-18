@@ -236,7 +236,7 @@ public class Learner {
 
     /**
      * send a request packet to the leader
-     *
+     * 发送一个请求包给leader
      * @param request
      *                the request from the client
      * @throws IOException

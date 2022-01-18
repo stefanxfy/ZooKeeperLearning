@@ -89,6 +89,7 @@ public class FollowerZooKeeperServer extends LearnerZooKeeperServer {
         if ((request.zxid & 0xffffffffL) != 0) {
             pendingTxns.add(request);
         }
+        // 处理 PROPOSAL 消息
         syncProcessor.processRequest(request);
     }
 

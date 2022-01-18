@@ -158,6 +158,7 @@ public class FinalRequestProcessor implements RequestProcessor {
         }
         ProcessTxnResult rc = null;
         if (!request.isThrottled()) {
+            // 应用到内存数据库
           rc = applyRequest(request);
         }
         if (request.cnxn == null) {
@@ -609,6 +610,7 @@ public class FinalRequestProcessor implements RequestProcessor {
 
         try {
             if (path == null || rsp == null) {
+                // 响应 response
                 responseSize = cnxn.sendResponse(hdr, rsp, "response");
             } else {
                 int opCode = request.type;

@@ -78,7 +78,7 @@ public class ProposalRequestProcessor implements RequestProcessor {
         } else {
             if (shouldForwardToNextProcessor(request)) {
                 // 处理器，也是Leader服务器事务处理流程的发起者。
-                // 对于非事务请求，ProposalRequestProcessor会直接将请求流转到CommitProcessor处理器，不再做其他处理
+                // 对于非事务请求，ProposalRequestProcessor 会直接将请求流转到 CommitProcessor 处理器，不再做其他处理
                 nextProcessor.processRequest(request);
             }
             if (request.getHdr() != null) {
