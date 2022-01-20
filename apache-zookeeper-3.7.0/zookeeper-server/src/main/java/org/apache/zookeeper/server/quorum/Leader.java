@@ -1096,7 +1096,7 @@ public class Leader extends LearnerMaster {
          */
         public void processRequest(Request request) throws RequestProcessorException {
             // 有一个toBeApp lied队列，专门用来存储那些已经被CommitProcessor处理过的可被提交的Proposal
-            // ToBeCommitProcessor处理器将这些请求逐个交付给FinalRequestProcessor处理器进行处理
+            // ToBeCommitProcessor 处理器将这些请求逐个交付给FinalRequestProcessor处理器进行处理
             // 等到FinalRequestProcessor 处理器处理完之后，再将其从toBeApplied队列中移除。
             next.processRequest(request);
 
