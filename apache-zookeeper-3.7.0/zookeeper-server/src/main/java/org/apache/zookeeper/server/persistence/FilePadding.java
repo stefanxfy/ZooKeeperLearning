@@ -27,6 +27,8 @@ import org.slf4j.LoggerFactory;
 public class FilePadding {
 
     private static final Logger LOG;
+    // preAllocSize是用来配置事务日志文件预先分配文件大小的参数。
+    // 默认65536，单位KB，即64MB。
     private static long preAllocSize = 65536 * 1024;
     private static final ByteBuffer fill = ByteBuffer.allocateDirect(1);
 

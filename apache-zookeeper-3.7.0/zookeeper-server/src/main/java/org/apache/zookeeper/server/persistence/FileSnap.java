@@ -250,6 +250,7 @@ public class FileSnap implements SnapShot {
                 OutputArchive oa = BinaryOutputArchive.getArchive(snapOS);
                 FileHeader header = new FileHeader(SNAP_MAGIC, VERSION, dbId);
                 serialize(dt, sessions, oa, header);
+
                 SnapStream.sealStream(snapOS, oa);
 
                 // Digest feature was added after the CRC to make it backward

@@ -141,8 +141,13 @@ public class SyncRequestProcessor extends ZooKeeperCriticalThread implements Req
     }
 
     private boolean shouldSnapshot() {
+        // snapCount 默认 10 0000， snapSizeInBytes 默认 4G
         int logCount = zks.getZKDatabase().getTxnCount();
+        // 上次快照后所有txn文件的大小，每次事务日志滚动生成时，累加统计
         long logSize = zks.getZKDatabase().getTxnSize();
+        // 快照是一个比较好性能的操作,为了防止集群中的所有机器同时触发快照操作，
+        // 当事务日志中的事务数量达到运行时[ snapCount/2 + 1，snapCount ]范围内生成的随机值时，该ZooKeeper服务器就触发一次快照。
+        // 或者 当上次快照之后所有事务日志文件大小在[ snapSizeInBytes/2 + 1，snapSizeInBytes ]范围内生成的随机值时，也会触发一次快照。
         return (logCount > (snapCount / 2 + randRoll))
                || (snapSizeInBytes > 0 && logSize > (snapSizeInBytes / 2 + randSize));
     }
@@ -155,6 +160,11 @@ public class SyncRequestProcessor extends ZooKeeperCriticalThread implements Req
     @Override
     public void run() {
         try {
+            // SyncRequestProcessor 是事务日志记录处理器，该处理器主要用来将事务请求记录到事务日志文件中去，
+            // 同时还会触发ZooKeeper 进行数据快照
+            // 针对每个事务请求，都会通过事务日志的形式将其记录下来。
+            // Leader服务器和 Follower服务器的请求处理链路中都会有这个处理器，两者在事务日志的记录功能上是完全一致的
+
             // we do this in an attempt to ensure that not all of the servers
             // in the ensemble take a snapshot at the same time
             resetSnapshotStats();
@@ -176,17 +186,18 @@ public class SyncRequestProcessor extends ZooKeeperCriticalThread implements Req
 
                 long startProcessTime = Time.currentElapsedTime();
                 ServerMetrics.getMetrics().SYNC_PROCESSOR_QUEUE_TIME.add(startProcessTime - si.syncQueueStartTime);
-                // SyncRequestProcessor 是事务日志记录处理器，该处理器主要用来将事务请求记录到事务日志文件中去，
-                // 同时还会触发ZooKeeper 进行数据快照
-                // 针对每个事务请求，都会通过事务日志的形式将其记录下来。
-                // Leader服务器和 Follower服务器的请求处理链路中都会有这个处理器，两者在事务日志的记录功能上是完全一致的
                 // track the number of records written to the log
+                // append 事务请求先落地到事务日志文件
                 if (!si.isThrottled() && zks.getZKDatabase().append(si)) {
+                    // 判断是否需要快照
                     if (shouldSnapshot()) {
+                        // 重置随机数
                         resetSnapshotStats();
                         // roll the log
+                        // 事务日志滚动，将上次文件流断开，此次再追加事务日志就会创建新的文件了
                         zks.getZKDatabase().rollLog();
                         // take a snapshot
+                        // 一个 服务 同一时刻只会有一个线程做快照
                         if (!snapThreadMutex.tryAcquire()) {
                             LOG.warn("Too busy to snap, skipping");
                         } else {
@@ -218,6 +229,7 @@ public class SyncRequestProcessor extends ZooKeeperCriticalThread implements Req
                 }
                 toFlush.add(si);
                 if (shouldFlush()) {
+                    // 将toFlush 中的请求交由下一个processor处理
                     flush();
                 }
                 ServerMetrics.getMetrics().SYNC_PROCESS_TIME.add(Time.currentElapsedTime() - startProcessTime);
@@ -236,6 +248,7 @@ public class SyncRequestProcessor extends ZooKeeperCriticalThread implements Req
         ServerMetrics.getMetrics().BATCH_SIZE.add(toFlush.size());
 
         long flushStartTime = Time.currentElapsedTime();
+        // 提交日志事务，使其落地
         zks.getZKDatabase().commit();
         ServerMetrics.getMetrics().SYNC_PROCESSOR_FLUSH_TIME.add(Time.currentElapsedTime() - flushStartTime);
 
