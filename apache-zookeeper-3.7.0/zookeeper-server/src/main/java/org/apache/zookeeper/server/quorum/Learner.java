@@ -566,7 +566,7 @@ public class Learner {
         // maxCommittedLog：Leader服务器提议缓存队列committedLog中的最大ZXID。
         synchronized (zk) {
             if (qp.getType() == Leader.DIFF) {
-                // 直接差异化同步（DIFF同步），即 少了一些数据
+                // 直接差异化同步（DIFF同步）
                 // peerLastZxid介于minCommittedLog和maxCommittedLog之间
                 LOG.info("Getting a diff from the leader 0x{}", Long.toHexString(qp.getZxid()));
                 self.setSyncMode(QuorumPeer.SyncMode.DIFF);
@@ -626,9 +626,7 @@ public class Learner {
                 LOG.error("Got unexpected packet from leader: {}, exiting ... ", LearnerHandler.packetToString(qp));
                 ServiceUtils.requestSystemExit(ExitCode.QUORUM_PACKET_ERROR.getValue());
             }
-            // 还存在一种特殊的 先回滚再差异化同步（TRUNC+DIFF同步）
-            // peerLastZxid依然在 minCommittedLog 和 maxCommittedLog 之间，
-            // 但是peerLastZxid和minCommittedLog是同一任期，maxCommittedLog是另一个任期。
+
             zk.getZKDatabase().initConfigInZKDatabase(self.getQuorumVerifier());
             zk.createSessionTracker();
 

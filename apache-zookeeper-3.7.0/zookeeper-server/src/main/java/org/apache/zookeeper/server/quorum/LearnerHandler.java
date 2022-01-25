@@ -529,7 +529,7 @@ public class LearnerHandler extends ZooKeeperThread {
             }
             // 注册 bean
             learnerMaster.registerLearnerHandlerBean(this, sock);
-            // 从报文中解析出 zxid
+            // 解析出 Epoch
             long lastAcceptedEpoch = ZxidUtils.getEpochFromZxid(qp.getZxid());
 
             long peerLastZxid;
@@ -584,6 +584,7 @@ public class LearnerHandler extends ZooKeeperThread {
             /* if we are not truncating or sending a diff just send a snapshot */
             if (needSnap) {
                 // 获取 SNAP SyncThrottler
+                // 以快照的方式同步
                 syncThrottler = learnerMaster.getLearnerSnapSyncThrottler();
                 syncThrottler.beginSync(exemptFromThrottle);
                 ServerMetrics.getMetrics().INFLIGHT_SNAP_COUNT.add(syncThrottler.getSyncInProgress());
@@ -610,7 +611,6 @@ public class LearnerHandler extends ZooKeeperThread {
                     ServerMetrics.getMetrics().SNAP_COUNT.add(1);
                 }
             } else {
-                // 获取 DIFF SyncThrottler
                 syncThrottler = learnerMaster.getLearnerDiffSyncThrottler();
                 syncThrottler.beginSync(exemptFromThrottle);
                 ServerMetrics.getMetrics().INFLIGHT_DIFF_COUNT.add(syncThrottler.getSyncInProgress());
@@ -813,6 +813,8 @@ public class LearnerHandler extends ZooKeeperThread {
          * zxid in our history. In this case, we will ignore TRUNC logic and
          * always send DIFF if we have old enough history
          */
+        // 1111 1111 1111 1111 1111 1111 1111 1111
+        // 判断是不是一个从0 开始的新 zxid
         boolean isPeerNewEpochZxid = (peerLastZxid & 0xffffffffL) == 0;
         // Keep track of the latest zxid which already queued
         long currentZxid = peerLastZxid;
@@ -901,6 +903,7 @@ public class LearnerHandler extends ZooKeeperThread {
                 currentZxid = queueCommittedProposals(itr, peerLastZxid, null, maxCommittedLog);
                 needSnap = false;
             } else if (peerLastZxid < minCommittedLog && txnLogSyncEnabled) {
+                // 使用txnlog和committedLog进行同步
                 // Use txnlog and committedLog to sync
                 // Calculate sizeLimit that we allow to retrieve txnlog from disk
                 long sizeLimit = db.calculateTxnLogSizeLimit();
@@ -984,7 +987,6 @@ public class LearnerHandler extends ZooKeeperThread {
         long prevProposalZxid = -1;
         while (itr.hasNext()) {
             Proposal propose = itr.next();
-            // (peerLaxtZxid, maxZxid]
             long packetZxid = propose.packet.getZxid();
             // abort if we hit the limit
             if ((maxZxid != null) && (packetZxid > maxZxid)) {
@@ -1004,6 +1006,10 @@ public class LearnerHandler extends ZooKeeperThread {
                 // Send diff when we see the follower's zxid in our history
                 // 当我们在历史记录中看到follower的zxid时，发送diff
                 if (packetZxid == peerLastZxid) {
+                    // 0x500000001  0x500000002  0x500000003  0x500000004  0x500000005
+                    // peerLastZxid  minCommittedLog  maxCommittedLog
+                    // 0x500000003   0x500000001      0x500000005
+
                     LOG.info(
                         "Sending DIFF zxid=0x{}  for peer sid: {}",
                         Long.toHexString(lastCommittedZxid),
@@ -1024,7 +1030,7 @@ public class LearnerHandler extends ZooKeeperThread {
                 } else if (packetZxid > peerLastZxid) {
                     // Peer have some proposals that the learnerMaster hasn't seen yet
                     // it may used to be a leader
-                    // (peerLaxtZxid, maxZxid]
+                    // ????
                     if (ZxidUtils.getEpochFromZxid(packetZxid) != ZxidUtils.getEpochFromZxid(peerLastZxid)) {
                         // We cannot send TRUNC that cross epoch boundary.
                         // The learner will crash if it is asked to do so.
@@ -1036,10 +1042,9 @@ public class LearnerHandler extends ZooKeeperThread {
                     // peerLastZxid  minCommittedLog  maxCommittedLog
                     // 0x500000003   0x500000001      0x500000005
 
-                    // 0x500000001  0x500000002  0x600000001   0x600000002
+                    // 0x500000001  0x500000002   0x600000001   0x600000002
                     // peerLastZxid  minCommittedLog  maxCommittedLog
                     // 0x500000003   0x500000001      0x600000002
-                    // ????
                     LOG.info(
                         "Sending TRUNC zxid=0x{}  for peer sid: {}",
                         Long.toHexString(prevProposalZxid),
