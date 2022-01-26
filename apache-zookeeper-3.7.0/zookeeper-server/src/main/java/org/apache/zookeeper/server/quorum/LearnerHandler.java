@@ -902,16 +902,21 @@ public class LearnerHandler extends ZooKeeperThread {
                 needSnap = false;
             } else if (peerLastZxid < minCommittedLog && txnLogSyncEnabled) {
                 // Use txnlog and committedLog to sync
+                // 使用txnlog和committedLog进行同步
                 // Calculate sizeLimit that we allow to retrieve txnlog from disk
+                // 计算我们允许从磁盘检索txnlog的sizeLimit
                 long sizeLimit = db.calculateTxnLogSizeLimit();
                 // This method can return empty iterator if the requested zxid
                 // is older than on-disk txnlog
+                // 从 磁盘上的事务日志文件 中读取从peerLastZxid开始的 txnLogItr
                 Iterator<Proposal> txnLogItr = db.getProposalsFromTxnLog(peerLastZxid, sizeLimit);
                 if (txnLogItr.hasNext()) {
                     LOG.info("Use txnlog and committedLog for peer sid: {}", getSid());
                     currentZxid = queueCommittedProposals(txnLogItr, peerLastZxid, minCommittedLog, maxCommittedLog);
 
                     if (currentZxid < minCommittedLog) {
+                        // 检测到 txnlog: peerLastZxid结束和committedLog: minCommittedLog开始之间的差距
+                        // 需要 快照同步
                         LOG.info(
                             "Detected gap between end of txnlog: 0x{} and start of committedLog: 0x{}",
                             Long.toHexString(currentZxid),

@@ -148,6 +148,7 @@ public class Leader extends LearnerMaster {
     }
 
     // list of followers that are ready to follow (i.e synced with the leader)
+    // 准备追随的追随者列表(即与领导者同步)
     private final HashSet<LearnerHandler> forwardingFollowers = new HashSet<LearnerHandler>();
 
     /**
@@ -601,17 +602,18 @@ public class Leader extends LearnerMaster {
         try {
             self.setZabState(QuorumPeer.ZabState.DISCOVERY);
             self.tick.set(0);
-            // 加载 数据
+            // 1. 加载 数据
             zk.loadData();
 
             leaderStateSummary = new StateSummary(self.getCurrentEpoch(), zk.getLastProcessedZxid());
 
             // Start thread that waits for connection requests from
             // new followers.
-            // 启动 LearnerCnxAcceptor
+            // 2. 启动 LearnerCnxAcceptor，处理来自Learner的连接请求
             cnxAcceptor = new LearnerCnxAcceptor();
             cnxAcceptor.start();
             // 如果 没有过半确认，会阻塞等待
+            // 3. connectingFollowers 连接数如果没有过半确认，会阻塞等待
             long epoch = getEpochToPropose(self.getId(), self.getAcceptedEpoch());
 
             zk.setZxid(ZxidUtils.makeZxid(epoch, 0));
@@ -666,13 +668,15 @@ public class Leader extends LearnerMaster {
             // We have to get at least a majority of servers in sync with
             // us. We do this by waiting for the NEWLEADER packet to get
             // acknowledged
-
+            // 3. electingFollowers 如果没有过半确认，会阻塞等待
+            // Leader发完LEADERINFO，等过半的ACKEPOCH
             waitForEpochAck(self.getId(), leaderStateSummary);
             self.setCurrentEpoch(epoch);
             self.setLeaderAddressAndId(self.getQuorumAddress(), self.getId());
             self.setZabState(QuorumPeer.ZabState.SYNCHRONIZATION);
 
             try {
+                // 4. Leader 发完 NEWLEADER，等ACK 过半
                 waitForNewLeaderAck(self.getId(), zk.getZxid());
             } catch (InterruptedException e) {
                 shutdown("Waiting for a quorum of followers, only synced with sids: [ "
@@ -697,7 +701,8 @@ public class Leader extends LearnerMaster {
                 }
                 return;
             }
-
+            // 5. 过半数的 follower 连上了 Leader 并且 过半数的 follower 已经同步了数据
+            // 所以Leader可以对外服务了，LeaderZooKeeperServer 启动
             startZkServer();
 
             /**
@@ -730,7 +735,7 @@ public class Leader extends LearnerMaster {
             boolean tickSkip = true;
             // If not null then shutdown this leader
             String shutdownMessage = null;
-            // Leader 定时 ping Learner
+            // 6. Leader 定时 ping Learner
             while (true) {
                 synchronized (this) {
                     long start = Time.currentElapsedTime();
@@ -1309,16 +1314,16 @@ public class Leader extends LearnerMaster {
     }
 
     /**
-     * lets the leader know that a follower is capable of following and is done
-     * syncing
+     * lets the leader know that a follower is capable of following and is done syncing
+     * 让领导者知道一个追随者能够跟随并且已经完成同步
      *
      * @param handler handler of the follower
      * @return last proposed zxid
      */
     @Override
     public synchronized long startForwarding(LearnerHandler handler, long lastSeenZxid) {
-        // Queue up any outstanding requests enabling the receipt of
-        // new requests
+        // Queue up any outstanding requests enabling the receipt of new requests
+        // 将所有未完成的请求排队，以便接收新请求
         if (lastProposed > lastSeenZxid) {
             for (Proposal p : toBeApplied) {
                 if (p.packet.getZxid() <= lastSeenZxid) {
@@ -1549,6 +1554,7 @@ public class Leader extends LearnerMaster {
         }
 
         leaderStartTime = Time.currentElapsedTime();
+        // LeaderZooKeeperServer启动
         zk.startup();
         /*
          * Update the election vote here to ensure that all members of the
