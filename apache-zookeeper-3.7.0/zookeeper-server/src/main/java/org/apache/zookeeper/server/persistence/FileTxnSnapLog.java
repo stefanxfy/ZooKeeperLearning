@@ -239,6 +239,7 @@ public class FileTxnSnapLog {
     }
 
     /**
+     * 该功能用于从快照和事务日志恢复服务器数据库
      * this function restores the server
      * database after reading from the
      * snapshots and transaction logs
@@ -478,9 +479,11 @@ public class FileTxnSnapLog {
         ConcurrentHashMap<Long, Integer> sessionsWithTimeouts,
         boolean syncSnap) throws IOException {
         long lastZxid = dataTree.lastProcessedZxid;
+        // 创建快照文件
         File snapshotFile = new File(snapDir, Util.makeSnapshotName(lastZxid));
         LOG.info("Snapshotting: 0x{} to {}", Long.toHexString(lastZxid), snapshotFile);
         try {
+            // 序列化
             snapLog.serialize(dataTree, sessionsWithTimeouts, snapshotFile, syncSnap);
         } catch (IOException e) {
             if (snapshotFile.length() == 0) {
@@ -524,6 +527,7 @@ public class FileTxnSnapLog {
                 // I'd rather just close/reopen this object itself, however that
                 // would have a big impact outside ZKDatabase as there are other
                 // objects holding a reference to this object.
+                // 重新打开txnLog和snapLog
                 txnLog = new FileTxnLog(dataDir);
                 snapLog = new FileSnap(snapDir);
 

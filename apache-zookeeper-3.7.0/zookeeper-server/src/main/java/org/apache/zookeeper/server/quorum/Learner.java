@@ -626,9 +626,7 @@ public class Learner {
                 LOG.error("Got unexpected packet from leader: {}, exiting ... ", LearnerHandler.packetToString(qp));
                 ServiceUtils.requestSystemExit(ExitCode.QUORUM_PACKET_ERROR.getValue());
             }
-            // 还存在一种特殊的 先回滚再差异化同步（TRUNC+DIFF同步）
-            // peerLastZxid依然在 minCommittedLog 和 maxCommittedLog 之间，
-            // 但是peerLastZxid和minCommittedLog是同一任期，maxCommittedLog是另一个任期。
+
             zk.getZKDatabase().initConfigInZKDatabase(self.getQuorumVerifier());
             zk.createSessionTracker();
 

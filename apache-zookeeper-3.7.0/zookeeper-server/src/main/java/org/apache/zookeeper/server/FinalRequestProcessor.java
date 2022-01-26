@@ -162,6 +162,7 @@ public class FinalRequestProcessor implements RequestProcessor {
           rc = applyRequest(request);
         }
         if (request.cnxn == null) {
+            // 从 Learner 转发过来的事务请求 cnxn=null， Leader不会帮助Leader 给客户端响应
             return;
         }
         ServerCnxn cnxn = request.cnxn;
@@ -609,8 +610,8 @@ public class FinalRequestProcessor implements RequestProcessor {
         updateStats(request, lastOp, lastZxid);
 
         try {
+            // 响应 response
             if (path == null || rsp == null) {
-                // 响应 response
                 responseSize = cnxn.sendResponse(hdr, rsp, "response");
             } else {
                 int opCode = request.type;

@@ -40,8 +40,8 @@ public class ProposalRequestProcessor implements RequestProcessor {
 
     SyncRequestProcessor syncProcessor;
 
-    // If this property is set, requests from Learners won't be forwarded
-    // to the CommitProcessor in order to save resources
+    // If this property is set, requests from Learners won't be forwarded to the CommitProcessor in order to save resources
+    // 如果设置了这个属性，学习者的请求将不会被转发到CommitProcessor以节省资源
     public static final String FORWARD_LEARNER_REQUESTS_TO_COMMIT_PROCESSOR_DISABLED =
           "zookeeper.forward_learner_requests_to_commit_processor_disabled";
     private final boolean forwardLearnerRequestsToCommitProcessorDisabled;
@@ -54,6 +54,7 @@ public class ProposalRequestProcessor implements RequestProcessor {
 
         forwardLearnerRequestsToCommitProcessorDisabled = Boolean.getBoolean(
                 FORWARD_LEARNER_REQUESTS_TO_COMMIT_PROCESSOR_DISABLED);
+
         LOG.info("{} = {}", FORWARD_LEARNER_REQUESTS_TO_COMMIT_PROCESSOR_DISABLED,
                 forwardLearnerRequestsToCommitProcessorDisabled);
     }
@@ -77,21 +78,21 @@ public class ProposalRequestProcessor implements RequestProcessor {
             zks.getLeader().processSync((LearnerSyncRequest) request);
         } else {
             if (shouldForwardToNextProcessor(request)) {
-                // 处理器，也是Leader服务器事务处理流程的发起者。
+                // 所有请求都会先 流转给 下一个处理器 CommitProcessor
                 // 对于非事务请求，ProposalRequestProcessor 会直接将请求流转到 CommitProcessor 处理器，不再做其他处理
+                // 同时对于 Learner 转发过来的事务请求，也会 先流转 给 CommitProcessor 处理
                 nextProcessor.processRequest(request);
             }
             if (request.getHdr() != null) {
-                // 对于事务请求，除了将请求交给CommitProcessor处理器外，
-                // 还会根据请求类型创建对应的Proposal提议，
-                // 并发送给所有的 Follower服务器来发起一次集群内的事务投票
+                // 对于事务请求，还需要 生成 Proposal提议，
+                // 并广播 给所有的 Follower服务器来发起一次集群内的事务投票
                 // We need to sync and get consensus on any transactions
                 try {
                     zks.getLeader().propose(request);
                 } catch (XidRolloverException e) {
                     throw new RequestProcessorException(e.getMessage(), e);
                 }
-                // ProposalRequestProcessor 还会将事务请求交付给SyncRequestProcessor 进行事务日志的记录。
+                // 还会将事务请求交付给 SyncRequestProcessor 进行事务日志的记录。
                 syncProcessor.processRequest(request);
             }
         }
@@ -104,10 +105,13 @@ public class ProposalRequestProcessor implements RequestProcessor {
     }
 
     private boolean shouldForwardToNextProcessor(Request request) {
+        // 从Learner转发过来的事务请求，是否禁止交由 CommitProcessor 处理
+        // 默认 false 不开启，所以从Learner转发过来的事务请求，会流转 给 CommitProcessor
         if (!forwardLearnerRequestsToCommitProcessorDisabled) {
             return true;
         }
         if (request.getOwner() instanceof LearnerHandler) {
+            // 从 Learner 转发过来的 请求 没有流转给 CommitProcessor 的计数 +1
             ServerMetrics.getMetrics().REQUESTS_NOT_FORWARDED_TO_COMMIT_PROCESSOR.add(1);
             return false;
         }

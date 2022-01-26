@@ -639,7 +639,9 @@ public class ZKDatabase {
      * @return true if the append was succesfull and false if not
      */
     public boolean append(Request si) throws IOException {
+        // txnCount+1
         txnCount.incrementAndGet();
+        // 事务请求落地
         return this.snapLog.append(si);
     }
 
@@ -648,6 +650,7 @@ public class ZKDatabase {
      */
     public void rollLog() throws IOException {
         this.snapLog.rollLog();
+        // 重置 计数
         resetTxnCount();
     }
 
@@ -746,6 +749,7 @@ public class ZKDatabase {
 
     /**
      * Get the size of txn since last snapshot
+     * 获取上次快照后txn的大小
      */
     public long getTxnSize() {
         return snapLog.getTotalLogSize();

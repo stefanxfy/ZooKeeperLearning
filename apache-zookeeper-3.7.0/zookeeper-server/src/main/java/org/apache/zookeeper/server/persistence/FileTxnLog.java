@@ -97,7 +97,7 @@ import org.slf4j.LoggerFactory;
 public class FileTxnLog implements TxnLog, Closeable {
 
     private static final Logger LOG;
-
+    // 魔法数
     public static final int TXNLOG_MAGIC = ByteBuffer.wrap("ZKLG".getBytes()).getInt();
 
     public static final int VERSION = 2;
@@ -268,6 +268,7 @@ public class FileTxnLog implements TxnLog, Closeable {
 
     @Override
     public synchronized boolean append(TxnHeader hdr, Record txn, TxnDigest digest) throws IOException {
+        // 追加事务日志
         if (hdr == null) {
             return false;
         }
@@ -281,6 +282,7 @@ public class FileTxnLog implements TxnLog, Closeable {
             lastZxidSeen = hdr.getZxid();
         }
         if (logStream == null) {
+            // 创建一个新事务日志文件
             LOG.info("Creating new log file: {}", Util.makeLogName(hdr.getZxid()));
 
             logFileWrite = new File(logDir, Util.makeLogName(hdr.getZxid()));
@@ -289,19 +291,25 @@ public class FileTxnLog implements TxnLog, Closeable {
             oa = BinaryOutputArchive.getArchive(logStream);
             FileHeader fhdr = new FileHeader(TXNLOG_MAGIC, VERSION, dbId);
             fhdr.serialize(oa, "fileheader");
+            // 新创建的文件需要先写入一个魔法数magic、version、dbid
             // Make sure that the magic number is written before padding.
             logStream.flush();
             filePadding.setCurrentSize(fos.getChannel().position());
             streamsToFlush.add(fos);
         }
+        // filePadding 有什么用
         filePadding.padFile(fos.getChannel());
+        // 序列化 事务体
         byte[] buf = Util.marshallTxnEntry(hdr, txn, digest);
         if (buf == null || buf.length == 0) {
             throw new IOException("Faulty serialization for header " + "and txn");
         }
+        // 创建要使用的校验和算法 Adler32 并计算校验和
         Checksum crc = makeChecksumAlgorithm();
         crc.update(buf, 0, buf.length);
+        // 写入 校验和
         oa.writeLong(crc.getValue(), "txnEntryCRC");
+        // 写入 事务体
         Util.writeTxnBytes(oa, buf);
 
         return true;
@@ -406,6 +414,7 @@ public class FileTxnLog implements TxnLog, Closeable {
         }
 
         // Roll the log file if we exceed the size limit
+        // 如果超过大小限制，则滚动日志文件，并没有扩容
         if (txnLogSizeLimit > 0) {
             long logSize = getCurrentLogSize();
 
@@ -449,6 +458,7 @@ public class FileTxnLog implements TxnLog, Closeable {
     }
 
     /**
+     * 截断当前事务日志
      * truncate the current transaction logs
      * @param zxid the zxid to truncate the logs to
      * @return true if successful false if not
@@ -463,9 +473,11 @@ public class FileTxnLog implements TxnLog, Closeable {
             }
             long pos = input.getPosition();
             // now, truncate at the current position
+            // 在当前位置截断
             RandomAccessFile raf = new RandomAccessFile(itr.logFile, "rw");
             raf.setLength(pos);
             raf.close();
+            // 截断后面的文件
             while (itr.goToNextLog()) {
                 if (!itr.logFile.delete()) {
                     LOG.warn("Unable to truncate {}", itr.logFile);

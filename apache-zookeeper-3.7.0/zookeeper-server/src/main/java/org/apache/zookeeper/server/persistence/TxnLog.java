@@ -95,6 +95,7 @@ public interface TxnLog extends Closeable {
     long getDbId() throws IOException;
 
     /**
+     * 提交事务并确认它们被持久化
      * commit the transaction and make sure
      * they are persisted
      * @throws IOException
