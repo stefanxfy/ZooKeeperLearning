@@ -607,7 +607,7 @@ public class Learner {
                 // immediately persist the latest snapshot when there is txn log gap
                 syncSnapshot = true;
             } else if (qp.getType() == Leader.TRUNC) {
-                // 仅回滚同步（TRUNC同步），数据超了
+                // 仅回滚同步（TRUNC同步），数据超了，或者有 Leader没有的数据
                 // peerLastZxid大于maxCommittedLog
                 //we need to truncate the log to the lastzxid of the leader
                 self.setSyncMode(QuorumPeer.SyncMode.TRUNC);
@@ -665,7 +665,7 @@ public class Learner {
                         QuorumVerifier qv = self.configFromString(new String(setDataTxn.getData(), UTF_8));
                         self.setLastSeenQuorumVerifier(qv, true);
                     }
-                    // add 未提交队列
+                    // add 未提交队列，后面正常的commit流程会提交
                     packetsNotCommitted.add(pif);
                     break;
                 case Leader.COMMIT:
@@ -682,7 +682,8 @@ public class Learner {
                             throw new Exception("changes proposed in reconfig");
                         }
                     }
-                    // diff writeToTxnLog=true
+                    // diff writeToTxnLog=true，diff 同步的数据是 会走正常流程commit的，即会写入txn log
+                    // 其他的不会，回直接应用到内存数据库
                     if (!writeToTxnLog) {
                         if (pif.hdr.getZxid() != qp.getZxid()) {
                             LOG.warn(
