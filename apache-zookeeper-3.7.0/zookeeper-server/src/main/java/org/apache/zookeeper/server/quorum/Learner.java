@@ -628,6 +628,7 @@ public class Learner {
             }
 
             zk.getZKDatabase().initConfigInZKDatabase(self.getQuorumVerifier());
+            // 创建 LearnerSessionTracker
             zk.createSessionTracker();
 
             long lastQueued = 0;
