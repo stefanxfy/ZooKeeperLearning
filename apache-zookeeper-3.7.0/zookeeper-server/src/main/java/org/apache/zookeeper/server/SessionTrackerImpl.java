@@ -160,13 +160,15 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
     public void run() {
         try {
             while (running) {
+                // 判断 下一个检查过期时间点是否到了
                 // waitTime = expirationTime - now
                 long waitTime = sessionExpiryQueue.getWaitTime();
                 if (waitTime > 0) {
+                    // 没到就休眠
                     Thread.sleep(waitTime);
                     continue;
                 }
-
+                // 依次清理过期 session
                 for (SessionImpl s : sessionExpiryQueue.poll()) {
                     ServerMetrics.getMetrics().STALE_SESSIONS_EXPIRED.add(1);
                     // 关闭并清理session
