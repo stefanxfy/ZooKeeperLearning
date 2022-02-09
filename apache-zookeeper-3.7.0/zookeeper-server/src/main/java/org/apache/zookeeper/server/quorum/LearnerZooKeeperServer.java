@@ -90,6 +90,7 @@ public abstract class LearnerZooKeeperServer extends QuorumZooKeeperServer {
         if (upgradeableSessionTracker.isLocalSession(sessionId)) {
             super.revalidateSession(cnxn, sessionId, sessionTimeout);
         } else {
+            // 对于Learner需要发送REVALIDATE消息给Leader，让Leader进行激活session处理
             getLearner().validateSession(cnxn, sessionId, sessionTimeout);
         }
     }

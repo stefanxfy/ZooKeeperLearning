@@ -51,6 +51,13 @@ public class ExpiryQueue<E> {
     }
 
     private long roundToNextInterval(long time) {
+        // nextExpirationTime值总是ExpirationInterval的整数倍数
+        // time / expirationInterval 会向下取整，所以+1就是向上取整
+        // 假设 当前时间为 1644377661000，超时时间为 20000，expirationInterval=2000
+        // time = 1644377661000 + 20000 = 1,644,377,681,000
+        // roundToNextInterval = (1,644,377,681,000/2000 + 1) * 2000
+        //                     = (822,188,840 + 1) * 2000 = 1644377682000
+        // 人为计算 1,644,377,681,000/2000 = 822,188,840.5，但是在代码里是向下取整的，为822,188,840
         return (time / expirationInterval + 1) * expirationInterval;
     }
 
@@ -84,6 +91,7 @@ public class ExpiryQueue<E> {
     public Long update(E elem, int timeout) {
         Long prevExpiryTime = elemMap.get(elem);
         long now = Time.currentElapsedTime();
+        // 计算的 newExpiryTime 比 now + timeout 要大
         Long newExpiryTime = roundToNextInterval(now + timeout);
 
         if (newExpiryTime.equals(prevExpiryTime)) {

@@ -1491,6 +1491,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
             // 如果客户端请求中已经包含了sessionID，那么就认为该客户端正在进行会话重连。
             // 在这种情况下，服务端只需要重新打开这个会话，否则需要重新创建。
             cnxn.setSessionId(sessionId);
+            // 对于Learner需要发送REVALIDATE消息给Leader，让Leader进行激活session处理
             reopenSession(cnxn, sessionId, passwd, sessionTimeout);
             ServerMetrics.getMetrics().CONNECTION_REVALIDATE_COUNT.add(1);
 
