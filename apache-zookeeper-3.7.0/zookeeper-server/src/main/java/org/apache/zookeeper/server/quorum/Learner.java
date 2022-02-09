@@ -873,6 +873,8 @@ public class Learner {
 
     protected void ping(QuorumPacket qp) throws IOException {
         // Send back the ping with our session data
+        // Learner 处理 Leader的ping请求，需要将自己的持有的sessions（sessionId 和 timeout）都发给Leader
+        // 目的是，通知 Leader 更新sessions的过期时间（touchSession）
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(bos);
         Map<Long, Integer> touchTable = zk.getTouchSnapshot();

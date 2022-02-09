@@ -36,10 +36,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This is a full featured SessionTracker. It tracks session in grouped by tick
- * interval. It always rounds up the tick interval to provide a sort of grace
- * period. Sessions are thus expired in batches made up of sessions that expire
- * in a given interval.
+ * This is a full featured SessionTracker. It tracks session in grouped by tick interval.
+ * It always rounds up the tick interval to provide a sort of grace period.
+ * Sessions are thus expired in batches made up of sessions that expire in a given interval.
+ *
+ * 这是一个全功能的SessionTracker。它按tick间隔分组跟踪会话。
+ * 它总是将tick间隔取整以提供一种宽限期。
+ * 因此，会话是由在给定时间间隔内过期的会话组成的批量过期。
  */
 public class SessionTrackerImpl extends ZooKeeperCriticalThread implements SessionTracker {
 
@@ -157,6 +160,7 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
     public void run() {
         try {
             while (running) {
+                // waitTime = expirationTime - now
                 long waitTime = sessionExpiryQueue.getWaitTime();
                 if (waitTime > 0) {
                     Thread.sleep(waitTime);
@@ -165,6 +169,7 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
 
                 for (SessionImpl s : sessionExpiryQueue.poll()) {
                     ServerMetrics.getMetrics().STALE_SESSIONS_EXPIRED.add(1);
+                    // 关闭并清理session
                     setSessionClosing(s.sessionId);
                     expirer.expire(s);
                 }

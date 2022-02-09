@@ -735,7 +735,7 @@ public class Leader extends LearnerMaster {
             boolean tickSkip = true;
             // If not null then shutdown this leader
             String shutdownMessage = null;
-            // 6. Leader 定时 ping Learner
+            // 6. Leader 定时 ping Learner，时间间隔为 tickTime / 2
             while (true) {
                 synchronized (this) {
                     long start = Time.currentElapsedTime();
