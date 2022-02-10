@@ -169,8 +169,9 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
 
                 for (SessionImpl s : sessionExpiryQueue.poll()) {
                     ServerMetrics.getMetrics().STALE_SESSIONS_EXPIRED.add(1);
-                    // 关闭并清理session
+                    // 将会话状态设置为正在关闭
                     setSessionClosing(s.sessionId);
+                    // 构建并发起 会话关闭 请求
                     expirer.expire(s);
                 }
             }
@@ -182,17 +183,17 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
 
     public synchronized boolean touchSession(long sessionId, int timeout) {
         SessionImpl s = sessionsById.get(sessionId);
-
+        // 检查会话是否存在
         if (s == null) {
             logTraceTouchInvalidSession(sessionId, timeout);
             return false;
         }
-
+        // 检查会话是否正在关闭
         if (s.isClosing()) {
             logTraceTouchClosingSession(sessionId, timeout);
             return false;
         }
-
+        // 更新会话
         updateSessionExpiry(s, timeout);
         return true;
     }
