@@ -159,6 +159,7 @@ public class FinalRequestProcessor implements RequestProcessor {
         ProcessTxnResult rc = null;
         if (!request.isThrottled()) {
             // 应用到内存数据库
+            // TODO
           rc = applyRequest(request);
         }
         if (request.cnxn == null) {
@@ -638,6 +639,9 @@ public class FinalRequestProcessor implements RequestProcessor {
             }
 
             if (request.type == OpCode.closeSession) {
+                // 会话关闭，发送ServerCnxnFactory.closeConn
+                // 服务在处理写事件时会触发CloseRequestException异常
+                // ServerCnxn捕获CloseRequestException异常，进行连接断开和清理工作
                 cnxn.sendCloseSession();
             }
         } catch (IOException e) {

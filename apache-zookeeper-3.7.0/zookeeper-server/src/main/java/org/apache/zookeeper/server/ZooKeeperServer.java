@@ -1860,6 +1860,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
                 LOG.warn("*****>>>>> Got {} {}",  txn.getClass(), txn.toString());
             }
         } else if (opCode == OpCode.closeSession) {
+            // 清理 sessionTracker中的会话
             sessionTracker.removeSession(sessionId);
         }
     }

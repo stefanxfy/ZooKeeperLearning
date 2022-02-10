@@ -590,19 +590,32 @@ public class PrepRequestProcessor extends ZooKeeperCriticalThread implements Req
             //zks.sessionTracker.checkSession(request.sessionId, request.getOwner());
             long startTime = Time.currentElapsedTime();
             synchronized (zks.outstandingChanges) {
+                // 需要将 Ephemerals 临时节点移动到 zks.outstandingChanges 中
+                // 这个过程需要对 zks.outstandingChanges加同步锁，否则将会出现：
+                // 正在进行中的删除节点的事务，会重复执行删除操作。
                 // need to move getEphemerals into zks.outstandingChanges
                 // synchronized block, otherwise there will be a race
                 // condition with the on flying deleteNode txn, and we'll
                 // delete the node again here, which is not correct
+                // 关闭会话，清理该会话的所有临时节点
+                // 收集需要清理的临时节点在ZooKeeper中，一旦某个会话失效后，那么和该会话相关的临时（EPHEMERAL）节点都需要被一并清除掉。
+                // 因此，在清理临时节点之前，首先需要将服务器上所有和该会话相关的临时节点都整理出来。
+                // 在 ZooKeeper 的内存数据库中，为每个会话都单独保存了一份由该会话维护的所有临时节点集合，
+                // 因此在会话清理阶段，只需要根据当前即将关闭的会话的sessionID从内存数据库中获取到这份临时节点列表即可。
                 Set<String> es = zks.getZKDatabase().getEphemerals(request.sessionId);
                 for (ChangeRecord c : zks.outstandingChanges) {
                     if (c.stat == null) {
                         // Doing a delete
+                        // stat = null，说明该节点正在进行删除操作，
+                        // 需要在 ephemerals 中将其排除
                         es.remove(c.path);
                     } else if (c.stat.getEphemeralOwner() == request.sessionId) {
+                        // outstandingChanges中有该会话的临时节点，可能正在进行创建节点操作
+                        // 需要将其加入到 ephemerals中
                         es.add(c.path);
                     }
                 }
+                // 构建 节点删除 事务，并将其加入到 zks.outstandingChanges中
                 for (String path2Delete : es) {
                     if (digestEnabled) {
                         parentPath = getParentPathAndValidate(path2Delete);
@@ -620,6 +633,7 @@ public class PrepRequestProcessor extends ZooKeeperCriticalThread implements Req
                     addChangeRecord(nodeRecord);
                 }
                 if (ZooKeeperServer.isCloseSessionTxnEnabled()) {
+                    // 将 ephemerals 构建 CloseSessionTxn 放进 request
                     request.setTxn(new CloseSessionTxn(new ArrayList<String>(es)));
                 }
                 zks.sessionTracker.setSessionClosing(request.sessionId);
@@ -718,6 +732,7 @@ public class PrepRequestProcessor extends ZooKeeperCriticalThread implements Req
         } else if (createMode.isTTL()) {
             ephemeralOwner = EphemeralType.TTL.toEphemeralOwner(ttl);
         } else if (createMode.isEphemeral()) {
+            // 创建临时节点
             ephemeralOwner = request.sessionId;
         }
         StatPersisted s = DataTree.createStat(hdr.getZxid(), hdr.getTime(), ephemeralOwner);
