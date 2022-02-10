@@ -89,16 +89,17 @@ public class ExpiryQueue<E> {
      *                 changed, or null if unchanged
      */
     public Long update(E elem, int timeout) {
+        // 1.获取会话实例上一次过期时间点
         Long prevExpiryTime = elemMap.get(elem);
         long now = Time.currentElapsedTime();
-        // 计算的 newExpiryTime 比 now + timeout 要大
+        // 2.计算的 newExpiryTime 比 now + timeout 要大
         Long newExpiryTime = roundToNextInterval(now + timeout);
-
+        // prevExpiryTime 和 newExpiryTime 进行比较，相等就不做处理
         if (newExpiryTime.equals(prevExpiryTime)) {
             // No change, so nothing to update
             return null;
         }
-
+        // 4.将 会话实例放进新桶里
         // First add the elem to the new expiry time bucket in expiryMap.
         Set<E> set = expiryMap.get(newExpiryTime);
         if (set == null) {
@@ -113,6 +114,7 @@ public class ExpiryQueue<E> {
         }
         set.add(elem);
 
+        // 5. 将旧桶中的对应会话记录删除
         // Map the elem to the new expiry time. If a different previous
         // mapping was present, clean up the previous expiry bucket.
         prevExpiryTime = elemMap.put(elem, newExpiryTime);
@@ -144,6 +146,7 @@ public class ExpiryQueue<E> {
      */
     public Set<E> poll() {
         long now = Time.currentElapsedTime();
+        // 1. 判断 expirationTime 是否过期
         long expirationTime = nextExpirationTime.get();
         if (now < expirationTime) {
             return Collections.emptySet();
@@ -151,7 +154,9 @@ public class ExpiryQueue<E> {
 
         Set<E> set = null;
         long newExpirationTime = expirationTime + expirationInterval;
+        // 2. cas 更新 nextExpirationTime
         if (nextExpirationTime.compareAndSet(expirationTime, newExpirationTime)) {
+            // 3. 清理 过期桶
             set = expiryMap.remove(expirationTime);
         }
         if (set == null) {
