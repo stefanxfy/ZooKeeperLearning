@@ -641,12 +641,13 @@ public class ZooKeeper implements AutoCloseable {
             watcher);
 
         this.clientConfig = clientConfig != null ? clientConfig : new ZKClientConfig();
+        // hostProvider 和 ConnectStringParser 干嘛的
         this.hostProvider = hostProvider;
-        // 解析connectString，以英文逗号分隔，例如：127.0.0.1:2181,127.0.0.1:2182
+        // 1、解析connectString，以英文逗号分隔，例如：127.0.0.1:2181,127.0.0.1:2182
         // 也可以 127.0.0.1:2181,127.0.0.1:2182/chrootPath
         // ip port 构建 InetSocketAddress list
         ConnectStringParser connectStringParser = new ConnectStringParser(connectString);
-
+        // 2、创建 ClientCnxn
         cnxn = createConnection(
             connectStringParser.getChrootPath(),
             hostProvider,
@@ -655,6 +656,7 @@ public class ZooKeeper implements AutoCloseable {
             watcher,
             getClientCnxnSocket(),
             canBeReadOnly);
+        // 3、启动sendThread和eventThread两个线程
         cnxn.start();
     }
 

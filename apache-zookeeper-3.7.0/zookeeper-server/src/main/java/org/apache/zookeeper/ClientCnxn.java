@@ -420,7 +420,7 @@ public class ClientCnxn {
         this.sessionId = sessionId;
         this.sessionPasswd = sessionPasswd;
         this.readOnly = canBeReadOnly;
-        // 初始化 watchManager、
+        // 初始化 watchManager
         this.watchManager = new ZKWatchManager(
                 clientConfig.getBoolean(ZKClientConfig.DISABLE_AUTO_WATCH_RESET),
                 defaultWatcher);
@@ -1212,6 +1212,7 @@ public class ClientCnxn {
                             serverAddress = hostProvider.next(1000);
                         }
                         onConnecting(serverAddress);
+                        // 向 serverAddress 发起连接
                         startConnect(serverAddress);
                         clientCnxnSocket.updateLastSendAndHeard();
                     }
@@ -1253,7 +1254,7 @@ public class ClientCnxn {
                     } else {
                         to = connectTimeout - clientCnxnSocket.getIdleRecv();
                     }
-
+                    // 检查是否超时
                     if (to <= 0) {
                         String warnInfo = String.format(
                             "Client session timed out, have not heard from server in %dms for session id 0x%s",
@@ -1263,6 +1264,7 @@ public class ClientCnxn {
                         throw new SessionTimeoutException(warnInfo);
                     }
                     if (state.isConnected()) {
+                        // 心跳机制
                         //1000(1 second) is to prevent race condition missing to send the second ping
                         //also make sure not to send too many pings when readTimeout is small
                         // readTimeout = sessionTimeout * 2 / 3
