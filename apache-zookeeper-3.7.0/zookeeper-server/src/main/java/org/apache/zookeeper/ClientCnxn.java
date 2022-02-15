@@ -1011,6 +1011,9 @@ public class ClientCnxn {
                 clientCnxnSocket.getLocalSocketAddress(),
                 clientCnxnSocket.getRemoteSocketAddress());
             isFirstConnect = false;
+            // seenRwServerBefore 表示 成功建立过一次连接，可以复用 sessionId，请求到了服务端会走ZooKeeperServer.reopenSession
+            // 这样就 发生了 会话所有者更换的操作，即会话移动。
+
             long sessId = (seenRwServerBefore) ? sessionId : 0;
             // 构建 ConnectRequest
             ConnectRequest conReq = new ConnectRequest(0, lastZxid, sessionTimeout, sessId, sessionPasswd);
@@ -1450,7 +1453,10 @@ public class ClientCnxn {
             hostProvider.onConnected();
             sessionId = _sessionId;
             sessionPasswd = _sessionPasswd;
+            // isRO 是否只读
             changeZkState((isRO) ? States.CONNECTEDREADONLY : States.CONNECTED);
+            // 不是只读，isRO=false，!isRO=true
+            // seenRwServerBefore = true
             seenRwServerBefore |= !isRO;
             LOG.info(
                 "Session establishment complete on server {}, session id = 0x{}, negotiated timeout = {}{}",

@@ -294,6 +294,7 @@ public class LeaderZooKeeperServer extends QuorumZooKeeperServer {
         try {
             // setowner as the leader itself, unless updated
             // via the follower handlers
+            // Leader 自己的话， session owner 是ServerCnxn.me  new Object()
             setOwner(sessionId, ServerCnxn.me);
         } catch (SessionExpiredException e) {
             // this is ok, it just means that the session revalidation failed.

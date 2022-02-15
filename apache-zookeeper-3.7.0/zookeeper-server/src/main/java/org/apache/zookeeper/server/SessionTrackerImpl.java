@@ -313,19 +313,21 @@ public class SessionTrackerImpl extends ZooKeeperCriticalThread implements Sessi
 
     public synchronized void checkSession(long sessionId, Object owner) throws KeeperException.SessionExpiredException, KeeperException.SessionMovedException, KeeperException.UnknownSessionException {
         LOG.debug("Checking session 0x{}", Long.toHexString(sessionId));
+        // 取出 会话
         SessionImpl session = sessionsById.get(sessionId);
 
         if (session == null) {
             throw new KeeperException.UnknownSessionException();
         }
-
+        // 判断会话是否关闭
         if (session.isClosing()) {
             throw new KeeperException.SessionExpiredException();
         }
-
+        // 判断会话所有者是否一致
         if (session.owner == null) {
             session.owner = owner;
         } else if (session.owner != owner) {
+            // 若会话所有者不一致，则说明会话发生了移动
             throw new KeeperException.SessionMovedException();
         }
     }

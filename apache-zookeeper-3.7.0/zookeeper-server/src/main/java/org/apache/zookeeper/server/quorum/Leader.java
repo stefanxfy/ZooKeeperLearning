@@ -1744,6 +1744,7 @@ public class Leader extends LearnerMaster {
         boolean valid = zk.checkIfValidGlobalSession(id, to);
         if (valid) {
             try {
+                // session owner 是 learnerHandler
                 // set the session owner as the follower that owns the session
                 zk.setOwner(id, learnerHandler);
             } catch (KeeperException.SessionExpiredException e) {
