@@ -881,7 +881,7 @@ public class ClientCnxn {
                     Long.toHexString(sessionId),
                     ((System.nanoTime() - lastPingSentNs) / 1000000));
                 return;
-              case AUTHPACKET_XID:
+            case AUTHPACKET_XID:
                 LOG.debug("Got auth session id: 0x{}", Long.toHexString(sessionId));
                 if (replyHdr.getErr() == KeeperException.Code.AUTHFAILED.intValue()) {
                     changeZkState(States.AUTH_FAILED);
@@ -939,11 +939,11 @@ public class ClientCnxn {
                 packet = pendingQueue.remove();
             }
             /*
-             * Since requests are processed in order, we better get a response
-             * to the first request!
+             * Since requests are processed in order, we better get a response to the first request!
+             * 既然请求是按顺序处理的，我们最好对第一个请求得到响应!
              */
             try {
-                // 必须按顺序响应 处理
+                // 必须按顺序处理响应，pendingQueue 按顺序出队列
                 if (packet.requestHeader.getXid() != replyHdr.getXid()) {
                     packet.replyHeader.setErr(KeeperException.Code.CONNECTIONLOSS.intValue());
                     throw new IOException("Xid out of order. Got Xid " + replyHdr.getXid()
@@ -1219,6 +1219,7 @@ public class ClientCnxn {
 
                     if (state.isConnected()) {
                         // determine whether we need to send an AuthFailed event.
+                        // sasl认证 暂时可以不看
                         if (zooKeeperSaslClient != null) {
                             boolean sendAuthEvent = false;
                             if (zooKeeperSaslClient.getSaslState() == ZooKeeperSaslClient.SaslState.INITIAL) {
@@ -1265,15 +1266,18 @@ public class ClientCnxn {
                     }
                     if (state.isConnected()) {
                         // 心跳机制
+                        // 1000(1秒)是为了防止竞态条件丢失而发送第二个ping,
+                        // 也要确保当readTimeout很小的时候不要发送太多的ping
                         //1000(1 second) is to prevent race condition missing to send the second ping
                         //also make sure not to send too many pings when readTimeout is small
                         // readTimeout = sessionTimeout * 2 / 3
                         // getIdleSend 距离上次发送时长
+                        // timeToNextPing = sessionTimeout / 3
                         int timeToNextPing = readTimeout / 2
                                              - clientCnxnSocket.getIdleSend()
                                              - ((clientCnxnSocket.getIdleSend() > 1000) ? 1000 : 0);
                         //send a ping request either time is due or no packet sent out within MAX_SEND_PING_INTERVAL
-                        // 定时发送 ping，维持长链接，readTimeout/2
+                        // 定时发送 ping
                         System.out.println(new Date() + "readTimeout=" +readTimeout+ ", timeToNextPing=" + timeToNextPing + ", to=" + to);
                         if (timeToNextPing <= 0 || clientCnxnSocket.getIdleSend() > MAX_SEND_PING_INTERVAL) {
                             sendPing();
@@ -1431,7 +1435,7 @@ public class ClientCnxn {
             long _sessionId,
             byte[] _sessionPasswd,
             boolean isRO) throws IOException {
-            // negotiatedSessionTimeout 最新4000
+            // 协商的 negotiatedSessionTimeout
             negotiatedSessionTimeout = _negotiatedSessionTimeout;
             if (negotiatedSessionTimeout <= 0) {
                 changeZkState(States.CLOSED);
@@ -1466,6 +1470,7 @@ public class ClientCnxn {
                 Long.toHexString(sessionId),
                 negotiatedSessionTimeout,
                 (isRO ? " (READ-ONLY mode)" : ""));
+            // 生成一个 SyncConnected 事件
             KeeperState eventState = (isRO) ? KeeperState.ConnectedReadOnly : KeeperState.SyncConnected;
             eventThread.queueEvent(new WatchedEvent(Watcher.Event.EventType.None, eventState, null));
         }
