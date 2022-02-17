@@ -24,6 +24,7 @@ package org.apache.zookeeper;
 public enum AddWatchMode {
     /**
      * <p>
+     * 在给定的路径上设置一个观察者，当触发时不会被移除
      * Set a watcher on the given path that does not get removed when triggered (i.e. it stays active
      * until it is removed). This watcher
      * is triggered for both data and child events. To remove the watcher, use
@@ -35,8 +36,12 @@ public enum AddWatchMode {
 
     /**
      * <p>
-     * Set a watcher on the given path that: a) does not get removed when triggered (i.e. it stays active
-     * until it is removed); b) applies not only to the registered path but all child paths recursively. This watcher
+     * 在给定的路径上设置一个观察者，当触发时不会被移除
+     * Set a watcher on the given path that:
+     * a) does not get removed when triggered (i.e. it stays active
+     * until it is removed);
+     * 不仅应用于注册路径，而且递归地应用于所有子路径
+     * b) applies not only to the registered path but all child paths recursively. This watcher
      * is triggered for both data and child events. To remove the watcher, use
      * <tt>removeWatches()</tt> with <tt>WatcherType.Any</tt>
      * </p>

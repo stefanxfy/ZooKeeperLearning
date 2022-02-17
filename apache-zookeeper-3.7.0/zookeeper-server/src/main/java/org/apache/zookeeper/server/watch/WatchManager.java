@@ -42,11 +42,15 @@ import org.slf4j.LoggerFactory;
 public class WatchManager implements IWatchManager {
 
     private static final Logger LOG = LoggerFactory.getLogger(WatchManager.class);
-
+    // path ---> Watcher列表
     private final Map<String, Set<Watcher>> watchTable = new HashMap<>();
-
+    // watcher ---> path列表
     private final Map<Watcher, Set<String>> watch2Paths = new HashMap<>();
-
+    // watcher mode 管理，watcher+path ---> WatcherMode
+    // WatcherMode有三种 STANDARD、PERSISTENT、PERSISTENT_RECURSIVE
+    // STANDARD，标准的，也是默认的，isPersistent 和 isRecursive 都是false，表示观察者是一次性的
+    // PERSISTENT，持续的，isPersistent=true，isRecursive=false
+    // PERSISTENT_RECURSIVE，持续的且递归的，即观察者对给定节点及其所有递归子节点都有效，isPersistent 和 isRecursive 都是true。
     private final WatcherModeManager watcherModeManager = new WatcherModeManager();
 
     @Override
@@ -121,11 +125,13 @@ public class WatchManager implements IWatchManager {
 
     @Override
     public WatcherOrBitSet triggerWatch(String path, EventType type, WatcherOrBitSet supress) {
+        // 构建 WatchedEvent
         WatchedEvent e = new WatchedEvent(type, KeeperState.SyncConnected, path);
         Set<Watcher> watchers = new HashSet<>();
         PathParentIterator pathParentIterator = getPathParentIterator(path);
         synchronized (this) {
             for (String localPath : pathParentIterator.asIterable()) {
+                // 遍历 watchTable
                 Set<Watcher> thisWatchers = watchTable.get(localPath);
                 if (thisWatchers == null || thisWatchers.isEmpty()) {
                     continue;
@@ -141,6 +147,7 @@ public class WatchManager implements IWatchManager {
                     } else if (!pathParentIterator.atParentPath()) {
                         watchers.add(watcher);
                         if (!watcherMode.isPersistent()) {
+                            // 不是持续的，会删除
                             iterator.remove();
                             Set<String> paths = watch2Paths.get(watcher);
                             if (paths != null) {
@@ -160,7 +167,8 @@ public class WatchManager implements IWatchManager {
             }
             return null;
         }
-
+        // 遍历触发 watcher，
+        // 向客户端发送 notification 消息，触发客户端的 watcher
         for (Watcher w : watchers) {
             if (supress != null && supress.contains(w)) {
                 continue;

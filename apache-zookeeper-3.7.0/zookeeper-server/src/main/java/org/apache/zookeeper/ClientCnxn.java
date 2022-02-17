@@ -504,7 +504,7 @@ public class ClientCnxn {
             final Set<Watcher> watchers;
             if (materializedWatchers == null) {
                 // materialize the watchers based on the event
-                // 找到具体watchers时，还会删除，也是watcher是一次性的
+                // 找到具体watchers时，还会删除，也就是说 watcher是一次性的
                 watchers = watchManager.materialize(event.getState(), event.getType(), event.getPath());
             } else {
                 watchers = new HashSet<>(materializedWatchers);
@@ -580,6 +580,7 @@ public class ClientCnxn {
                         }
                     }
                 } else if (event instanceof LocalCallback) {
+                    // 触发本地回调
                     LocalCallback lcb = (LocalCallback) event;
                     if (lcb.cb instanceof StatCallback) {
                         ((StatCallback) lcb.cb).processResult(lcb.rc, lcb.path, lcb.ctx, null);
@@ -735,6 +736,7 @@ public class ClientCnxn {
     // @VisibleForTesting
     protected void finishPacket(Packet p) {
         int err = p.replyHeader.getErr();
+        // 响应完成后，根据响应结果 注册watch
         if (p.watchRegistration != null) {
             p.watchRegistration.register(err);
         }
@@ -766,6 +768,7 @@ public class ClientCnxn {
                 p.notifyAll();
             }
         } else {
+            // 设置了 Callback，Packet交由eventThread处理
             p.finished = true;
             eventThread.queuePacket(p);
         }
@@ -1020,6 +1023,7 @@ public class ClientCnxn {
             // We add backwards since we are pushing into the front
             // Only send if there's a pending watch
             if (!clientConfig.getBoolean(ZKClientConfig.DISABLE_AUTO_WATCH_RESET)) {
+                // 客户端重连后，watch 重新 向服务端注册
                 List<String> dataWatches = watchManager.getDataWatchList();
                 List<String> existWatches = watchManager.getExistWatchList();
                 List<String> childWatches = watchManager.getChildWatchList();
@@ -1593,6 +1597,7 @@ public class ClientCnxn {
         WatchRegistration watchRegistration,
         WatchDeregistration watchDeregistration) throws InterruptedException {
         ReplyHeader r = new ReplyHeader();
+        // 构建 packet 并将其 加入请求待发送队列，并唤醒sendThread线程
         Packet packet = queuePacket(
             h,
             r,
@@ -1605,6 +1610,7 @@ public class ClientCnxn {
             watchRegistration,
             watchDeregistration);
         synchronized (packet) {
+            // 阻塞等待 packet 完成，packet.finished置为true
             if (requestTimeout > 0) {
                 // Wait for request completion with timeout
                 waitForPacketFinish(r, packet);

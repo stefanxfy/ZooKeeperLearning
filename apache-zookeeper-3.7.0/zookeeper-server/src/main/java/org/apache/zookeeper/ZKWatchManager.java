@@ -37,14 +37,20 @@ import org.slf4j.LoggerFactory;
 class ZKWatchManager implements ClientWatchManager {
 
     private static final Logger LOG = LoggerFactory.getLogger(ZKWatchManager.class);
-
+    // getData、getConfig使用
     private final Map<String, Set<Watcher>> dataWatches = new HashMap<>();
+    // exists 使用
     private final Map<String, Set<Watcher>> existWatches = new HashMap<>();
+    // getChildren 使用
     private final Map<String, Set<Watcher>> childWatches = new HashMap<>();
+    // 后面两个集合是新加的，弥补了zk观察者只能使用一次的场景。
+    // addWatch 使用，给定节点持续有效的观察者集合，触发之后不好被移除
     private final Map<String, Set<Watcher>> persistentWatches = new HashMap<>();
+    // addWatch 使用，给定节点及其递归所有子节点都持续有效的观察者集合，触发之后不好被移除
     private final Map<String, Set<Watcher>> persistentRecursiveWatches = new HashMap<>();
-    private final boolean disableAutoWatchReset;
 
+    private final boolean disableAutoWatchReset;
+    // 默认 watcher ZooKeeper构造时可以设置
     private volatile Watcher defaultWatcher;
 
     ZKWatchManager(boolean disableAutoWatchReset, Watcher defaultWatcher) {
@@ -396,6 +402,9 @@ class ZKWatchManager implements ClientWatchManager {
             }
 
             return result;
+            // 根据 EventType 从不同的集合中获取观察者列表
+            // dataWatches、existWatches、childWatches在获取watcher列表时有移除操作
+            // persistentWatches、persistentRecursiveWatches没有移除操作
         case NodeDataChanged:
         case NodeCreated:
             synchronized (dataWatches) {

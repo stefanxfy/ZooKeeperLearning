@@ -25,8 +25,9 @@ import java.util.Set;
 public interface ClientWatchManager {
 
     /**
-     * Return a set of watchers that should be notified of the event. The
-     * manager must not notify the watcher(s), however it will update it's
+     * 返回一组应该被告知事件的观察者。
+     * Return a set of watchers that should be notified of the event.
+     * The manager must not notify the watcher(s), however it will update it's
      * internal structure as if the watches had triggered. The intent being
      * that the callee is now responsible for notifying the watchers of the
      * event, possibly at some later time.

@@ -1962,24 +1962,28 @@ public class ZooKeeper implements AutoCloseable {
         PathUtils.validatePath(clientPath);
 
         // the watch contains the un-chroot path
+        // 1. 构建 WatchRegistration
         WatchRegistration wcb = null;
         if (watcher != null) {
             wcb = new DataWatchRegistration(watcher, clientPath);
         }
 
         final String serverPath = prependChroot(clientPath);
-
+        // 2. 构建 GetDataRequest
         RequestHeader h = new RequestHeader();
         h.setType(ZooDefs.OpCode.getData);
         GetDataRequest request = new GetDataRequest();
         request.setPath(serverPath);
-        // 标记 request 是否 有监听
+        // 3. 标记 request 是否 有监听
         request.setWatch(watcher != null);
+        // 4. 构建 GetDataResponse，到时响应时会填充 GetDataResponse对象
         GetDataResponse response = new GetDataResponse();
+        // 5. 提交请求 并阻塞等待请求响应完成
         ReplyHeader r = cnxn.submitRequest(h, request, response, wcb);
         if (r.getErr() != 0) {
             throw KeeperException.create(KeeperException.Code.get(r.getErr()), clientPath);
         }
+        // 6. 获取响应内容
         if (stat != null) {
             DataTree.copyStat(response.getStat(), stat);
         }
