@@ -81,6 +81,7 @@ class WatcherModeManager {
     }
 
     // recursiveQty is an optimization to avoid having to walk the map every time this value is needed
+    // recursiveQty是一种优化，可以避免每次需要这个值时都要遍历映射
     private void adjustRecursiveQty(WatcherMode oldMode, WatcherMode newMode) {
         if (oldMode == null) {
             oldMode = WatcherMode.DEFAULT_WATCHER_MODE;

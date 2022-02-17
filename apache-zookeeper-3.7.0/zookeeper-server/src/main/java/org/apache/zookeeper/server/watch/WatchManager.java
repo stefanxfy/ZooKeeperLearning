@@ -47,7 +47,7 @@ public class WatchManager implements IWatchManager {
     // watcher ---> path列表
     private final Map<Watcher, Set<String>> watch2Paths = new HashMap<>();
     // watcher mode 管理，watcher+path ---> WatcherMode
-    // WatcherMode有三种 STANDARD、PERSISTENT、PERSISTENT_RECURSIVE
+    // 枚举类 WatcherMode有三种模式 STANDARD、PERSISTENT、PERSISTENT_RECURSIVE
     // STANDARD，标准的，也是默认的，isPersistent 和 isRecursive 都是false，表示观察者是一次性的
     // PERSISTENT，持续的，isPersistent=true，isRecursive=false
     // PERSISTENT_RECURSIVE，持续的且递归的，即观察者对给定节点及其所有递归子节点都有效，isPersistent 和 isRecursive 都是true。
