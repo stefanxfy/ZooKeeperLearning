@@ -166,6 +166,7 @@ public class FileSnap implements SnapShot {
      * @throws IOException
      */
     protected List<File> findNValidSnapshots(int n) throws IOException {
+        // 获取 降序 Snapshots file
         List<File> files = Util.sortDataDir(snapDir.listFiles(), SNAPSHOT_FILE_PREFIX, false);
         int count = 0;
         List<File> list = new ArrayList<File>();
@@ -177,6 +178,7 @@ public class FileSnap implements SnapShot {
                 if (SnapStream.isValidSnapshot(f)) {
                     list.add(f);
                     count++;
+                    // 获取 前 n个 snap file 即可
                     if (count == n) {
                         break;
                     }
