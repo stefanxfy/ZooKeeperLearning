@@ -341,6 +341,10 @@ public class FileTxnLog implements TxnLog, Closeable {
                 logZxid = fzxid;
             }
         }
+        // logZxid <= snapshotZxid
+        // logZxid >= fzxid
+        //     snapshotZxid
+        //----------|------------------------
         // 大于等于 logZxid 的文件是需要保留的文件
         List<File> v = new ArrayList<File>(5);
         for (File f : files) {
