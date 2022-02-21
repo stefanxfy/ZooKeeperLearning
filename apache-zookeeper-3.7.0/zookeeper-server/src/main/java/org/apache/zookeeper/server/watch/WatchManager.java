@@ -125,13 +125,13 @@ public class WatchManager implements IWatchManager {
 
     @Override
     public WatcherOrBitSet triggerWatch(String path, EventType type, WatcherOrBitSet supress) {
-        // 构建 WatchedEvent
+        // 1. 构建 WatchedEvent
         WatchedEvent e = new WatchedEvent(type, KeeperState.SyncConnected, path);
         Set<Watcher> watchers = new HashSet<>();
         PathParentIterator pathParentIterator = getPathParentIterator(path);
         synchronized (this) {
             for (String localPath : pathParentIterator.asIterable()) {
-                // 遍历 watchTable
+                // 2. 遍历 watchTable
                 Set<Watcher> thisWatchers = watchTable.get(localPath);
                 if (thisWatchers == null || thisWatchers.isEmpty()) {
                     continue;
@@ -145,9 +145,10 @@ public class WatchManager implements IWatchManager {
                             watchers.add(watcher);
                         }
                     } else if (!pathParentIterator.atParentPath()) {
+                        // 3. 取出来的 watcher 加入到 watchers中
                         watchers.add(watcher);
                         if (!watcherMode.isPersistent()) {
-                            // 不是持续的，会删除
+                            // 4. 不是持续的，会删除
                             iterator.remove();
                             Set<String> paths = watch2Paths.get(watcher);
                             if (paths != null) {
@@ -167,12 +168,12 @@ public class WatchManager implements IWatchManager {
             }
             return null;
         }
-        // 遍历触发 watcher，
-        // 向客户端发送 notification 消息，触发客户端的 watcher
+        // 5. 遍历触发 watcher
         for (Watcher w : watchers) {
             if (supress != null && supress.contains(w)) {
                 continue;
             }
+            // 6. NIOServerCnxn.process向客户端发送 notification 消息，触发客户端的 watcher
             w.process(e);
         }
 
