@@ -78,7 +78,7 @@ public class PurgeTxnLog {
         }
 
         FileTxnSnapLog txnLog = new FileTxnSnapLog(dataDir, snapDir);
-
+        // 获取 降序 前 num个 Snapshots 文件
         List<File> snaps = txnLog.findNValidSnapshots(num);
         int numSnaps = snaps.size();
         if (numSnaps > 0) {
@@ -88,6 +88,7 @@ public class PurgeTxnLog {
 
     // VisibleForTesting
     static void purgeOlderSnapshots(FileTxnSnapLog txnLog, File snapShot) {
+        // 拿最后一个snapShot，获取其Zxid
         final long leastZxidToBeRetain = Util.getZxidFromName(snapShot.getName(), PREFIX_SNAPSHOT);
 
         /**
@@ -110,6 +111,7 @@ public class PurgeTxnLog {
          * calling txnLog.getSnapshotLogs().
          */
         final Set<File> retainedTxnLogs = new HashSet<File>();
+        // 获取需要保留的 事务日志文件
         retainedTxnLogs.addAll(Arrays.asList(txnLog.getSnapshotLogs(leastZxidToBeRetain)));
 
         /**
@@ -126,14 +128,18 @@ public class PurgeTxnLog {
                 if (!f.getName().startsWith(prefix + ".")) {
                     return false;
                 }
+                // 排查掉保留的文件
                 if (retainedTxnLogs.contains(f)) {
                     return false;
                 }
                 long fZxid = Util.getZxidFromName(f.getName(), prefix);
+                // fZxid 小于 leastZxidToBeRetain 的删除
                 return fZxid < leastZxidToBeRetain;
             }
 
         }
+        // 删除 事务日志文件有些疑惑，为啥要先找出需要保留的事务日志文件，再过滤清理小于leastZxidToBeRetain的文件
+        // 难道需要保留的事务文件里有小于leastZxidToBeRetain的？
         // add all non-excluded log files
         File[] logs = txnLog.getDataDir().listFiles(new MyFileFilter(PREFIX_LOG));
         List<File> files = new ArrayList<>();

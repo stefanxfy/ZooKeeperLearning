@@ -324,10 +324,12 @@ public class FileTxnLog implements TxnLog, Closeable {
      * @return log files that starts at, or just before, the snapshot and subsequent ones
      */
     public static File[] getLogFiles(File[] logDirList, long snapshotZxid) {
+        // 获取 升序的 事务日志文件列表
         List<File> files = Util.sortDataDir(logDirList, LOG_FILE_PREFIX, true);
         long logZxid = 0;
         // Find the log file that starts before or at the same time as the
         // zxid of the snapshot
+        // logZxid 不大于 snapshotZxid 的最大值
         for (File f : files) {
             long fzxid = Util.getZxidFromName(f.getName(), LOG_FILE_PREFIX);
             if (fzxid > snapshotZxid) {
@@ -339,6 +341,11 @@ public class FileTxnLog implements TxnLog, Closeable {
                 logZxid = fzxid;
             }
         }
+        // logZxid <= snapshotZxid
+        // logZxid >= fzxid
+        //     snapshotZxid
+        //----------|------------------------
+        // 大于等于 logZxid 的文件是需要保留的文件
         List<File> v = new ArrayList<File>(5);
         for (File f : files) {
             long fzxid = Util.getZxidFromName(f.getName(), LOG_FILE_PREFIX);
