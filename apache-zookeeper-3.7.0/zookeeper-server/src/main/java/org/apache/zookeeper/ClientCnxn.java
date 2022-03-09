@@ -420,15 +420,13 @@ public class ClientCnxn {
         this.sessionId = sessionId;
         this.sessionPasswd = sessionPasswd;
         this.readOnly = canBeReadOnly;
-        // 初始化 watchManager
+        // 初始化 watchManager，从ZooKeeper构造器传入的Watcher作为默认Watcher
         this.watchManager = new ZKWatchManager(
                 clientConfig.getBoolean(ZKClientConfig.DISABLE_AUTO_WATCH_RESET),
                 defaultWatcher);
-
         // 如果sessionTimeout=30000，ipport是3个， connectTimeout=10000，readTimeout=20000
         this.connectTimeout = sessionTimeout / hostProvider.size();
         this.readTimeout = sessionTimeout * 2 / 3;
-
         // 初始化 sendThread 和 eventThread
         this.sendThread = new SendThread(clientCnxnSocket);
         this.eventThread = new EventThread();

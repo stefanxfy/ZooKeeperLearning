@@ -634,20 +634,13 @@ public class ZooKeeper implements AutoCloseable {
         HostProvider hostProvider,
         ZKClientConfig clientConfig
     ) throws IOException {
-        LOG.info(
-            "Initiating client connection, connectString={} sessionTimeout={} watcher={}",
-            connectString,
-            sessionTimeout,
-            watcher);
 
         this.clientConfig = clientConfig != null ? clientConfig : new ZKClientConfig();
-        // hostProvider 和 ConnectStringParser 干嘛的
+        // 1、构建hostProvider，默认 StaticHostProvider
         this.hostProvider = hostProvider;
-        // 1、解析connectString，以英文逗号分隔，例如：127.0.0.1:2181,127.0.0.1:2182
-        // 也可以 127.0.0.1:2181,127.0.0.1:2182/chrootPath
-        // ip port 构建 InetSocketAddress list
+        // 2、构建connectString解析器，按一定格式解析connectString
         ConnectStringParser connectStringParser = new ConnectStringParser(connectString);
-        // 2、创建 ClientCnxn
+        // 3、创建 ClientCnxn
         cnxn = createConnection(
             connectStringParser.getChrootPath(),
             hostProvider,
@@ -656,7 +649,7 @@ public class ZooKeeper implements AutoCloseable {
             watcher,
             getClientCnxnSocket(),
             canBeReadOnly);
-        // 3、启动sendThread和eventThread两个线程
+        // 4、启动sendThread和eventThread两个线程
         cnxn.start();
     }
 

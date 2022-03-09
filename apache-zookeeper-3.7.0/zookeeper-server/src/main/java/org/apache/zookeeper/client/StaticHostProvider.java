@@ -338,6 +338,7 @@ public final class StaticHostProvider implements HostProvider {
         InetSocketAddress addr;
 
         synchronized (this) {
+            // reconfigMode分支不用考虑
             if (reconfigMode) {
                 addr = nextHostInReconfigMode();
                 if (addr != null) {
@@ -348,21 +349,23 @@ public final class StaticHostProvider implements HostProvider {
                 reconfigMode = false;
                 needToSleep = (spinDelay > 0);
             }
+            // currentIndex自增，如果等于服务地址列表长度，就重置为0
             ++currentIndex;
             if (currentIndex == serverAddresses.size()) {
                 currentIndex = 0;
             }
-            // 一个环，两个游标currentIndex、lastIndex
-            // currentIndex 当前选择的位置，lastIndex上次的位置，
-            // 每次 currentIndex+1，若currentIndex = serverAddresses.size,则置为0，因此形成一个环
-            // currentIndex = lastIndex，会睡眠 spinDelay
             addr = serverAddresses.get(currentIndex);
+            // 两个游标currentIndex、lastIndex
+            // currentIndex 当前选择的位置，lastIndex上次的位置
+            // lastIndex 什么时候设置呢？会话建立成功之后调用 onConnected，将currentIndex赋值给lastIndex
             needToSleep = needToSleep || (currentIndex == lastIndex && spinDelay > 0);
             if (lastIndex == -1) {
                 // We don't want to sleep on the first ever connect attempt.
                 lastIndex = 0;
             }
         }
+        // 如果 currentIndex和lastIndex且spinDelay>0，就需要休眠spinDelay时间，
+        // 以降低对同一个服务实例的连接压力。
         if (needToSleep) {
             try {
                 Thread.sleep(spinDelay);
@@ -370,7 +373,9 @@ public final class StaticHostProvider implements HostProvider {
                 LOG.warn("Unexpected exception", e);
             }
         }
-
+        // 解析InetSocketAddress，
+        // 如果一个主机映射了多个ip地址（InetAddress）
+        // 就打乱选择其中一个地址返回
         return resolve(addr);
     }
 

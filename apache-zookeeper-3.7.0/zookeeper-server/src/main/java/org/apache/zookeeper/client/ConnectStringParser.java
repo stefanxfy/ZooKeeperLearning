@@ -51,6 +51,9 @@ public final class ConnectStringParser {
      */
     public ConnectStringParser(String connectString) {
         // parse out chroot, if any
+        // 解析chroot
+        // connectString 可以指定某个路径，
+        // 如127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/test
         int off = connectString.indexOf('/');
         if (off >= 0) {
             String chrootPath = connectString.substring(off);
@@ -65,7 +68,7 @@ public final class ConnectStringParser {
         } else {
             this.chrootPath = null;
         }
-        // 按 “,” 分割
+        // 按 , 分割
         List<String> hostsList = split(connectString, ",");
         for (String host : hostsList) {
             int port = DEFAULT_PORT;
@@ -85,6 +88,7 @@ public final class ConnectStringParser {
                     host = host.substring(0, pidx);
                 }
             }
+            // 封装未解析的InetSocketAddress
             serverAddresses.add(InetSocketAddress.createUnresolved(host, port));
         }
     }
