@@ -11,7 +11,14 @@ import java.io.IOException;
 public class WatchTest {
     public static void main(String[] args) throws IOException, InterruptedException {
         String zkAddress = "127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183";
-        ZooKeeper zooKeeper = new ZooKeeper(zkAddress, 20000, null);
+        ZooKeeper zooKeeper = new ZooKeeper(zkAddress, 20000, new Watcher() {
+            @Override
+            public void process(WatchedEvent event) {
+                if (event.getState() == Event.KeeperState.SyncConnected) {
+                    System.out.println("会话建立成功");
+                }
+            }
+        });
         byte[] val = new byte[0];
         try {
             val = zooKeeper.getData("/test1", new Watcher() {

@@ -74,6 +74,7 @@ public interface NodeHashMap {
     int size();
 
     /**
+     * 在节点上进行更改之前调用，这将清除与它相关的摘要。
      * Called before we made the change on the node, which will clear
      * the digest associated with it.
      *
@@ -83,6 +84,7 @@ public interface NodeHashMap {
     void preChange(String path, DataNode node);
 
     /**
+     * 在对节点进行更改后调用，该节点将更新摘要。
      * Called after making the changes on the node, which will update
      * the digest.
      *

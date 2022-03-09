@@ -88,9 +88,11 @@ import org.slf4j.LoggerFactory;
  * or client connection code in it so that it can be tested in a stand alone
  * way.
  * <p>
- * The tree maintains two parallel data structures: a hashtable that maps from
- * full paths to DataNodes and a tree of DataNodes. All accesses to a path is
- * through the hashtable. The tree is traversed only when serializing to disk.
+ * The tree maintains two parallel data structures:
+ * a hashtable that maps from full paths to DataNodes and a tree of DataNodes.
+ * All accesses to a path is through the hashtable. The tree is traversed only when serializing to disk.
+ * 该树维护两个并行的数据结构:一个映射的哈希表 datanode 的完整路径和一个datanode树。
+ * 对路径的所有访问都是通过哈希表。只有在序列化到磁盘时才会遍历树。
  */
 public class DataTree {
 
@@ -236,7 +238,7 @@ public class DataTree {
 
     /**
      * Get the size of the nodes based on path and data length.
-     *
+     * 根据路径和数据长度获取节点的大小。
      * @return size of the data
      */
     public long approximateDataSize() {
