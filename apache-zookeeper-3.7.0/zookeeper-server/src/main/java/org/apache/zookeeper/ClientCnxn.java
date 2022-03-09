@@ -788,7 +788,7 @@ public class ClientCnxn {
 
     // for test only
     protected void onConnecting(InetSocketAddress addr) {
-
+        System.out.println(new Date() + "::onConnecting=" + addr.getHostString() + ":" + addr.getPort());
     }
 
     private void conLossPacket(Packet p) {
@@ -1126,7 +1126,7 @@ public class ClientCnxn {
             lastPingSentNs = System.nanoTime();
             // xid = -2 , type = 11
             RequestHeader h = new RequestHeader(ClientCnxn.PING_XID, OpCode.ping);
-            System.out.println(new Date() + "------------------sendPing=" + h.toString());
+            // 提交到请求队列
             queuePacket(h, null, null, null, null, null, null, null, null);
         }
 
@@ -1147,6 +1147,7 @@ public class ClientCnxn {
             saslLoginFailed = false;
             if (!isFirstConnect) {
                 try {
+                    System.out.println("非首次连接，随机休眠1000ms内");
                     Thread.sleep(ThreadLocalRandom.current().nextLong(1000));
                 } catch (InterruptedException e) {
                     LOG.warn("Unexpected exception", e);
@@ -1270,8 +1271,8 @@ public class ClientCnxn {
                         // 心跳机制
                         // 1000(1秒)是为了防止竞态条件丢失而发送第二个ping,
                         // 也要确保当readTimeout很小的时候不要发送太多的ping
-                        //1000(1 second) is to prevent race condition missing to send the second ping
-                        //also make sure not to send too many pings when readTimeout is small
+                        // 1000(1 second) is to prevent race condition missing to send the second ping
+                        // also make sure not to send too many pings when readTimeout is small
                         // readTimeout = sessionTimeout * 2 / 3
                         // getIdleSend 距离上次发送时长
                         // timeToNextPing = sessionTimeout / 3
@@ -1280,7 +1281,7 @@ public class ClientCnxn {
                                              - ((clientCnxnSocket.getIdleSend() > 1000) ? 1000 : 0);
                         //send a ping request either time is due or no packet sent out within MAX_SEND_PING_INTERVAL
                         // 定时发送 ping
-                        System.out.println(new Date() + "readTimeout=" +readTimeout+ ", timeToNextPing=" + timeToNextPing + ", to=" + to);
+                        System.out.println(new Date() + "readTimeout=" +readTimeout+ ", timeToNextPing=" + timeToNextPing + ", to=" + to + ", getIdleSend=" + clientCnxnSocket.getIdleSend());
                         if (timeToNextPing <= 0 || clientCnxnSocket.getIdleSend() > MAX_SEND_PING_INTERVAL) {
                             sendPing();
                             clientCnxnSocket.updateLastSend();
@@ -1303,7 +1304,6 @@ public class ClientCnxn {
                         }
                         to = Math.min(to, pingRwTimeout - idlePingRwServer);
                     }
-                    System.out.println(new Date() + "to=" + to);
                     clientCnxnSocket.doTransport(to, pendingQueue, ClientCnxn.this);
                 } catch (Throwable e) {
                     if (closing) {
@@ -1323,6 +1323,7 @@ public class ClientCnxn {
 
                         // At this point, there might still be new packets appended to outgoingQueue.
                         // they will be handled in next connection or cleared up if closed.
+                        e.printStackTrace();
                         cleanAndNotifyState();
                     }
                 }
@@ -1455,16 +1456,16 @@ public class ClientCnxn {
             if (!readOnly && isRO) {
                 LOG.error("Read/write client got connected to read-only server");
             }
-
+            // 根据 negotiatedSessionTimeout 重新计算 readTimeout 和 connectTimeout
             readTimeout = negotiatedSessionTimeout * 2 / 3;
             connectTimeout = negotiatedSessionTimeout / hostProvider.size();
+            // 对于 StaticHostProvider，lastIndex = currentIndex;
             hostProvider.onConnected();
             sessionId = _sessionId;
             sessionPasswd = _sessionPasswd;
             // isRO 是否只读
             changeZkState((isRO) ? States.CONNECTEDREADONLY : States.CONNECTED);
-            // 不是只读，isRO=false，!isRO=true
-            // seenRwServerBefore = true
+            // 不是只读，isRO=false，!isRO=true seenRwServerBefore = true
             seenRwServerBefore |= !isRO;
             LOG.info(
                 "Session establishment complete on server {}, session id = 0x{}, negotiated timeout = {}{}",

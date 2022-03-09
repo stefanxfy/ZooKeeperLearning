@@ -84,20 +84,18 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                 incomingBuffer.flip();
                 if (incomingBuffer == lenBuffer) {
                     // java.nio.DirectByteBuffer[pos=0 lim=4 cap=4]
-                    LOG.info("Readable len, incomingBuffer={}", incomingBuffer.toString());
+//                    LOG.info("Readable len, incomingBuffer={}", incomingBuffer.toString());
                     recvCount.getAndIncrement();
                     readLength();
                 } else if (!initialized) {
                     // 如果尚未完成初始化，那么就认为该响应一定是会话创建请求的响应，
                     // 直接交由readConnectResult方法来处理该响应。
                     // java.nio.HeapByteBuffer[pos=0 lim=37 cap=37]
-                    LOG.info("Readable not initialized, incomingBuffer={}", incomingBuffer.toString());
+//                    LOG.info("Readable not initialized, incomingBuffer={}", incomingBuffer.toString());
                     readConnectResult();
                     enableRead();
 
                     if (findSendablePacket(outgoingQueue, sendThread.tunnelAuthInProgress()) != null) {
-                        // Since SASL authentication has completed (if client is configured to do so),
-                        // outgoing packets waiting in the outgoingQueue can now be sent.
                         enableWrite();
                     }
                     lenBuffer.clear();
@@ -105,8 +103,8 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                     updateLastHeard();
                     initialized = true;
                 } else {
-                    // 响应 + 回调
-                    LOG.info("Readable readResponse, incomingBuffer={}", incomingBuffer.toString());
+                    // 非会话建立请求响应 + 回调
+//                    LOG.info("Readable readResponse, incomingBuffer={}", incomingBuffer.toString());
                     sendThread.readResponse(incomingBuffer);
                     lenBuffer.clear();
                     incomingBuffer = lenBuffer;
@@ -114,7 +112,9 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                 }
             }
         }
+        // org.apache.zookeeper.ClientCnxnSocketNIO.doIO
         if (sockKey.isWritable()) {
+            // 从 outgoingQueue中取出可以发送的 Packet
             Packet p = findSendablePacket(outgoingQueue, sendThread.tunnelAuthInProgress());
             LOG.info("Writable, Packet={}", p.toString());
             if (p != null) {
@@ -129,16 +129,16 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
                     // 编码
                     p.createBB();
                 }
-                // 写
+                // 写入网络缓冲区
                 sock.write(p.bb);
                 if (!p.bb.hasRemaining()) {
                     // 如果还有剩余没有发完，再次接着发送，
-                    // 发送完了，就从队列中删除，并加到pendingQueue，等待响应
                     sentCount.getAndIncrement();
                     outgoingQueue.removeFirstOccurrence(p);
                     if (p.requestHeader != null
                         && p.requestHeader.getType() != OpCode.ping
                         && p.requestHeader.getType() != OpCode.auth) {
+                        // 发送完了，就从队列中删除，并加到pendingQueue，等待响应
                         synchronized (pendingQueue) {
                             pendingQueue.add(p);
                         }
@@ -266,7 +266,6 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
         sock.socket().setTcpNoDelay(true);
         return sock;
     }
-
     /**
      * register with the selection and connect
      * @param sock the {@link SocketChannel}
@@ -282,7 +281,6 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
             sendThread.primeConnection();
         }
     }
-
     @Override
     void connect(InetSocketAddress addr) throws IOException {
         // 创建非阻塞的 SocketChannel
@@ -296,7 +294,6 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
             throw e;
         }
         initialized = false;
-
         /*
          * Reset incomingBuffer
          */
@@ -356,10 +353,10 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
         synchronized (this) {
             selected = selector.selectedKeys();
         }
-        LOG.info("doTransport, selected={}", selected);
+//        LOG.info("doTransport, selected={}", selected);
         for (SelectionKey selectionKey : selected) {
-            LOG.info("selectionKey,OP_CONNECT={},OP_READ={},OP_WRITE={}", (selectionKey.readyOps() & SelectionKey.OP_CONNECT) != 0,
-                    (selectionKey.readyOps() & SelectionKey.OP_READ) != 0, (selectionKey.readyOps() & SelectionKey.OP_WRITE) != 0);
+/*            LOG.info("selectionKey,OP_CONNECT={},OP_READ={},OP_WRITE={}", (selectionKey.readyOps() & SelectionKey.OP_CONNECT) != 0,
+                    (selectionKey.readyOps() & SelectionKey.OP_READ) != 0, (selectionKey.readyOps() & SelectionKey.OP_WRITE) != 0);*/
         }
 
         // Everything below and until we get back to the select is
