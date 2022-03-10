@@ -368,6 +368,7 @@ public final class StaticHostProvider implements HostProvider {
         // 以降低对同一个服务实例的连接压力。
         if (needToSleep) {
             try {
+                System.out.println("StaticHostProvider.next...sleep spinDelay=" + spinDelay);
                 Thread.sleep(spinDelay);
             } catch (InterruptedException e) {
                 LOG.warn("Unexpected exception", e);
