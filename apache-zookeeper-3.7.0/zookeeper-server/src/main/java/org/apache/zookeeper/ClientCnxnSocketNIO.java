@@ -116,7 +116,6 @@ public class ClientCnxnSocketNIO extends ClientCnxnSocket {
         if (sockKey.isWritable()) {
             // 从 outgoingQueue中取出可以发送的 Packet
             Packet p = findSendablePacket(outgoingQueue, sendThread.tunnelAuthInProgress());
-            LOG.info("Writable, Packet={}", p.toString());
             if (p != null) {
                 updateLastSend();
                 // If we already started writing p, p.bb will already exist

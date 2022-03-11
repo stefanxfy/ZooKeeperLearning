@@ -308,7 +308,7 @@ public class ClientCnxn {
             this.readOnly = readOnly;
             this.watchRegistration = watchRegistration;
         }
-
+        // org.apache.zookeeper.ClientCnxn.Packet.createBB
         public void createBB() {
             try {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -517,6 +517,7 @@ public class ClientCnxn {
         }
 
         @SuppressFBWarnings("JLM_JSR166_UTILCONCURRENT_MONITORENTER")
+        // org.apache.zookeeper.ClientCnxn.EventThread.queuePacket
         public void queuePacket(Packet packet) {
             if (wasKilled) {
                 synchronized (waitingEvents) {
@@ -546,6 +547,7 @@ public class ClientCnxn {
                     if (event == eventOfDeath) {
                         wasKilled = true;
                     } else {
+                        // 处理 event
                         processEvent(event);
                     }
                     if (wasKilled) {
@@ -602,6 +604,7 @@ public class ClientCnxn {
                         ((VoidCallback) lcb.cb).processResult(lcb.rc, lcb.path, lcb.ctx);
                     }
                 } else {
+                    // processEvent部分源码
                     Packet p = (Packet) event;
                     int rc = 0;
                     String clientPath = p.clientPath;
@@ -732,9 +735,10 @@ public class ClientCnxn {
     }
 
     // @VisibleForTesting
+    // org.apache.zookeeper.ClientCnxn.finishPacket
     protected void finishPacket(Packet p) {
         int err = p.replyHeader.getErr();
-        // 响应完成后，根据响应结果 注册watch
+        // 响应完成后，根据响应状态码，状态码为OK，注册watch
         if (p.watchRegistration != null) {
             p.watchRegistration.register(err);
         }
@@ -763,11 +767,11 @@ public class ClientCnxn {
         if (p.cb == null) {
             synchronized (p) {
                 p.finished = true;
-                // 唤醒 发起请求的主线程
+                // 如果没有设置回调函数就 唤醒 发起请求的主线程
                 p.notifyAll();
             }
         } else {
-            // 设置了 Callback，Packet交由eventThread处理
+            // 设置了 Callback，Packet交由eventThread进行回调处理
             p.finished = true;
             eventThread.queuePacket(p);
         }
@@ -932,20 +936,20 @@ public class ClientCnxn {
                 zooKeeperSaslClient.respondToServer(request.getToken(), ClientCnxn.this);
                 return;
             }
-
+            // 必须按顺序处理响应，pendingQueue 按顺序出队列
             Packet packet;
             synchronized (pendingQueue) {
                 if (pendingQueue.size() == 0) {
                     throw new IOException("Nothing in the queue, but got " + replyHdr.getXid());
                 }
+                // 从 pendingQueue 中取出 packet
                 packet = pendingQueue.remove();
             }
             /*
              * Since requests are processed in order, we better get a response to the first request!
-             * 既然请求是按顺序处理的，我们最好对第一个请求得到响应!
              */
             try {
-                // 必须按顺序处理响应，pendingQueue 按顺序出队列
+                // 对比xid是否一致，若不一致则抛出Xid out of order异常
                 if (packet.requestHeader.getXid() != replyHdr.getXid()) {
                     packet.replyHeader.setErr(KeeperException.Code.CONNECTIONLOSS.intValue());
                     throw new IOException("Xid out of order. Got Xid " + replyHdr.getXid()
@@ -953,7 +957,7 @@ public class ClientCnxn {
                                           + " expected Xid " + packet.requestHeader.getXid()
                                           + " for a packet with details: " + packet);
                 }
-
+                // 填充 replyHeader
                 packet.replyHeader.setXid(replyHdr.getXid());
                 packet.replyHeader.setErr(replyHdr.getErr());
                 packet.replyHeader.setZxid(replyHdr.getZxid());
@@ -961,11 +965,13 @@ public class ClientCnxn {
                     lastZxid = replyHdr.getZxid();
                 }
                 if (packet.response != null && replyHdr.getErr() == 0) {
+                    // 反序列化 response
                     packet.response.deserialize(bbia, "response");
                 }
 
                 LOG.debug("Reading reply session id: 0x{}, packet:: {}", Long.toHexString(sessionId), packet);
             } finally {
+                // 进行packet处理的收尾工作，如注册watcher、唤醒同步阻塞的主线程、触发本地回调函数等
                 finishPacket(packet);
             }
         }
@@ -1127,7 +1133,7 @@ public class ClientCnxn {
             lastPingSentNs = System.nanoTime();
             // xid = -2 , type = 11
             RequestHeader h = new RequestHeader(ClientCnxn.PING_XID, OpCode.ping);
-            System.out.println(new Date() + "------------------sendPing=" + h.toString());
+//            System.out.println(new Date() + "------------------sendPing=" + h.toString());
             queuePacket(h, null, null, null, null, null, null, null, null);
         }
 
@@ -1281,7 +1287,7 @@ public class ClientCnxn {
                                              - ((clientCnxnSocket.getIdleSend() > 1000) ? 1000 : 0);
                         //send a ping request either time is due or no packet sent out within MAX_SEND_PING_INTERVAL
                         // 定时发送 ping
-                        System.out.println(new Date() + "readTimeout=" +readTimeout+ ", timeToNextPing=" + timeToNextPing + ", to=" + to);
+//                        System.out.println(new Date() + "readTimeout=" +readTimeout+ ", timeToNextPing=" + timeToNextPing + ", to=" + to);
                         if (timeToNextPing <= 0 || clientCnxnSocket.getIdleSend() > MAX_SEND_PING_INTERVAL) {
                             sendPing();
                             clientCnxnSocket.updateLastSend();
@@ -1304,7 +1310,7 @@ public class ClientCnxn {
                         }
                         to = Math.min(to, pingRwTimeout - idlePingRwServer);
                     }
-                    System.out.println(new Date() + "to=" + to);
+//                    System.out.println(new Date() + "to=" + to);
                     clientCnxnSocket.doTransport(to, pendingQueue, ClientCnxn.this);
                 } catch (Throwable e) {
                     if (closing) {
@@ -1673,7 +1679,7 @@ public class ClientCnxn {
         WatchRegistration watchRegistration) {
         return queuePacket(h, r, request, response, cb, clientPath, serverPath, ctx, watchRegistration, null);
     }
-
+    // org.apache.zookeeper.ClientCnxn.queuePacket
     public Packet queuePacket(
         RequestHeader h,
         ReplyHeader r,
@@ -1686,7 +1692,6 @@ public class ClientCnxn {
         WatchRegistration watchRegistration,
         WatchDeregistration watchDeregistration) {
         Packet packet = null;
-
         // Note that we do not generate the Xid for the packet yet. It is
         // generated later at send-time, by an implementation of ClientCnxnSocket::doIO(),
         // where the packet is actually sent.
@@ -1713,7 +1718,8 @@ public class ClientCnxn {
                 outgoingQueue.add(packet);
             }
         }
-        // 唤醒 sendThread 线程
+        // 唤醒 sendThread线程，
+        // 以ClientCnxnSocketNIO为例：selector.wakeup()
         sendThread.getClientCnxnSocket().packetAdded();
         return packet;
     }
