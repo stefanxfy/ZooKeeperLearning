@@ -1,6 +1,6 @@
 # ZooKeeper客户端源码（二）——向服务端发起请求
 
-[TOC]
+![向服务端发起请求](../img/向服务端发起请求.png)
 
 ## 一、向服务端发起请求
 
@@ -134,11 +134,11 @@ void readResponse(ByteBuffer incomingBuffer) throws IOException {
 
 以同步阻塞方式等待响应结果的请求API，都是调用方法`org.apache.zookeeper.ClientCnxn#submitRequest`：
 
-![image-20220311232244168](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311232244168.png)
+![submitRequest](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311232244168.png)
 
 将`packet`提交给`outgoingQueue`队列后，就调用`packet.wait()`阻塞当前线程。解析对比完`packet`后，调用`finishPacket()`方法进行收尾工作，如果没有设置`Callback`，就调用`packet.notifyAll()`唤醒刚才阻塞的线程。
 
-![image-20220311232533509](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311232533509.png)
+![finishPacket](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311232533509.png)
 
 ### 3、异步回调通知
 
@@ -163,3 +163,4 @@ void readResponse(ByteBuffer incomingBuffer) throws IOException {
 本文源码基于`ZooKeeper3.7.0`版本。
 
 推荐阅读：《从Paxos到Zookeeper：分布式一致性原理与实践》倪超著。
+
