@@ -502,11 +502,12 @@ public class ClientCnxn {
             final Set<Watcher> watchers;
             if (materializedWatchers == null) {
                 // materialize the watchers based on the event
-                // 找到具体watchers时，还会删除，也就是说 watcher是一次性的
+                // 找到具体watchers时，一次性的会被删除
                 watchers = watchManager.materialize(event.getState(), event.getType(), event.getPath());
             } else {
                 watchers = new HashSet<>(materializedWatchers);
             }
+            // 封装成 WatcherSetEventPair 加入到waitingEvents队列
             WatcherSetEventPair pair = new WatcherSetEventPair(watchers, event);
             // queue the pair (watch set & event) for later processing
             waitingEvents.add(pair);
@@ -897,7 +898,8 @@ public class ClientCnxn {
                 }
               return;
             case NOTIFICATION_XID:
-                // 通知 响应
+                // org.apache.zookeeper.ClientCnxn.SendThread.readResponsen部分源码
+                // 事件通知 响应
                 LOG.debug("Got notification session id: 0x{}",
                     Long.toHexString(sessionId));
                 // 解析 WatcherEvent

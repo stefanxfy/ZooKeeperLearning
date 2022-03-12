@@ -2,17 +2,19 @@
 
 [TOC]
 
-## 向服务端发起请求
+## 一、向服务端发起请求
 
-客户端月服务端通信的最小单元是`Packet`，`Packet`中包含请求头、请求体、响应头、响应体、本地回调函数、watcher注册等信息。而真正要发给服务端的只有请求头和请求体以及请求体长度等少量信息：
+客户端与服务端通信的最小单元是`Packet`。所有请求在发送给服务端之前，都需要先构建一个`Packet`，再将`Packet`提交给请求处理队列`outgoingQueue`并唤醒`SendThread`线程，最后，处理写事件，从`outgoingQueue`中取出`Packet`，将其序列化写入网络发送缓冲区。
 
-![ClientCnxn.Packet.createBB](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311225500544.png)
+### 1、构建协议包
 
-所有请求在发送给服务端之前，都需要先构建一个`Packet`，再将`Packet`提交给请求处理队列`outgoingQueue`并唤醒`SendThread`线程，最后，处理写事件，从`outgoingQueue`中取出`Packet`，将其序列化写入网络发送缓冲区。
+`Packet`中包含请求头、请求体、响应头、响应体、本地回调函数、watcher注册等信息。
 
-### 构建数据包
+#### （1）请求体和响应体
 
 不同的请求API有不同的请求体和响应体，比如`getData`的请求体是`GetDataRequest`，响应体是`GetDataResponse`，`setData`的请求体是`SetDataRequest`，响应体是`SetDataResponse`。
+
+![请求体和响应体内容](../img/请求体和响应体内容.png)
 
 如下是不同请求体和响应体的类关系图：
 
@@ -20,20 +22,30 @@
 
 ![Record-Response.drawio](https://gitee.com/stefanpy/myimg/raw/master/img/Record-Response.drawio.png)
 
-请求头`RequestHeader`定义操作类型`OpCode`和`xid`。
+#### （2）请求头
+
+请求头`RequestHeader`定义操作类型`OpCode`和请求序号`xid`。
 
 - 最常见`OpCode`有`create=1`、`delete=2`、`exists=3`、`getData=5`、`setData=6`、`ping=11`等，详细参考`org.apache.zookeeper.ZooDefs.OpCode`。
-- `xid`是用来标识每个请求的唯一单机唯一性的，正常从1开始自增，但是也有几个特殊的xid定义，`NOTIFICATION_XID=-1`watch通知响应，`PING_XID=-2`心跳请求，`AUTHPACKET_XID=-4`授权数据包请求，`SET_WATCHES_XID=-8`设置`watch`请求。
+- `xid`用于记录客户端请求发起的先后序号，用来确保单个客户端请求的响应顺序。正常从1开始自增，但是也有几个特殊的xid定义，`NOTIFICATION_XID=-1`watch通知响应，`PING_XID=-2`心跳请求，`AUTHPACKET_XID=-4`授权数据包请求，`SET_WATCHES_XID=-8`设置`watch`请求。
+
+根据协议规定，除非是“会话创建”请求，其他所有的客户端请求都会带上请求头。
+
+#### （3）getData源码示例
 
 以`getData`源码为例，其他类似：
 
 ![ZooKeeper.getData](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311221525761.png)
 
-### 发送数据包
+### 2、发送数据包
+
+#### （1）提交给outgoingQueue
 
 构建好`Packet`，就提交给`outgoingQueue`队列，然后通知`SendThread`线程，有请求提交了：
 
 ![ClientCnxn.queuePacket](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311222333377.png)
+
+#### （2）SendThread处理写事件
 
 `SendThread`线程轮询`SelectionKey`列表，处理写事件：
 
@@ -41,9 +53,21 @@
 
 除了会话建立请求、心跳请求，其他正常请求发送完毕后，都需要添加到`pendingQueue`队列，其目的是按顺序处理响应。
 
-## 接收服务端响应
+#### （3）网络包序列化
 
-### 按顺序处理响应
+真正要发给服务端的只有请求头和请求体以及长度等少量信息。
+
+![请求协议组成](../img/请求协议组成.png)
+
+如下是`Packet`序列化过程：
+
+![ClientCnxn.Packet.createBB](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311225500544.png)
+
+发送的网络包，需要序列化为byte数组，而`ZooKeeper`并没有使用多么高深的序列化技术，实则还是用的java原生的序列化和反序列化技术`ByteArrayOutputStream`+`DataOutputStream`。
+
+## 二、接收服务端响应
+
+### 1、按顺序处理响应
 
 正常请求，如`getData`、`setData`、`create`、`delete`等的响应都需要按顺序处理。接收服务端发来的响应信息按顺序和`pendingQueue`队列中的`Packet`对比`xid`是否相等，相等就是同一个请求，不相等就说明顺序乱了，抛出异常。
 
@@ -100,7 +124,11 @@ void readResponse(ByteBuffer incomingBuffer) throws IOException {
 }
 ```
 
-### 唤醒同步阻塞
+从网络底层读取数据，然后反序列化出响应头和响应体。
+
+![响应协议](../img/响应协议.png)
+
+### 2、唤醒同步阻塞
 
 请求的同步阻塞方式到底如何实现的呢？
 
@@ -112,7 +140,7 @@ void readResponse(ByteBuffer incomingBuffer) throws IOException {
 
 ![image-20220311232533509](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311232533509.png)
 
-### 异步回调通知
+### 3、异步回调通知
 
 以异步回调通知响应结果，就直接调用的`org.apache.zookeeper.ClientCnxn#queuePacket`，直接将`packet`添加到`outgoingQueue`队列。
 
@@ -126,8 +154,12 @@ void readResponse(ByteBuffer incomingBuffer) throws IOException {
 
 ![processEvent部分源码](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311233925234.png)
 
-### 注册watcher
+## 三、总结与参考
 
+一图以蔽之。
 
+![请求发起和响应过程](../img/请求发起和响应过程.png)
 
-### watcher触发通知
+本文源码基于`ZooKeeper3.7.0`版本。
+
+推荐阅读：《从Paxos到Zookeeper：分布式一致性原理与实践》倪超著。

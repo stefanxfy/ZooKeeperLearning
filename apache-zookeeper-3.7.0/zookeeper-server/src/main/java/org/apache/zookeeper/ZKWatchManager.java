@@ -360,7 +360,8 @@ class ZKWatchManager implements ClientWatchManager {
             if (defaultWatcher != null) {
                 result.add(defaultWatcher);
             }
-
+            // 无类型事件，判断 通知状态KeeperState，如果KeeperState不是SyncConnected
+            // 就把所有的 watcher容器都清空
             boolean clear = disableAutoWatchReset && state != Watcher.Event.KeeperState.SyncConnected;
             synchronized (dataWatches) {
                 for (Set<Watcher> ws : dataWatches.values()) {
