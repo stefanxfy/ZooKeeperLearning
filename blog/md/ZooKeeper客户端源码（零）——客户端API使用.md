@@ -1,10 +1,10 @@
 # ZooKeeper客户端源码（零）——客户端API使用
 
-![ZooKeeper客户端API](../img/ZooKeeper客户端API.png)
+![ZooKeeper客户端API](https://gitee.com/stefanpy/myimg/raw/master/img/ZooKeeper%E5%AE%A2%E6%88%B7%E7%AB%AFAPI.png)
 
-## 建立连接和会话
+## 一、建立连接和会话
 
-客户端可以通过创建一个 `ZooKeeper`（`org.apache.zookeeper.ZooKeeper`）实例来连接`ZooKeeper`服务器。ZooKeeper构造函数有多个重载版本，可以传入的完全参数如下：
+客户端可以通过创建一个 `ZooKeeper`（`org.apache.zookeeper.ZooKeeper`）实例来连接`ZooKeeper`服务器。`ZooKeeper`构造函数有多个重载版本，可以传入的完全参数如下：
 
 ```java
 public ZooKeeper(
@@ -29,9 +29,9 @@ public ZooKeeper(
 | hostProvider   | HostProvider   | 服务地址选择器                                               |
 | clientConfig   | ZKClientConfig | 客户端配置，可以将客户端一些配置信息如sasl、scoket实现类等放到一个文件中。一般可以不用传clientConfig |
 
-客户端与服务端建立的连接通过会话保持连接有状态，可以通过会话重连或者重用一条连接。
+客户端与服务端建立的连接，建立会话保持连接有状态，并且可以通过会话重连或者重用一条连接。
 
-连接建立过程是异步的，也就是说创建好`ZooKeeper`实例之后就会立刻返回，而此时可能还有完成会话创建，所以需要传入一个`watcher`事件。当会话真正创建成功后，客户端会生成一个“已建立连接”的事件，进行回调通知。
+连接建立是一个异步过程，也就是说创建好`ZooKeeper`实例之后就会立刻返回，而此时可能还没有完成会话创建，所以需要传入一个`watcher`事件。当会话真正创建成功后，客户端会生成一个”已建立连接“（`SyncConnected`）的事件，进行回调通知。
 
 如下代码演示，创建`ZooKeeper`实例，与服务端建立：
 
@@ -50,7 +50,7 @@ ZooKeeper zooKeeper = new ZooKeeper(connectString, 9999, new Watcher() {
 countDownLatch.await();
 ```
 
-通过上一次连接成功后的`sessionId`和`sessionPasswd`可以重新建立连接：
+通过上一次会话建立成功后的`sessionId`和`sessionPasswd`可以重新建立连接：
 
 ```java
 CountDownLatch countDownLatch1 = new CountDownLatch(1);
@@ -103,7 +103,7 @@ System.out.println(data);
 
 ![重新建立连接在同一个服务是哪个](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311150044016.png)
 
-## 创建节点
+## 二、创建节点
 
 创建节点的API有两种：同步阻塞和异步回调。
 
@@ -130,17 +130,17 @@ public void create(
     long ttl)
 ```
 
-两者的区别就在于异步可以传一个`AsyncCallback`回调函数，这个回调类可以传`StringCallback`和`Create2Callback`。
+两者的区别就在于异步可以传一个`AsyncCallback`回调函数，这个回调函数可以传`StringCallback`或者`Create2Callback`。
 
 这两种`Callback`有什么区别呢？
 
-在用法上没多大区别，主要是为了区别节点类型，`StringCallback`用于旧节点类型，`Create2Callback`用于新拓展的节点类型。
+在用法上没多大区别，主要是为了区别新旧版本的节点类型，`StringCallback`用于旧节点类型，`Create2Callback`用于新拓展的节点类型。
 
 原先节点类型有四种：持久节点（`PERSISTENT`）、持久顺序节点（`PERSISTENT_SEQUENTIAL`）、临时节点（`EPHEMERAL`）、临时顺序节点（`EPHEMERAL_SEQUENTIAL`），后来又在持久节点上拓展了两种新类型：持久带有效期节点（`PERSISTENT_WITH_TTL`）、持久顺序带有效期节点（`PERSISTENT_SEQUENTIAL_WITH_TTL`）。
 
 持久节点又带有效期，那和临时节点有什么区别呢？
 
-临时节点，连接断开后就会清除，持有节点带有效期，连接断开后不会清除，但是在过了有效期后没有更新且其没有孩子节点，就会被清除。
+临时节点，连接断开后就会清除，持有节点带有效期，连接断开后不会清除，但是在过了有效期后没有更新过且其没有孩子节点，就会被清除。
 
 | 参数名     | 类型          | 说明                                                         |
 | ---------- | ------------- | ------------------------------------------------------------ |
@@ -153,7 +153,7 @@ public void create(
 | stat       | Stat          | 节点状态信息，创建节点时传空实例，创建成功响应后会填充stat，主要信息有czxid、mzxid、ctime、mtime、version、cversion、dataLength等 |
 | ttl        | long          | 持久节点的有效期，单位毫秒，必须大于0                        |
 
-ACL是节点的权限控制，如果实际应用场景不需要太高的权限要求，可以不用关注这个参数，只需要传``Ids.OPEN_ACL_UNSAFE`即可，这就表明之后对这个节点的任何操作都不需要权限。
+`ACL`是节点的权限控制，如果实际应用场景不需要太高的权限要求，可以不用关注这个参数，只需要传``Ids.OPEN_ACL_UNSAFE`即可，这就表明之后对这个节点的任何操作都不需要权限。
 
 如下代码演示节点创建，同步阻塞和异步回调方式：
 
@@ -192,18 +192,18 @@ countDownLatch2.await();
 
 回调函数需要重写`processResult`方法，该方法有四个参数：
 
-- rc，响应状态码，可参考`org.apache.zookeeper.KeeperException.Code`，说几个常见状态码：响应成功：`OK(0)`，其他状态码就都是异常：`ConnectionLoss(-4)`连接断开、`NodeExists(-110)`节点已存在、`SessionExpired(-112)`会话过期等。
-- path，API调用时传入的节点路径。
-- ctx，API调用时传入的ctx上下文对象。
-- name，实际创建的节点名，比如顺序节点，会在原参数path基础上带个有序编号后缀。
+- `rc`，响应状态码，可参考`org.apache.zookeeper.KeeperException.Code`。常见状态码：响应成功：`OK(0)`，其他状态码就都是异常：`ConnectionLoss(-4)`连接断开、`NodeExists(-110)`节点已存在、`SessionExpired(-112)`会话过期等。
+- `path`，API调用时传入的节点路径。
+- `ctx`，API调用时传入的上下文对象。
+- `name`，实际创建的节点名，比如顺序节点，会在原参数`path`基础上带个有序编号后缀。
 
 注：后续所有API，都与创建节点一样有同步阻塞和异步回调两种方式。
 
-继承了`AsyncCallback`的接口还有很多种，不同的API可以对应不同的`AsyncCallback`接口，如下图是`AsyncCallback`接口继承关系图：
+继承了`AsyncCallback`的接口还有很多，不同的API可以对应不同的`AsyncCallback`接口，如下图是`AsyncCallback`接口继承关系图：
 
 ![AsyncCallback.drawio](https://gitee.com/stefanpy/myimg/raw/master/img/AsyncCallback.drawio.png)
 
-## 获取节点
+## 三、获取节点
 
 获取节点的API有两种：
 
@@ -214,9 +214,9 @@ public byte[] getData(final String path, Watcher watcher, Stat stat)
 public void getData(final String path, Watcher watcher, DataCallback cb, Object ctx)    
 ```
 
-与创建节点不同，获取节点的API还可以注册一个`watcher`，`watcher`注册到对应节点上，如果节点发生了更新操作，就会触发回调`watcher`进行通知。
+与创建节点不同，获取节点的API还可以注册一个`watcher`，如果节点发生了更新操作，就会触发回调`watcher`进行通知。
 
-如下代码演示获取节点信息并注册一个watcher：
+如下代码演示获取节点信息并注册一个`watcher`：
 
 ```java
 CountDownLatch countDownLatch = new CountDownLatch(1);
@@ -249,9 +249,9 @@ Thread.sleep(1000000);
 
 还有其他事件如：`NodeCreated`、`NodeDeleted`、`NodeChildrenChanged`等。
 
-显然通知信息`WatchedEvent`中没有节点到底修改成了什么内容，所以当通知节点更新后，如果想知道更新了什么，还需要主动`getData`一次。
+显然通知信息`WatchedEvent`中没有节点原始数据内容和变更后的新数据内容，所以当通知节点更新后，如果想知道更新了什么，还需要主动`getData`一次。
 
-## 更新节点
+## 四、更新节点
 
 更新节点API有两种：
 
@@ -262,7 +262,7 @@ public Stat setData(final String path, byte[] data, int version)
 public void setData(final String path, byte[] data, int version, StatCallback cb, Object ctx)    
 ```
 
-更新节点内容必须基于某个version更新，如果传入的version和该节点当前version不一致就会修改失败，就跟`CAS`（`Compare and Swap`）的原理差不多。所以需要先通过`getData`获取节点的`version`，然后再调用`setData`。
+更新节点内容必须基于某个`version`更新，如果传入的`version`和该节点当前`version`不一致就会修改失败，就跟`CAS`（`Compare and Swap`）的原理差不多。所以需要先通过`getData`获取节点的`version`，然后再调用`setData`。
 
 如下演示更新节点操作：
 
@@ -295,7 +295,7 @@ System.out.println(stat1.toString());
 
 ![image-20220311171546137](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311171546137.png)
 
-## 删除节点
+## 五、删除节点
 
 删除节点API有两种：
 
@@ -308,7 +308,7 @@ public void delete(final String path, int version, VoidCallback cb, Object ctx)
 
 删除节点也属于节点更新范畴，所以也需要基于`version`，保证其操作的原子性。
 
-## 权限控制
+## 六、权限控制
 
 为了避免存储在 `ZooKeeper `服务器上的数据被其他进程干扰或人为操作修改，可以对`ZooKeeper`上的数据访问进行权限控制（Access Control）。
 
@@ -318,11 +318,11 @@ public void delete(final String path, int version, VoidCallback cb, Object ctx)
 
 权限模式有多种，如：`Digest`、`Auth`、`IP`、`World`、`Super`：
 
-- `Digest`是最常用的权限控制模式，也更符合我们对于权限控制的认识，其以类似于`username:password`形式的权限标识进行权限配置，便于区分不同应用来进行权限控制。
+- `Digest`是最常用的权限控制模式，其以类似于`username:password`形式的权限标识进行权限配置，便于区分不同应用来进行权限控制。
 - `Auth`用于授予权限，注意需要先创建用户。
-- `IP`一种白名单的方式，授权给指定ip或者某个ip段。
+- `IP`一种白名单的方式，授权给指定ip或ip段。
 
-- `World`是一种最开放的权限控制模式，这种权限控制方式几乎没有任何作用，数据节点的访问权限对所有用户开放。`World`模式也可以看作是一种特殊的`Digest`模式，它只有一个权限标识，即`worl:anyone`。
+- `World`是一种最开放的权限控制模式，这种权限控制方式几乎没有任何作用，数据节点的访问权限对所有用户开放。`World`模式也可以看作是一种特殊的`Digest`模式，它只有一个权限标识，即`world:anyone`。
 - `Super`顾名思义就是超级用户的意思，也是一种特殊的`Digest`模式，在`Super`模式下，超级用户可以对任意`ZooKeeper`上的数据节点进行任何操作。
 
 如果要使用 `ZooKeeper `的权限控制功能，需要在完成 `ZooKeeper `会话创建后，给该会话添加上相关的权限信息（`AuthInfo`）:
@@ -355,7 +355,7 @@ Stat stat = new Stat();
 zooKeeper.create("/testAcl1", "hello world".getBytes(), ZooDefs.Ids.CREATOR_ALL_ACL, CreateMode.PERSISTENT, stat);
 ```
 
-通过没有设置权限信息或者没有设置正确的权限信息的会话进行节点获取操作，抛出如下异常`NoAuthException`：
+没有设置权限信息或者没有设置正确的权限信息的会话进行节点获取操作，抛出如下异常`NoAuthException`：
 
 ![image-20220311183532225](https://gitee.com/stefanpy/myimg/raw/master/img/image-20220311183532225.png)
 
@@ -363,23 +363,23 @@ zooKeeper.create("/testAcl1", "hello world".getBytes(), ZooDefs.Ids.CREATOR_ALL_
 
 经测试，对于删除操作而言，一个节点的权限作用范围是其子节点，也就是说，对一个数据节点添加权限信息后，依然可以自由地删除这个节点，但是对于这个节点的子节点，就必须使用相应的权限信息才能够删除掉它。
 
-## 总结与参考
+## 七、总结与参考
 
-1. 客户端建立连接是一个异步过程，需要注册一个watcher来监听会话建立完成。
-2. 可以通过sessionId和sessionPasswd重新建立连接。
+1. 客户端建立连接是一个异步过程，需要注册一个`watcher`来监听会话建立完成。
+2. 可以通过`sessionId`和`sessionPasswd`重新建立连接。
 3. 所有对节点的请求API都有同步阻塞和异步回调两种方式，异步回调就是传入一个回调函数，响应处理时进行回调通知。
 4. 只有`getData`等非事务请求才能注册`watcher`，事务请求如`create`、`delete`、`setData`都不可以。
-5. 创建节点时可以为其设置`ACL`权限控制，其他API只有在设置了正确权限的会话下，才能操作；但是对于删除操作而言，一个节点的权限作用范围是其子节点，所以在没有权限的情况下是可以删除该节点的。
-
-本文源码基于`ZooKeeper3.7.0`版本。
+5. 创建节点时可以为其设置`ACL`权限控制，其他API只有在设置了正确权限的会话下，才有权操作；但是对于删除操作而言，一个节点的权限作用范围是其子节点，所以在没有权限的情况下是可以删除该节点的。
 
 推荐阅读：《从Paxos到Zookeeper：分布式一致性原理与实践》倪超著。
 
-## 推荐阅读
+## 八、推荐阅读
 
 [ZooKeeper客户端源码（一）——向服务端建立连接+会话建立+心跳保持长连接](https://stefan.blog.csdn.net/article/details/123393612)
 
+[ZooKeeper客户端源码（二）——向服务端发起请求（顺序响应+同步阻塞+异步回调）](https://stefan.blog.csdn.net/article/details/123455097)
 
+[ZooKeeper客户端源码（三）——Watcher注册与通知](https://stefan.blog.csdn.net/article/details/123464459)
 
 
 
